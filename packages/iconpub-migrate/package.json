@@ -1,0 +1,35 @@
+{
+  "name": "@iconpub/migrate",
+  "version": "0.0.0",
+  "author": "yalda",
+  "description": "",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "chrome-extension",
+    "vue",
+    "vite",
+    "create-chrome-ext"
+  ],
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "fmt": "prettier --write '**/*.{vue,ts,json,css,scss,md}'"
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^1.0.12",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@iconpub/core": "^0.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.13",
+    "vue-tsc": "^0.38.2"
+  }
+}

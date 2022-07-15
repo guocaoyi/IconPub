@@ -1,0 +1,29 @@
+# OS 
+.DS_Store
+
+# ignore node dependency directories & lock
+node_modules
+yarn.lock
+package-lock.json
+
+# ignore log files and local
+*.log
+*.local
+
+# ignore compiled files
+dist
+dist-ssr
+/build
+/coverage
+/types
+/esm
+/cjs
+
+# ignore ide settings
+.idea
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!.vscode
+!pnpm-lock.yaml

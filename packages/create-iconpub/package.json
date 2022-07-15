@@ -1,0 +1,49 @@
+{
+  "name": "create-iconpub",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Scaffolding your chrome extension, multiple boilerplates supported!",
+  "author": "yalda",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "create-iconpub": "index.js"
+  },
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "files": [
+    "_workflow",
+    "_mustache",
+    "template-*",
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guocaoyi/iconpub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guocaoyi/iconpub/issues"
+  },
+  "homepage": "https://iconpub.cn",
+  "keywords": [
+    "create-iconpub",
+    "iconpub",
+    "iconfont",
+    "webfont",
+    "icon"
+  ],
+  "dependencies": {
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.6",
+    "mustache": "^4.2.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.18.22",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

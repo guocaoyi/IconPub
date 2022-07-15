@@ -1,0 +1,16 @@
+{
+  "name": "iconpub",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "fmt": "prettier --write '**/*.{vue,js,ts,json,css,md,yaml,html}'"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "2.7.1",
+    "typescript": "4.7.4"
+  }
+}
