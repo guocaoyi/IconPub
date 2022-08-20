@@ -1,0 +1,22 @@
+# os
+.DS_Store
+.vscode
+node_modules
+public
+src
+
+# docker
+.dockerignore
+docker-compose.yml
+Dockerfile
+
+# workspace
+index.html
+tsconfig.json
+vite.config.ts
+
+# log
+*.log
+yarn.lock
+pnpm-lock.yaml
+package-lock.json

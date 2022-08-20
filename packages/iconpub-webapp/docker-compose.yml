@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  webapp:
+    restart: unless-stopped
+    image: yalda/iconpub-webapp
+    container_name: iconpub-webapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      PORT: 4000
+    ports:
+      - '4000:4000'

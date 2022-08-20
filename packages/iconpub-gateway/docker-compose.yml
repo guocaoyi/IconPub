@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  gateway:
+    restart: unless-stopped
+    image: yalda/iconpub-gateway
+    container_name: iconpub-gateway
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '443:443'
+      - '80:80'

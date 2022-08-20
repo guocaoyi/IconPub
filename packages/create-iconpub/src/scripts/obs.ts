@@ -1,2 +1,1 @@
 // esdk-obs-nodejs
-export {}

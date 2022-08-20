@@ -1,0 +1,29 @@
+/**
+ * 操作日志
+ */
+export class ActiveLogVo {
+  id: number
+  /** 项目编号 */
+  groupID: number
+  /** 内容 */
+  content: string
+  /** type */
+
+  /**
+   * @enum {0 | 1 | 2} 0: 登录 1: 操作图标 2: 操作项目
+   */
+  type: 0 | 1 | 2
+
+  /** 操作行为（Event）编号 */
+  operatorID: string
+
+  /** 操作行为（Event）名称 */
+  operatorName: string
+
+  /** 创建时间戳 */
+  createdAt: string
+  /** 更新时间戳 */
+  updatedAt?: string
+  /** 删除时间戳 */
+  deletedAt?: null
+}

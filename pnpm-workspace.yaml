@@ -1,4 +1,5 @@
 packages:
+  - 'packages/create-iconpub'
   - 'packages/iconpub-*'
   - '!**/test/**'
   - '!**/__tests__/**'

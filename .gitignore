@@ -13,7 +13,7 @@ package-lock.json
 # ignore compiled files
 dist
 dist-ssr
-/build
+build
 /coverage
 /types
 /esm

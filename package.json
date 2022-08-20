@@ -1,16 +1,21 @@
 {
   "name": "iconpub",
-  "version": "0.0.0",
-  "private": true,
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "fmt": "prettier --write '**/*.{vue,js,ts,json,css,md,yaml,html}'"
-  },
-  "author": "",
+  "private": true,
+  "author": "yalda",
   "license": "MIT",
+  "scripts": {
+    "fmt": "prettier --write '**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
+    "lint:eslint": "eslint packages"
+  },
   "dependencies": {
-    "prettier": "2.7.1",
-    "typescript": "4.7.4"
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "husky": "^7.0.1",
+    "@typescript-eslint/parser": "4.28.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^7.28.0",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-svelte3": "^3.2.0"
   }
 }

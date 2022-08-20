@@ -1,0 +1,9 @@
+# os
+.DS_Store
+.vscode
+
+.dockerignore
+Dockerfile
+
+# log
+*.log

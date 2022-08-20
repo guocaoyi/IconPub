@@ -1,0 +1,31 @@
+version: '3.9'
+
+# optional ports are specified throughout for more advanced use cases.
+
+services:
+  webapp:
+    restart: unless-stopped
+    image: yalda/iconpub-webapp
+    container_name: iconpub-webapp
+    environment:
+      PORT: 4000
+    ports:
+      - '4000:4000'
+
+  server:
+    restart: unless-stopped
+    image: yalda/iconpub-server
+    container_name: iconpub-server
+    environment:
+      JWT_SECRET: testsecret
+      PORT: 4001
+    ports:
+      - '4001:4001'
+
+  gateway:
+    restart: unless-stopped
+    image: yalda/iconpub-gateway
+    container_name: iconpub-gateway
+    ports:
+      - '443:443'
+      - '80:80'

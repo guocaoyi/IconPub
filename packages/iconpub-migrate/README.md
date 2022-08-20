@@ -13,8 +13,10 @@
 run the command
 
 ```shell
+#
 $ cd iconpub-migrate
 
+#
 $ npm run dev
 ```
 
@@ -34,6 +36,7 @@ $ npm run dev
 After the development of your extension run the command
 
 ```shell
+# build for production
 $ npm build
 ```
 

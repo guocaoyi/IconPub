@@ -1,0 +1,132 @@
+{
+  "apifoxProject": "1.0.0",
+  "info": {
+    "name": "IconPub Server",
+    "description": "",
+    "mockRule": { "rules": [], "enableSystemRule": true }
+  },
+  "responseCollection": [],
+  "apiCollection": [
+    {
+      "name": "根目录",
+      "parentId": 0,
+      "serverId": "",
+      "description": "",
+      "preProcessors": [],
+      "postProcessors": [],
+      "auth": {},
+      "items": [
+        {
+          "name": "获取用户列表",
+          "api": {
+            "id": "34306940",
+            "method": "get",
+            "path": "/user",
+            "parameters": {},
+            "auth": {},
+            "commonParameters": { "query": [], "body": [], "cookie": [], "header": [] },
+            "responses": [
+              {
+                "id": "82854081",
+                "name": "成功",
+                "code": 200,
+                "contentType": "json",
+                "jsonSchema": { "type": "object", "properties": {} }
+              }
+            ],
+            "responseExamples": [],
+            "requestBody": { "type": "none", "parameters": [] },
+            "description": "",
+            "tags": [],
+            "status": "testing",
+            "serverId": "",
+            "operationId": "",
+            "sourceUrl": "",
+            "ordering": 10,
+            "cases": [],
+            "mocks": [],
+            "customApiFields": "{}",
+            "advancedSettings": {},
+            "mockScript": {}
+          }
+        }
+      ]
+    }
+  ],
+  "socketCollection": [],
+  "docCollection": [],
+  "schemaCollection": [],
+  "apiTestCaseCollection": [
+    {
+      "name": "默认分组",
+      "children": [],
+      "items": [{ "id": 1160935, "name": "ceshi", "description": "rewq", "steps": [] }]
+    }
+  ],
+  "apiTestSuiteCollection": [],
+  "environments": [
+    {
+      "baseUrl": "http://127.0.0.1:4001",
+      "baseUrls": { "default": "http://127.0.0.1:4001" },
+      "parameters": { "cookie": [], "query": [], "header": [], "body": [] },
+      "variables": [],
+      "name": "测试环境",
+      "type": "normal",
+      "visibility": "protected",
+      "ordering": 0,
+      "id": "5052862"
+    },
+    {
+      "baseUrl": "http://127.0.0.1",
+      "baseUrls": { "default": "http://127.0.0.1" },
+      "parameters": {},
+      "variables": [],
+      "name": "正式环境",
+      "type": "normal",
+      "visibility": "protected",
+      "ordering": 0,
+      "id": "5052863"
+    },
+    {
+      "baseUrl": "http://127.0.0.1:4523/mock/1449263",
+      "baseUrls": { "default": "http://127.0.0.1:4523/mock/undefined" },
+      "parameters": {},
+      "variables": [],
+      "name": "本地 Mock",
+      "type": "mock",
+      "visibility": "protected",
+      "ordering": 0,
+      "id": "5052864"
+    },
+    {
+      "baseUrl": "",
+      "baseUrls": { "default": "" },
+      "parameters": {},
+      "variables": [],
+      "name": "云端 Mock",
+      "type": "cloudMock",
+      "visibility": "protected",
+      "ordering": 0,
+      "id": "5052865"
+    }
+  ],
+  "commonScripts": [],
+  "databaseConnections": [],
+  "globalVariables": [],
+  "commonParameters": null,
+  "projectSetting": {
+    "apiStatuses": ["developing", "testing", "released", "deprecated"],
+    "servers": [{ "name": "本地测试环境 01", "id": "default" }],
+    "preProcessors": [],
+    "postProcessors": [],
+    "auth": {},
+    "cloudMock": {
+      "security": "free",
+      "token": "V5d34tUE9OxI7mwO9SScDLxXLiMjLEfa",
+      "enable": false,
+      "tokenKey": "apifoxToken"
+    },
+    "initialDisabledMockIds": [],
+    "id": "1130317"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@iconpub/core",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./esm/index.mjs",
+      "require": "./cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "types/index.d.ts",
+  "files": [
+    "cjs",
+    "esm",
+    "types"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "svg2ttf": "^6.0.3",
+    "svgicons2svgfont": "12.0.0",
+    "ttf2eot": "3.1.0",
+    "ttf2woff": "3.0.0",
+    "ttf2woff2": "4.0.5"
+  }
+}

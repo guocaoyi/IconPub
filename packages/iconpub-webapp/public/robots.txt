@@ -1,0 +1,26 @@
+User-agent: Baiduspider
+Allow: /
+Disallow: /api/
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.bmp$
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.bmp$
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.bmp$

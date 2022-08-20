@@ -1,0 +1,41 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "IconPub Server",
+    "description": "",
+    "version": "0.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/user": {
+      "get": {
+        "summary": "获取用户列表",
+        "x-apifox-folder": "",
+        "x-apifox-status": "testing",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                },
+                "examples": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

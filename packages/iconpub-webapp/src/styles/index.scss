@@ -1,0 +1,19 @@
+:root {
+  --ep-color-primary: #42b8dd;
+}
+
+body {
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+code {
+  border-radius: 2px;
+  padding: 2px 4px;
+  background-color: var(--ep-color-primary-light-9);
+  color: var(--ep-color-primary);
+}

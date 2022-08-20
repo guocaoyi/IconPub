@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  server:
+    restart: unless-stopped
+    image: yalda/iconpub-server
+    container_name: iconpub-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+      port: 4001
+    ports:
+      - '4001:4001'
