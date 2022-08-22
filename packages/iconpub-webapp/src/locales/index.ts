@@ -1,27 +1,22 @@
-import * as collections from '../components/collections/locales'
-import * as layouts from '../components/layouts/locales'
+import * as CollectionsLocales from '../components/collections/locales'
+import * as LayoutsLocales from '../components/layouts/locales'
+import * as HomeLocale from '../pages/home.locale'
 
 export const messages = {
   en: {
     // components
-    ...collections.en,
-    ...layouts.en,
+    ...CollectionsLocales.en,
+    ...LayoutsLocales.en,
 
     // pages
-    message: {
-      morning: 'coming soon...',
-      slogen: 'Personal or Enterprise users, please set your own bucket or private deployment',
-    },
+    ...HomeLocale.en,
   },
   zh: {
     // components
-    ...collections.zh,
-    ...layouts.zh,
+    ...CollectionsLocales.zh,
+    ...LayoutsLocales.zh,
 
     // pages
-    message: {
-      morning: '即将上线！',
-      slogen: '个人或者企业用户请设置『独立存储桶』或者『私有化部署』',
-    },
+    ...HomeLocale.zh,
   },
 }

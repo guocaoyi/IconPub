@@ -12,9 +12,9 @@ defineProps<{ msg: string; age?: number }>()
       <a style="height: 2rem; border-radius: 50%" title="iconpub">
         <img style="height: 2rem" src="../../assets/iconpub.png" alt="iconpub" />
       </a>
-      <a class="header-link" href="/">{{ $t('header.pub') }}</a>
-      <a class="header-link" href="/libs">{{ $t('header.libs') }}</a>
-      <a class="header-link" href="/projects">{{ $t('header.project') }}</a>
+      <router-link class="header-link" to="/">{{ $t('header.pub') }}</router-link>
+      <router-link class="header-link" to="/libs">{{ $t('header.libs') }}</router-link>
+      <router-link class="header-link" to="/projects">{{ $t('header.project') }}</router-link>
     </div>
 
     <div class="info">
