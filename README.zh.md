@@ -1,38 +1,62 @@
 # IconPub
 
-## Features
+## 特性
 
-- IconSVG to FontSVG to Font TTF to WOFF\EOT\WOFF2（完成）
-- Github WorkFlow（完成）
-- Gitlab CICD Pipeline（完成）
-- NPM CLI（开发测试中）
-- Picker - Chrome Extension（开发中）
-- GUI & Server（待开发）
+- [ ] IconSVG to FontSVG to Font TTF to WOFF\EOT\WOFF2
+- [ ] Github WorkFlow
+- [ ] Gitlab CICD Pipeline
+- [ ] NPM CLI
+- [ ] Migrate - Chrome Extension
+- [ ] GUI & Server
 
-## Issues
+## 架构视图
 
-- 生成图标镜面反转（待解决）
-- IconFont 兼容性（待解决）
+- gateway(nginx server + ssl + lb)
+- webapp(nginx server + dist)
+- node server(nestjs)
 
-## IconFont Project Transfer
+## Docker
 
-use iconpub-migrate for only once
+### 构建镜像
 
-## WorkFlow
+```bash
+# 网关服务
+cd packages/iconpub-gateway
+docker build -t yalda/iconpub-gateway .
 
-> 以下方案，均默认以 Font 方式管理图标；
-> 小项目优先使用 本地 IMG & SVG 方式管理图标；
-> 大项目优先使用 Font 方式管理图标（pages > 100 contributers > 10）
+# 后端服务
+cd packages/iconpub-server
+docker build -t yalda/iconpub-server .
 
-### 使用 GitHub 仓库管理
+# 前端应用
+cd packages/iconpub-webapp
+docker build -t yalda/iconpub-webapp .
+```
 
-### 使用 Gitlab 仓库管理
+### 容器运行
 
-### 使用 NPM 包管理
+```bash
+# docker compose up -d
+docker compose up -d
+```
 
-### 使用私有化部署服务管理
+```bash
+# 网关服务
+docker run --name iconpub-gateway \
+-v /***/nginx:/etc/ssl \
+-p 80:80 \
+-p 443:443 \
+-itd \
+-m 256m \
+yalda/iconpub-gateway:latest
+```
 
-## Archi
+```bash
+# 后端服务
+docker run --name iconpub-server -itd -p 4001:4001 -m 2048m yalda/iconpub-server:latest
+```
 
-- web app
-- node server
+```bash
+# 前端应用
+docker run --name iconpub-webapp -itd -p 4000:4000 -m 256m yalda/iconpub-webapp:latest
+```
