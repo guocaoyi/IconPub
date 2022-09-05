@@ -29,14 +29,15 @@ IconPub is an icon management system!
 
 ### Schedules
 
-- [x] Core [2022.08]
-- [ ] WebApp(Host + Domain + UI + Gateway) [2022.08 - 2022.09]
+- [x] `iconpub-core` [2022.08]
+- [ ] `iconpub-webapp` (Host + Domain + UI + Gateway) [2022.08 - 2022.09]
 - [ ] Node Server(Core + Storage + File Storage + OpenApi) [2022.09]
-- [ ] Auth(Email \ Github \ WeChat \ LDAP) [2022.09]
+- [ ] Auth(Email \ GitHub \ WeChat \ LDAP) [2022.09]
 - [ ] Chrome Extensions [2022.10]
 - [ ] Repo Creater(Git CI/CD Scripts + Boilerplate) [2022.09 - 2022.10]
 - [ ] Desktop [2022.10]
 - [ ] Plugin(Webpack \ Vite) [2022.10 - 2022.11]
+- [ ] Preivew Server(Demo page + Download) [2022.10]
 
 ## Development
 

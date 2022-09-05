@@ -17,9 +17,9 @@
 | :-------------- | :-------------- | :------------- | :------------- | :----------- | :------------ |
 | SaaS 社区版     | icons.pub       | iconpub-server | social \ email | mysql        | bucket \ file |
 | SaaS 企业版     | icons.pub       | iconpub-server | social \ email | mysql        | bucket \ file |
-| 企业私服版      | iconpub-web     | iconpub-server | ldap           | mysql-drivte | bucket \ file |
-| 团队客户端版    | iconpub-desktop | iconpub-apis   | ldap           | mysql-drivte | bucket \ file |
-| 个人客户端版    | iconpub-desktop | iconpub-apis   | -              | sqlite       | bucket \ file |
+| 企业版          | iconpub-web     | iconpub-server | ldap           | mysql-drivte | bucket \ file |
+| 团队版          | iconpub-desktop | iconpub-apis   | ldap           | mysql-drivte | bucket \ file |
+| 个人版          | iconpub-desktop | iconpub-apis   | -              | sqlite       | bucket \ file |
 | GitHub 代码仓库 | -               | github action  | -              | lock file    | bucket \ npm  |
 | GitLab 代码仓库 | -               | gitlab ci/cd   | -              | lock file    | bucket \ npm  |
 | 码云代码仓库    | -               | gitee go       | -              | lock file    | bucket \ npm  |
@@ -29,14 +29,14 @@
 
 ### 开发进度
 
-- [x] Core [2022.08]
-- [ ] WebApp(Host + Domain + UI + Gateway) [2022.08 - 2022.09]
-- [ ] Node Server(Core + Storage + File Storage + OpenApi) [2022.09]
-- [ ] Auth(Email \ Github \ WeChat \ LDAP) [2022.09]
-- [ ] Chrome Extensions [2022.10]
-- [ ] Repo Creater(Git CI/CD Scripts + Boilerplate) [2022.09 - 2022.10]
-- [ ] Desktop [2022.10]
-- [ ] Plugin(Webpack \ Vite) [2022.10 - 2022.11]
+- [x] 核心包 [2022.08]
+- [ ] 前端应用（主机 + 域名 + 界面 + 网关） [2022.08 - 2022.09]
+- [ ] 后台服务 + 持久层 + 文件储存 + 开放接口文档） [2022.09]
+- [ ] 鉴权（Email \ GitHub \ WeChat \ LDAP） [2022.09]
+- [ ] 浏览器插件 [2022.10]
+- [ ] 脚手架（Git CI/CD 脚本 + 模板项目） [2022.09 - 2022.10]
+- [ ] 桌面客户端 [2022.10]
+- [ ] 插件（Webpack \ Vite） [2022.10 - 2022.11]
 
 ## 开发
 
