@@ -4,9 +4,9 @@
 
 <template>
   <el-config-provider namespace="ep">
-    <BaseHeader />
+    <base-header />
     <router-view></router-view>
-    <BaseAbout />
+    <base-about />
   </el-config-provider>
 </template>
 

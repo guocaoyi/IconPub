@@ -18,7 +18,7 @@
           <a href="" target="_blank" rel="noopener">{{ $t('about.project.issues') }}</a>
         </p>
         <p>
-          <a href="" target="_blank" rel="noopener">{{ $t('about.project.license') }}</a>
+          {{ $t('about.project.license') }}
         </p>
       </div>
       <div class="about-columns">

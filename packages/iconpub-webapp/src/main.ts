@@ -32,7 +32,9 @@ const router = VueRouter.createRouter({
 })
 
 const app = Vue.createApp(App)
-app.use(ElementPlus)
-app.use(router)
-app.use(i18n)
-app.mount('#app')
+app
+  //
+  .use(ElementPlus)
+  .use(router)
+  .use(i18n)
+  .mount('#app')
