@@ -1,7 +1,3 @@
-class Icon {
-  id: number
-}
-
 export class BasicIcon {
   name: string
   show_svg: string
