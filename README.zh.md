@@ -1,5 +1,7 @@
 # IconPub
 
+开箱即用的矢量图标管理（字体图标、公共 CDN 加速、浏览器迁移插件、自定义存储桶、私有化部署、Docker Image 支撑、桌面客户端）
+
 ## 特性
 
 - [ ] IconSVG to FontSVG to Font TTF to WOFF\EOT\WOFF2

@@ -1,4 +1,4 @@
-import * as CollectionsLocales from '../components/collections/locales'
+import * as CollectionsLocales from '../components/ip-banner/locales'
 import * as LayoutsLocales from '../components/layouts/locales'
 import * as HomeLocale from '../pages/home.locale'
 
