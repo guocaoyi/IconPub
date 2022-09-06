@@ -1,22 +1,36 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { Document, Menu as IconMenu, Setting } from '@element-plus/icons-vue'
+const props = defineProps({
+  foo: String,
+})
+
+const emit = defineEmits(['change', 'delete'])
 
 const isCollapse = ref(true)
 const handleOpen = (key: string, keyPath: string[]) => {
   isCollapse.value = false
   console.log(key, keyPath)
 }
+
 const handleClose = (key: string, keyPath: string[]) => {
   isCollapse.value = true
-  console.log(key, keyPath)
+  console.log(key, keyPath, isCollapse)
+}
+
+// logger
+const vLogDirective = {
+  beforeMount: (el) => {
+    console.info('x', el)
+  },
 }
 </script>
 
 <template>
   <el-menu
     default-active="2"
-    class="el-menu-vertical-demo"
+    class="container"
+    v-log-directive
     :collapse="isCollapse"
     @open="handleOpen"
     @close="handleClose"
@@ -37,7 +51,9 @@ const handleClose = (key: string, keyPath: string[]) => {
 </template>
 
 <style scoped>
-.el-menu-vertical-demo {
+.container {
+  display: flex;
   flex-grow: 1;
+  flex-direction: row;
 }
 </style>

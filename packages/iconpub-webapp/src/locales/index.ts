@@ -1,6 +1,6 @@
-import * as CollectionsLocales from '../components/ip-banner/locales'
-import * as LayoutsLocales from '../components/layouts/locales'
-import * as HomeLocale from '../pages/home.locale'
+import * as CollectionsLocales from '@/components/ip-banner/locales'
+import * as LayoutsLocales from '@/components/layouts/locales'
+import * as HomeLocale from '@/pages/home.locale'
 
 export const messages = {
   en: {

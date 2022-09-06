@@ -12,7 +12,7 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "paths": {
-      "~/*": ["src/*"]
+      "@/*": ["src/*"]
     },
     "skipLibCheck": true
   },

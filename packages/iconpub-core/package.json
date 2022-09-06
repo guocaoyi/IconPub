@@ -1,8 +1,8 @@
 {
   "name": "@iconpub/core",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "yalda",
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.mjs",
@@ -26,5 +26,12 @@
     "ttf2eot": "3.1.0",
     "ttf2woff": "3.0.0",
     "ttf2woff2": "4.0.5"
+  },
+  "devDependencies": {
+    "@types/svg2ttf": "^5.0.1",
+    "@types/svgicons2svgfont": "^10.0.1",
+    "@types/ttf2eot": "^2.0.0",
+    "@types/ttf2woff": "^2.0.2",
+    "@types/ttf2woff2": "^2.0.0"
   }
 }

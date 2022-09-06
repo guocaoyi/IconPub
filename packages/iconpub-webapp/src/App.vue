@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-// import Vue from 'vue'
+import * as Vue from 'vue'
 </script>
 
 <template>
