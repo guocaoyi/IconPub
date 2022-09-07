@@ -1,16 +1,14 @@
 <script lang="ts" setup>
-import * as VueI18m from 'vue-i18n'
 import { ElMessage } from 'element-plus'
-import { toggleDark } from '~/composables'
-
-defineProps<{ msg: string; age?: number }>()
+import { toggleDark } from '@/composables'
+import config from '@/config'
 </script>
 
 <template>
   <div class="header">
     <div class="spacer">
       <a style="height: 2rem; border-radius: 50%" title="iconpub">
-        <img style="height: 2rem" src="../../assets/iconpub.png" alt="iconpub" />
+        <img style="height: 2rem" src="@/assets/iconpub.png" alt="iconpub" />
       </a>
       <router-link class="header-link" to="/">{{ $t('header.pub') }}</router-link>
       <router-link class="header-link" to="/libs">{{ $t('header.libs') }}</router-link>
@@ -28,7 +26,7 @@ defineProps<{ msg: string; age?: number }>()
         <i inline-flex i="dark:ep-moon ep-sunny" />
       </a>
 
-      <a target="_blank" href="https://github.com/guocaoyi/iconpub" class="header-tool"
+      <a target="_blank" :href="config.github" class="header-tool"
         ><img
           style="height: 1.2rem"
           src="https://img.shields.io/github/stars/guocaoyi?style=social"
@@ -59,10 +57,6 @@ defineProps<{ msg: string; age?: number }>()
   padding: 0 3rem;
 
   font-weight: 500;
-
-  a {
-    text-decoration: none;
-  }
 
   .header-link {
     color: var(--ep-text-color-primary);

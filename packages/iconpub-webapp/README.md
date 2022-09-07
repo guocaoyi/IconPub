@@ -32,7 +32,3 @@ cd iconpub/packages/iconpub-webapp
 npm i
 npm run dev
 ```
-
-### Custom theme
-
-See `src/styles/element/index.scss`.

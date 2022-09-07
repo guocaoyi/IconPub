@@ -5,10 +5,10 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Banner: typeof import('./components/collections/Banner.vue')['default']
-    BaseAbout: typeof import('./components/layouts/BaseAbout.vue')['default']
-    BaseHeader: typeof import('./components/layouts/BaseHeader.vue')['default']
-    BaseSide: typeof import('./components/layouts/BaseSide.vue')['default']
+    BaseBanner: typeof import('./components/BaseBanner/index.vue')['default']
+    BaseFooter: typeof import('./components/BaseFooter/index.vue')['default']
+    BaseHeader: typeof import('./components/BaseHeader/index.vue')['default']
+    BaseSide: typeof import('./components/BaseSide/index.vue')['default']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

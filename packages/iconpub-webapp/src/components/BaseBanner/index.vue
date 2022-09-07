@@ -1,6 +1,4 @@
-<script lang="ts">
-import Vue from 'vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="banner-wrap">banner</div>

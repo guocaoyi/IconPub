@@ -1,5 +1,3 @@
-import Banner from './banner.vue'
-
 import type { AppContext, Plugin } from 'vue'
 
 export type SFCWithInstall<T> = T & Plugin
@@ -22,8 +20,3 @@ export const withInstall = <T, E extends Record<string, any>>(main: T, extra?: E
   }
   return main as SFCWithInstall<T> & E
 }
-
-export const IPBanner = withInstall(Banner)
-export default IPBanner
-
-export * from './banner.vue'

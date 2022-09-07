@@ -1,16 +1,4 @@
 export const en = {
-  account: {
-    sign: {
-      in: 'Sign in',
-      up: 'Sign up',
-    },
-  },
-  side: {},
-  header: {
-    pub: 'PUB',
-    libs: 'Libs',
-    project: 'Projects',
-  },
   about: {
     me: 'IconPub open source project',
     project: {
@@ -18,7 +6,7 @@ export const en = {
       about: 'about project',
       readme: 'readme',
       issues: 'issues',
-      license: 'MIT',
+      license: 'Apache-2.0 license',
     },
     dev: {
       label: 'Developer',
@@ -36,25 +24,13 @@ export const en = {
       github: '',
     },
     license: {
-      police: 'SU32010602011142',
-      icp: 'ICP2022030674-1',
+      police: '苏公网安备 32010602011142号',
+      icp: '苏ICP备2022030674号-1',
     },
   },
 }
 
 export const zh = {
-  account: {
-    sign: {
-      in: '登录',
-      up: '注册',
-    },
-  },
-  side: {},
-  header: {
-    pub: '基地',
-    libs: '图标库',
-    project: '我的项目',
-  },
   about: {
     me: 'IconPub开源图标管理系统',
     project: {
@@ -62,7 +38,7 @@ export const zh = {
       about: '关于项目',
       readme: '使用指南',
       issues: '建议反馈',
-      license: 'MIT',
+      license: 'Apache-2.0 license',
     },
     dev: {
       label: '开发者',
@@ -81,7 +57,7 @@ export const zh = {
     },
     license: {
       police: '苏公网安备 32010602011142号',
-      icp: '苏ICP备2022030674号-1',
+      icp: '苏ICP备 2022030674号-1',
     },
   },
 }

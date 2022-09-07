@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import config from '@/config'
+</script>
+
 <template>
   <div class="about-wrap">
     <div class="about">
@@ -18,7 +22,7 @@
           <a href="" target="_blank" rel="noopener">{{ $t('about.project.issues') }}</a>
         </p>
         <p>
-          <a href="" target="_blank" rel="noopener">{{ $t('about.project.license') }}</a>
+          {{ $t('about.project.license') }}
         </p>
       </div>
       <div class="about-columns">
@@ -36,9 +40,7 @@
       <div class="about-columns">
         <div class="column-title">{{ $t('about.source.label') }}</div>
         <p>
-          <a href="https://github.com/guocaoyi/iconpub" target="_blank" rel="noopener">{{
-            $t('about.source.react')
-          }}</a>
+          <a :href="config.github" target="_blank" rel="noopener">{{ $t('about.source.react') }}</a>
         </p>
         <p>
           <a href="https://hub.docker.com/u/yalda" target="_blank" rel="noopener">{{
@@ -49,7 +51,7 @@
       <div class="about-columns">
         <div class="column-title">{{ $t('about.social.label') }}</div>
         <p class="github">
-          <a href="https://github.com/guocaoyi/IconPub" target="_blank" rel="noopener"
+          <a :href="config.github" target="_blank" rel="noopener"
             ><img
               alt=""
               src="https://lf3-static.bytednsdoc.com/obj/eden-cn/bqaeh7vhobd/Github_logo.svg"
@@ -60,11 +62,11 @@
     </div>
 
     <div class="footer">
-      <span>© 2022 Yalda &nbsp;</span>
+      <span>© 2022 {{ config.author.toUpperCase() }} &nbsp;</span>
       <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010602011142">
         {{ $t('about.license.police') }} &nbsp;</a
       >
-      <a href="https://beian.miit.gov.cn/#/Integrated/index"> {{ $t('about.license.icp') }}</a>
+      <a href="https://beian.miit.gov.cn/#/integrated/index"> {{ $t('about.license.icp') }}</a>
     </div>
   </div>
 </template>

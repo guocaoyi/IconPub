@@ -9,6 +9,10 @@ Summary
   5. version timestamp follow the yyyy.MM.dd format
 ```
 
-## 0.0.1 [2022.08.10]
+## 0.0.1 [2022.09.06]
+
+- feat: initial
+
+## 0.0.0 [2022.08.10]
 
 - feat: initial

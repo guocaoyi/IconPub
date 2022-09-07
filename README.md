@@ -4,36 +4,34 @@ IconPub is an icon management system!
 
 ## Features
 
-- webapp
-- webapp(nginx server + dist)
-- node server(nestjs)
+- Icon Font file compiler
+- FrontEnd app + Node Server
+- Docker Images
+- Chrome Extensions for icons migration
+- Git repository to manage icons
+- FrontEnd app compiler plugin(vite \ webpack)
 
 ### Solutions
 
-| Solution           | Client          | Runtime        | Auth           | Storage             | File Storage  |
-| :----------------- | :-------------- | :------------- | :------------- | :------------------ | :------------ |
-| SaaS Community     | icons.pub       | iconpub-server | github \ email | mysql               | tencent cos   |
-| SaaS Ultimate      | icons.pub       | iconpub-server | github \ email | mysql               | bucket \ file |
-| Private Enterprise | iconpub-web     | iconpub-server | ldap           | custom host (mysql) | bucket \ file |
-| Private Community  | iconpub-desktop | iconpub-apis   | ldap           | custom host (mysql) | bucket \ file |
-| Private Personal   | iconpub-desktop | iconpub-apis   | -              | sqlite              | bucket \ file |
-| GitHub Repository  | -               | github action  | -              | lock file           | bucket \ npm  |
-| GitLab Repository  | -               | gitlab ci/cd   | -              | lock file           | bucket \ npm  |
-| GitEE Repository   | -               | gitee go       | -              | lock file           | bucket \ npm  |
-| Vite Plugin        | -               | iconpub-plugin | -              | lock file           | output file   |
-| Rollup Plugin      | -               | iconpub-plugin | -              | lock file           | output file   |
-| Webpack Plugin     | -               | iconpub-plugin | -              | lock file           | output file   |
+|            | Client          | Runtime        | Auth           | Storage   | File Storage  |
+| :--------- | :-------------- | :------------- | :------------- | :-------- | :------------ |
+| Community  | iconpub-web     | iconpub-server | social \ email | mysql     | bucket \ file |
+| Enterprise | iconpub-web     | iconpub-server | ldap           | mysql     | bucket \ file |
+| Personal   | iconpub-desktop | iconpub-server | -              | sqlite    | bucket \ file |
+| Git        | git repo        | ci/cd          | -              | lock file | bucket \ npm  |
+| Plugin     | -               | iconpub-plugin | -              | lock file | output file   |
 
-## Schedules
+### Schedules
 
-- [ ] Core [2022.08]
-- [ ] WebApp(Host + Domain + UI + Gateway) [2022.08 - 2022.09]
-- [ ] Server(Core + Storage + File Storage + OpenApi) [2022.09]
-- [ ] Auth(Github \ WeChat \ Email \ LDAP) [2022.09]
-- [ ] Chrome Extensions [2022.10]
-- [ ] Repo(Git CI/CD Scripts + Boilerplate) [2022.09 - 2022.10]
-- [ ] Desktop [2022.10]
-- [ ] Plugin(Webpack + Vite) [2022.10 - 2022.11]
+- [x] Core [2022.08] (0%)
+- [ ] WebApp (Host + Domain + UI + Gateway) [2022.09] (0%)
+- [ ] Node Server(Core + Storage + File Storage + OpenApi) [2022.09] (0%)
+- [ ] Auth(Email \ GitHub \ WeChat \ LDAP) [2022.09] (0%)
+- [ ] Chrome Extensions [2022.10] (0%)
+- [ ] Repo Creater(Git CI/CD Scripts + Boilerplate) [2022.10] (0%)
+- [ ] Preivew Server(Demo page + Download) [2022.10] (0%)
+- [ ] Desktop [2022.10] (0%)
+- [ ] Plugin(Webpack \ Vite) [2022.10 - 2022.11] (0%)
 
 ## Development
 

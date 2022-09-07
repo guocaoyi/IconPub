@@ -5,9 +5,6 @@ class Group {
   name: string
 }
 
-/**
- * @scope iconfont
- */
 export class FontProjectDto {
   id: number
   description: string
@@ -26,9 +23,6 @@ export class FontProjectDto {
   deleted_at?: string
 }
 
-/**
- * @scope iconpark
- */
 export class ProjectDto {
   id: number
   name: string
@@ -55,17 +49,17 @@ export class ProjectDto {
  * 图标集合（项目、等同 Project）
  */
 export class CollectionDto {
-  id: 39973
+  id: number
   name: string
   description: string
 
   copyright: null
   cover_icon_id: null
-  create_user_id: 9986357
+  create_user_id: number
 
   fees: null
-  has_secret: 0
-  has_temp: 0
+  has_secret: number
+  has_temp: number
   icons: []
 
   /** count */
@@ -89,7 +83,7 @@ export class CollectionDto {
   slug: string
   source_file_type: null
   tag_ids: '6,20'
-  type: 'icon'
+  type: 'icon' | 'ikon' | ''
   url: ''
 
   createdAt: string

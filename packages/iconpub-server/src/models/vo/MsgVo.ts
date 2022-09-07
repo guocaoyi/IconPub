@@ -1,6 +1,5 @@
 /**
  * 消息实例
- * @scope iconfont
  */
 export class UnreadCountVo {
   chats_count: 0

@@ -1,12 +1,8 @@
-<script lang="ts" setup>
-// import Vue from 'vue'
-</script>
-
 <template>
   <el-config-provider namespace="ep">
-    <BaseHeader />
+    <LayoutHeader />
     <router-view></router-view>
-    <BaseAbout />
+    <LayoutFooter />
   </el-config-provider>
 </template>
 

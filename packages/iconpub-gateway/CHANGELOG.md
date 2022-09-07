@@ -9,6 +9,11 @@ Summary
   5. version timestamp follow the yyyy.MM.dd format
 ```
 
+## 0.0.1 [2022.09.07]
+
+- feat: add robots.txt
+- remove: notfound.html, and `html` folders to `public`
+
 ## 0.0.0 [2022.08.17]
 
 - feat: initial

@@ -1,3 +1,5 @@
+@import url('normalize.css/normalize.css');
+
 :root {
   --ep-color-primary: #42b8dd;
 }
@@ -9,11 +11,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-}
-
-code {
-  border-radius: 2px;
-  padding: 2px 4px;
-  background-color: var(--ep-color-primary-light-9);
-  color: var(--ep-color-primary);
 }
