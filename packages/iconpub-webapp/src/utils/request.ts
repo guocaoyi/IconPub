@@ -46,7 +46,7 @@ export const post = ({ url, data = {}, params = {} }: any) =>
 // - common headers
 // - baseurl: development \ production
 
-// vue-plugin
+// vue-pluginfiy
 // - install
 
 // method

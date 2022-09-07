@@ -1,10 +1,5 @@
 <script lang="ts" setup>
-import { onUnmounted } from 'vue'
 import config from '@/config'
-
-onUnmounted(() => {
-  //
-})
 </script>
 
 <template>
@@ -67,7 +62,7 @@ onUnmounted(() => {
     </div>
 
     <div class="footer">
-      <span>© 2022 Yalda &nbsp;</span>
+      <span>© 2022 {{ config.author.toUpperCase() }} &nbsp;</span>
       <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010602011142">
         {{ $t('about.license.police') }} &nbsp;</a
       >

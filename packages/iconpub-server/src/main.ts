@@ -23,6 +23,12 @@ const bootstrap = async () => {
   process.on('uncaughtException', (e) => {
     console.error(e)
   })
+  process.on('uncaughtExceptionMonitor', (e) => {
+    console.error(e)
+  })
+  process.on('unhandledRejection', (e) => {
+    console.error(e)
+  })
 
   /**
    * doc(swagger)

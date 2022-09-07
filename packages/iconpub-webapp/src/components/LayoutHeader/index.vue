@@ -2,8 +2,6 @@
 import { ElMessage } from 'element-plus'
 import { toggleDark } from '@/composables'
 import config from '@/config'
-
-const props = defineProps<{ age?: number }>()
 </script>
 
 <template>

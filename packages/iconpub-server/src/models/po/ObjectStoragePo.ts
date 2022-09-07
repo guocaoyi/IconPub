@@ -27,6 +27,7 @@ export class ObjectStoragePo {
 
   /** Web Component ES2019 文件尺寸（KB） */
   fileSize: number
+
   /** Web Component ES2015 文件尺寸（KB） */
   legacyFileSize: number
 

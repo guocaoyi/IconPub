@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "author": "yalda",
-  "license": "MIT",
+  "license": "Apache-2.0 License",
   "main": "./cjs/index.js",
   "module": "./esm/index.mjs",
   "exports": {

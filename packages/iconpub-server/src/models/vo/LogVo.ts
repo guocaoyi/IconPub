@@ -5,12 +5,13 @@ export class ActiveLogVo {
   id: number
   /** 项目编号 */
   groupID: number
+
   /** 内容 */
   content: string
-  /** type */
 
   /**
-   * @enum {0 | 1 | 2} 0: 登录 1: 操作图标 2: 操作项目
+   * type
+   * @enum {0 | 1 | 2} 0:sign 1:icon action 2:action
    */
   type: 0 | 1 | 2
 
@@ -22,8 +23,10 @@ export class ActiveLogVo {
 
   /** 创建时间戳 */
   createdAt: string
+
   /** 更新时间戳 */
   updatedAt?: string
+
   /** 删除时间戳 */
   deletedAt?: null
 }

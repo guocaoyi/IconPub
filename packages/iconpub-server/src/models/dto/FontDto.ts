@@ -1,10 +1,9 @@
 /**
  * 字体链接实例
- * @scope iconfont
  */
 export class FontDto {
-  id: 1559344
-  owner_id: 3487347
+  id: number
+  owner_id: number
   owner_type: 'Project'
 
   css_file: '//at.alicdn.com/t/c/font_3487347_rrivpk620y8.css'

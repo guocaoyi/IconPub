@@ -25,9 +25,6 @@ export class Creator {
   updatedAt: string
 }
 
-/**
- * @scope iconpark
- */
 export class AccountDto {
   /** 账号组织编号 */
   accountGroupId: number
@@ -35,11 +32,17 @@ export class AccountDto {
   /** 头像（URI） */
   avatarUri: string
 
-  createTime: number /** 账号创建时间 */
+  /** 账号创建时间 */
+  createTime: number
+
   description: string
+
   deviceId: '0'
+
   email: string
-  hasPassword: boolean /** 是否已设置密码 */
+
+  /** 是否已设置密码 */
+  hasPassword: boolean
   loginName: string
 
   mobile: string

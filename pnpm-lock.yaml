@@ -156,8 +156,10 @@ importers:
       '@types/node': ^17.0.35
       '@vitejs/plugin-vue': ^2.3.3
       '@vueuse/core': ^9.1.0
+      aegis-web-sdk: ^1.36.2
       axios: ^0.27.2
       element-plus: ^2.2.2
+      normalize.css: ^8.0.1
       pinia: ^2.0.21
       sass: ^1.52.1
       typescript: ^4.7.4
@@ -170,8 +172,10 @@ importers:
     dependencies:
       '@element-plus/icons-vue': 2.0.9_vue@3.2.38
       '@vueuse/core': 9.1.1_vue@3.2.38
+      aegis-web-sdk: 1.36.2
       axios: 0.27.2
       element-plus: 2.2.16_vue@3.2.38
+      normalize.css: 8.0.1
       pinia: 2.0.21_typescript@4.8.2+vue@3.2.38
       vue: 3.2.38
     devDependencies:
@@ -2213,6 +2217,12 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
     dev: true
+
+  /aegis-web-sdk/1.36.2:
+    resolution: {integrity: sha512-QOkFCtJ013Rivs4nFWX3ZuXkLsZqH2oO+4u7DODYEC6RmvX7A1ZRZSeeMnthhRVegiMQO0nY7vbSPkpS/wn32g==}
+    dependencies:
+      web-vitals: 1.1.2
+    dev: false
 
   /agent-base/6.0.2:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
@@ -5606,6 +5616,10 @@ packages:
     resolution: {integrity: sha512-Wj7+EJQ8mSuXr2iWfnujrimU35R2W4FAErEyTmJoJ7ucwTn2hOUSsRehMb5RSYkxXGTM7Y9QpvPmp++w5ftoJw==}
     dev: false
 
+  /normalize.css/8.0.1:
+    resolution: {integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==}
+    dev: false
+
   /npm-run-path/4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
@@ -7324,6 +7338,10 @@ packages:
     dependencies:
       defaults: 1.0.3
     dev: true
+
+  /web-vitals/1.1.2:
+    resolution: {integrity: sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig==}
+    dev: false
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}

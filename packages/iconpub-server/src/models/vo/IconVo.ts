@@ -1,18 +1,18 @@
 export class IconVo {
-  /** 图标编号 */
+  /** icon id */
   id: number
-  /** 图册编号 */
+  /** icon ablum id */
   albumID: number
 
-  /** 名称 */
-  name: 'preview-open'
-  /** 名称（英文）*/
-  nameEn: 'preview-open'
-  /** 名称（中文）*/
-  nameZh: '预览-打开'
-  /** 名称（中文简拼）*/
+  /** name */
+  name: string
+  /** name(eg) */
+  nameEn: string
+  /** name(zh_CN) */
+  nameZh: string
+  /** name(simple spelling) */
   nameZhJp: string
-  /** 名称（中文全拼）*/
+  /** name() */
   nameZhQp: string
 
   categoryEn: null
@@ -20,9 +20,10 @@ export class IconVo {
 
   color_type: 1
 
-  description: 'preview-open'
+  description: string
+
   /** 分组编号 */
-  groupID: 13582
+  groupID: number
 
   iconVersion: null
 

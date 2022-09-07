@@ -1,22 +1,29 @@
-import * as CollectionsLocales from '@/components/ip-banner/locales'
-import * as LayoutsLocales from '@/components/layouts/locales'
-import * as HomeLocale from '@/pages/home.locale'
+import * as BaseBannerLocale from '@/components/BaseBanner/locale'
+import * as LayoutFooterLocale from '@/components/LayoutFooter/locale'
+import * as LayoutHeaderLocale from '@/components/LayoutHeader/locale'
+import * as LayoutSideLocale from '@/components/LayoutSide/locale'
+
+import * as HomeLocale from '@/views/home/locale'
 
 export const messages = {
   en: {
     // components
-    ...CollectionsLocales.en,
-    ...LayoutsLocales.en,
+    ...BaseBannerLocale.en,
+    ...LayoutFooterLocale.en,
+    ...LayoutHeaderLocale.en,
+    ...LayoutSideLocale.en,
 
-    // pages
+    // views
     ...HomeLocale.en,
   },
   zh: {
     // components
-    ...CollectionsLocales.zh,
-    ...LayoutsLocales.zh,
+    ...BaseBannerLocale.zh,
+    ...LayoutFooterLocale.zh,
+    ...LayoutHeaderLocale.zh,
+    ...LayoutSideLocale.zh,
 
-    // pages
+    // views
     ...HomeLocale.zh,
   },
 }

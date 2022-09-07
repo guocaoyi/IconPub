@@ -1,15 +1,12 @@
-import Home from './pages/Home.vue'
-import Project from './pages/Home.vue'
+import Home from '@/views/home/index.vue'
+import Legal from '@/views/legal/index.vue'
+import Privacy from '@/views/privacy/index.vue'
 
 export const routes = [
-  // /login
-  // /signup
-
-  //
+  // home
   { path: '/', component: Home },
-  { path: '/libs', component: Project },
-  { path: '/projects', component: Project },
 
-  // /privacy
-  // /security
+  // protocol
+  { path: '/legal', component: Legal },
+  { path: '/privacy', component: Privacy },
 ]

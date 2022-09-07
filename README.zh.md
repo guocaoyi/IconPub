@@ -6,37 +6,32 @@
 
 - 图标字体文件构建
 - 前端应用 + 后端运行时
-- 支持 Docker 方式构架以及部署
+- 支持 Docker 容器打包，快速部署私服
 - 提供 Chrome 浏览器插件进行转移图标
 - Git 仓库方式维护图标
 - 前端编译时插件提供
 
 ### 方案
 
-|                 | 客户端          | 运行时         | 鉴权           | 持久化       | 文件储存      |
-| :-------------- | :-------------- | :------------- | :------------- | :----------- | :------------ |
-| SaaS 社区版     | icons.pub       | iconpub-server | social \ email | mysql        | bucket \ file |
-| SaaS 企业版     | icons.pub       | iconpub-server | social \ email | mysql        | bucket \ file |
-| 企业版          | iconpub-web     | iconpub-server | ldap           | mysql-drivte | bucket \ file |
-| 团队版          | iconpub-desktop | iconpub-apis   | ldap           | mysql-drivte | bucket \ file |
-| 个人版          | iconpub-desktop | iconpub-apis   | -              | sqlite       | bucket \ file |
-| GitHub 代码仓库 | -               | github action  | -              | lock file    | bucket \ npm  |
-| GitLab 代码仓库 | -               | gitlab ci/cd   | -              | lock file    | bucket \ npm  |
-| 码云代码仓库    | -               | gitee go       | -              | lock file    | bucket \ npm  |
-| Vite 插件       | -               | iconpub-plugin | -              | lock file    | output file   |
-| Rollup 插件     | -               | iconpub-plugin | -              | lock file    | output file   |
-| Webpack 插件    | -               | iconpub-plugin | -              | lock file    | output file   |
+|              | 客户端          | 运行时         | 鉴权           | 持久化    | 文件储存      |
+| :----------- | :-------------- | :------------- | :------------- | :-------- | :------------ |
+| 社区版       | iconpub-web     | iconpub-server | social \ email | mysql     | bucket \ file |
+| 私服版       | iconpub-web     | iconpub-server | ldap           | mysql     | bucket \ file |
+| 个人版       | iconpub-desktop | iconpub-server | -              | sqlite    | bucket \ file |
+| 仓库托管方案 | git repo        | platform ci/cd | -              | lock file | bucket \ npm  |
+| 编译插件方案 | -               | iconpub-plugin | -              | lock file | output file   |
 
 ### 开发进度
 
-- [x] 核心包 [2022.08]
-- [ ] 前端应用（主机 + 域名 + 界面 + 网关） [2022.08 - 2022.09]
-- [ ] 后台服务 + 持久层 + 文件储存 + 开放接口文档） [2022.09]
-- [ ] 鉴权（Email \ GitHub \ WeChat \ LDAP） [2022.09]
-- [ ] 浏览器插件 [2022.10]
-- [ ] 脚手架（Git CI/CD 脚本 + 模板项目） [2022.09 - 2022.10]
-- [ ] 桌面客户端 [2022.10]
-- [ ] 插件（Webpack \ Vite） [2022.10 - 2022.11]
+- [x] 核心包 [2022.08] (0%)
+- [ ] 网关（主机 + 域名 + 网关 + SSL） [2022.09] (0%)
+- [ ] 前端应用 [2022.09] (0%)
+- [ ] 后台服务（核心 + 持久层 + 文件储存 + 开放接口文档） [2022.09] (0%)
+- [ ] 鉴权（Email \ GitHub \ WeChat \ LDAP） [2022.09] (0%)
+- [ ] 浏览器插件 [2022.10] (0%)
+- [ ] 脚手架（Git CI/CD 脚本 + 模板项目） [2022.10] (0%)
+- [ ] 桌面客户端 [2022.10] (0%)
+- [ ] 插件（Webpack \ Vite \ Rollup） [2022.11] (0%)
 
 ## 开发
 

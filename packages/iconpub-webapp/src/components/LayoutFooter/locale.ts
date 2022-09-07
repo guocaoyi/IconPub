@@ -1,16 +1,4 @@
 export const en = {
-  account: {
-    sign: {
-      in: 'Sign in',
-      up: 'Sign up',
-    },
-  },
-  side: {},
-  header: {
-    pub: 'Land',
-    libs: 'Libs',
-    project: 'Projects',
-  },
   about: {
     me: 'IconPub open source project',
     project: {
@@ -43,18 +31,6 @@ export const en = {
 }
 
 export const zh = {
-  account: {
-    sign: {
-      in: '登录',
-      up: '注册',
-    },
-  },
-  side: {},
-  header: {
-    pub: '基地',
-    libs: '图标库',
-    project: '我的项目',
-  },
   about: {
     me: 'IconPub开源图标管理系统',
     project: {
