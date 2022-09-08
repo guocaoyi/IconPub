@@ -5,7 +5,7 @@
   "description": "Scaffolding your chrome extension, multiple boilerplates supported!",
   "author": "yalda",
   "license": "Apache-2.0 License",
-  "main": "index.js",
+  "main": "./bin.js",
   "bin": {
     "create-iconpub": "index.js"
   },
@@ -40,8 +40,11 @@
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@types/node": "^14.18.22",
-    "typescript": "^4.7.4"
+    "@types/node": "^14.18.28",
+    "@types/prompts": "^2.0.14",
+    "@types/mustache": "^4.2.1",
+    "@types/minimist": "^1.2.2",
+    "typescript": "^4.8.2"
   },
   "scripts": {
     "build": "tsc"

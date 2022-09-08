@@ -1,12 +1,10 @@
-#!/usr/bin/env node
-
-import * as fs from 'fs'
-import * as path from 'path'
-import * as process from 'process'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
+import * as process from 'node:process'
 import minimist from 'minimist'
 import prompts from 'prompts'
 import mustache from 'mustache'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 import { ansi256, red, reset } from 'kolorist'
 
 const argv = minimist(process.argv.slice(2), { string: ['_'] })
@@ -15,7 +13,7 @@ const cwd = process.cwd()
 /**
  * 仓库类型
  */
-const GitPlatform = [
+export const GitPlatform = [
   {
     name: 'github',
     kolor: ansi256(81),
@@ -30,7 +28,7 @@ const GitPlatform = [
   },
 ]
 
-const Storage = [
+export const Storage = [
   {
     name: 'npm',
     kolor: ansi256(81),
@@ -42,7 +40,7 @@ const Storage = [
 ]
 
 /** 存储桶厂商 */
-const BucketFirm = [
+export const BucketFirm = [
   {
     name: 'Ali OSS',
     firm: 'aliyun',
@@ -71,9 +69,9 @@ const BucketFirm = [
   },
 ]
 
-const Boilerplates: Array<{ name: string; kolor: string }> = []
+const Boilerplates: Array<{ title: string; value: string }> = []
 
-const renameFiles = {
+const renameFiles: { [K: string]: string } = {
   '.gitignore.mustache': '.gitignore',
   'CHANGELOG.md.mustache': 'CHANGELOG.md',
   'README.md.mustache': 'README.md',
@@ -87,7 +85,7 @@ async function init() {
   const defaultTargetDir = 'icon-pub'
   const getProjectName = () => (targetDir === '.' ? path.basename(path.resolve()) : targetDir)
 
-  let result = {}
+  let result: any = {}
 
   try {
     result = await prompts(
@@ -102,7 +100,7 @@ async function init() {
           },
         },
         {
-          type: () => (!fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm'),
+          type: !fs.existsSync(targetDir) || isEmpty(targetDir) ? null : 'confirm',
           name: 'overwrite',
           message: () =>
             (targetDir === '.' ? 'Current directory' : `Target directory "${targetDir}"`) +
@@ -118,34 +116,33 @@ async function init() {
           },
         },
         {
-          type: (_, opts = {}) => {
+          type: (_, opts: any = {}) => {
             if (opts.overwrite === false) {
               throw new Error(red('✖') + ' Operation cancelled')
             }
-            return null
+            return 'text'
           },
           name: 'overwriteChecker',
         },
         {
-          type: () => (isValidPackageName(getProjectName()) ? null : 'text'),
+          type: isValidPackageName(getProjectName()) ? null : 'text',
           name: 'packageName',
           message: reset('Package name:'),
-          initial: () => toValidPackageName(getProjectName()),
+          initial: toValidPackageName(getProjectName()),
           validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name',
         },
         {
           type: template && Boilerplates.includes(template) ? null : 'select',
           name: 'boilerplate',
           message:
-            typeof template === 'string' && !Boilerplates.includes(template)
+            typeof template === 'string'
               ? reset(`"${template}" isn't a valid template. Please choose from below: `)
               : reset('Boilerplate:'),
           initial: 0,
-          choices: Boilerplates.map((framework) => {
-            const frameworkColor = framework.kolor
+          choices: Boilerplates.map((framework): { title: string; value: string } => {
             return {
-              title: frameworkColor(framework.name),
-              value: framework,
+              title: framework.title,
+              value: framework.value,
             }
           }),
         },
@@ -156,8 +153,8 @@ async function init() {
         },
       },
     )
-  } catch (cancelled) {
-    console.log(cancelled.message)
+  } catch {
+    console.log('error')
     return
   }
 
@@ -178,33 +175,31 @@ async function init() {
   console.log(`\Scaffolding project in ${root}...`)
 
   // template boilerplate
-  const templateDir = path.resolve(fileURLToPath(import.meta.url), '..', `boilerplate-${template}`)
+  const templateDir = path.resolve(__dirname, '..', `boilerplate-${template}`)
 
   // mustache
-  const mustacheDir = path.resolve(fileURLToPath(import.meta.url), '..', 'mustache')
+  const mustacheDir = path.resolve(__dirname, '..', 'mustache')
 
   const opts = {
     name: packageName || getProjectName(),
     author: author || '*',
-    //@ts-ignore
-    now: new Date().format('yyyy.MM.dd'),
-    //@ts-ignore
-    nowYear: new Date().format('yyyy'),
+    now: (new Date() as DatePlus).format('yyyy.MM.dd'),
+    nowYear: (new Date() as DatePlus).format('yyyy'),
   }
 
-  const writeMu = (file) => {
+  const writeMu = (file: string) => {
     const targetPath = renameFiles[file]
       ? path.join(root, renameFiles[file])
       : path.join(root, file)
     copy(path.join(mustacheDir, file), targetPath, opts)
   }
 
-  const write = (file, content?: unknown) => {
+  const write = (file: string, content?: string) => {
     const targetPath = renameFiles[file]
       ? path.join(root, renameFiles[file])
       : path.join(root, file)
     if (content) {
-      fs.writeFileSync(targetPath, content)
+      fs.writeFileSync(targetPath, content ?? '')
     } else {
       copy(path.join(templateDir, file), targetPath)
     }
@@ -248,15 +243,18 @@ async function init() {
   }
 }
 
-// @ts-ignore
-Date.prototype.format = function (fmt) {
-  const o = {
+interface DatePlus extends Date {
+  format: (fmt: string) => string
+}
+
+;(Date as any).prototype.format = function (fmt: string) {
+  const o: any = {
     'M+': this.getMonth() + 1,
     'd+': this.getDate(),
   }
   if (/(y+)/.test(fmt))
     fmt = fmt.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length))
-  for (var k in o)
+  for (const k in o)
     if (new RegExp('(' + k + ')').test(fmt))
       fmt = fmt.replace(
         RegExp.$1,
@@ -272,13 +270,13 @@ function formatTargetDir(targetDir = '') {
   return targetDir.trim().replace(/\/+$/g, '')
 }
 
-function copy(src, dest, opts = {}) {
+function copy(src: string, dest: string, opts = {}) {
   const stat = fs.statSync(src)
   if (stat.isDirectory()) {
     copyDir(src, dest)
   } else if (/\.mustache$/gi.test(src)) {
-    let stemp = fs.readFileSync(src, { encoding: 'utf8' })
-    let result = mustache.render(stemp, opts)
+    const stemp = fs.readFileSync(src, { encoding: 'utf8' })
+    const result = mustache.render(stemp, opts)
     dest = dest.replace(/\.mustache$/gi, '')
     fs.writeFileSync(dest, result, { encoding: 'utf-8' })
   } else {
@@ -289,14 +287,14 @@ function copy(src, dest, opts = {}) {
 /**
  * @param {string} projectName
  */
-function isValidPackageName(projectName) {
+function isValidPackageName(projectName: string) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName)
 }
 
 /**
  * @param {string} projectName
  */
-function toValidPackageName(projectName) {
+function toValidPackageName(projectName: string): string {
   return projectName
     .trim()
     .toLowerCase()
@@ -309,7 +307,7 @@ function toValidPackageName(projectName) {
  * @param {string} srcDir
  * @param {string} destDir
  */
-function copyDir(srcDir, destDir) {
+function copyDir(srcDir: string, destDir: string) {
   fs.mkdirSync(destDir, { recursive: true })
   for (const file of fs.readdirSync(srcDir)) {
     const srcFile = path.resolve(srcDir, file)
@@ -321,7 +319,7 @@ function copyDir(srcDir, destDir) {
 /**
  * @param {string} path
  */
-function isEmpty(path) {
+function isEmpty(path: string) {
   const files = fs.readdirSync(path)
   return files.length === 0 || (files.length === 1 && files[0] === '.git')
 }
@@ -329,7 +327,7 @@ function isEmpty(path) {
 /**
  * @param {string} dir
  */
-function emptyDir(dir) {
+function emptyDir(dir: string) {
   if (!fs.existsSync(dir)) {
     return
   }
@@ -342,7 +340,7 @@ function emptyDir(dir) {
  * @param {string | undefined} userAgent process.env.npm_config_user_agent
  * @returns object | undefined
  */
-function pkgFromUserAgent(userAgent) {
+function pkgFromUserAgent(userAgent: string | undefined) {
   if (!userAgent) return undefined
   const pkgSpec = userAgent.split(' ')[0]
   const pkgSpecArr = pkgSpec.split('/')

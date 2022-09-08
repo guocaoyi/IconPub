@@ -9,6 +9,7 @@ package-lock.json
 # ignore log files and local
 *.log
 *.local
+*.js
 
 # ignore compiled files
 dist
