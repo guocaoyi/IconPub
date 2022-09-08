@@ -6,9 +6,6 @@ import config from '@/config'
   <div class="about-wrap">
     <div class="about">
       <div class="about-columns">
-        <div class="column-title">{{ $t('about.me') }}</div>
-      </div>
-      <div class="about-columns">
         <div class="column-title">{{ $t('about.project.label') }}</div>
         <p>
           <a href="https://icons.pub" target="_blank" rel="noopener">{{
@@ -51,23 +48,20 @@ import config from '@/config'
       <div class="about-columns">
         <div class="column-title">{{ $t('about.social.label') }}</div>
         <p class="github">
-          <a :href="config.github" target="_blank" rel="noopener"
-            ><img
-              alt=""
-              src="https://lf3-static.bytednsdoc.com/obj/eden-cn/bqaeh7vhobd/Github_logo.svg"
-              style="margin-right: 8px"
-          /></a>
+          <a :href="config.github" target="_blank" rel="noopener">
+            <img alt="" src="" style="margin-right: 0.5rem" />
+          </a>
         </p>
       </div>
     </div>
 
-    <div class="footer">
+    <footer>
       <span>© 2022 {{ config.author.toUpperCase() }} &nbsp;</span>
       <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010602011142">
         {{ $t('about.license.police') }} &nbsp;</a
       >
       <a href="https://beian.miit.gov.cn/#/integrated/index"> {{ $t('about.license.icp') }}</a>
-    </div>
+    </footer>
   </div>
 </template>
 
@@ -76,28 +70,30 @@ import config from '@/config'
   width: 100%;
   min-width: 86rem;
   background-color: var(--ep-bg-color-overlay);
+  display: flex;
+  flex-direction: column;
 }
 
 .about {
   width: 86rem;
   margin: 0 auto;
-  padding: 2rem;
-  font-size: 12px;
-  line-height: 20px;
+  padding: 2rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
   color: var(--ep-text-color-primary);
   display: flex;
 }
 
 .about-columns {
   display: block;
-  width: 180px;
+  width: 11.25rem;
   margin-right: 50px;
-  line-height: 20px;
+  line-height: 1.25rem;
 
   .column-title {
     color: var(--ep-text-color-primary);
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     margin-top: 3px;
   }
 
@@ -107,8 +103,8 @@ import config from '@/config'
   }
 }
 
-.footer {
-  height: 3rem;
+footer {
+  height: 2rem;
 
   display: flex;
   justify-content: center;
@@ -116,8 +112,6 @@ import config from '@/config'
 
   font-size: 0.8rem;
   line-height: 1rem;
-
-  border-top: 1px solid var(--ep-bg-color-overlay);
 
   span {
     color: var(--ep-text-color-primary);

@@ -3,10 +3,10 @@ export const en = {
     me: 'IconPub open source project',
     project: {
       label: 'IconPub',
-      about: 'about project',
-      readme: 'readme',
-      issues: 'issues',
-      license: 'Apache-2.0 license',
+      about: 'Chrome Extension',
+      readme: 'Creater',
+      issues: 'Desktop App',
+      license: 'Apache-2.0 License',
     },
     dev: {
       label: 'Developer',
@@ -38,7 +38,7 @@ export const zh = {
       about: '关于项目',
       readme: '使用指南',
       issues: '建议反馈',
-      license: 'Apache-2.0 license',
+      license: 'Apache-2.0 License',
     },
     dev: {
       label: '开发者',

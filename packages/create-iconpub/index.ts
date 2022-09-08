@@ -4,7 +4,6 @@ import * as process from 'node:process'
 import minimist from 'minimist'
 import prompts from 'prompts'
 import mustache from 'mustache'
-import { fileURLToPath } from 'node:url'
 import { ansi256, red, reset } from 'kolorist'
 
 const argv = minimist(process.argv.slice(2), { string: ['_'] })
@@ -77,7 +76,7 @@ const renameFiles: { [K: string]: string } = {
   'README.md.mustache': 'README.md',
 }
 
-async function init() {
+const init = async () => {
   let targetDir = formatTargetDir(argv._[0]) || ''
   let author = '**'
   let template = argv.template || argv.t
@@ -264,13 +263,13 @@ interface DatePlus extends Date {
 }
 
 /**
- * @param {string | undefined} targetDir
+ * format target dir
  */
-function formatTargetDir(targetDir = '') {
+const formatTargetDir = (targetDir = '') => {
   return targetDir.trim().replace(/\/+$/g, '')
 }
 
-function copy(src: string, dest: string, opts = {}) {
+const copy = (src: string, dest: string, opts = {}) => {
   const stat = fs.statSync(src)
   if (stat.isDirectory()) {
     copyDir(src, dest)
@@ -287,14 +286,14 @@ function copy(src: string, dest: string, opts = {}) {
 /**
  * @param {string} projectName
  */
-function isValidPackageName(projectName: string) {
+const isValidPackageName = (projectName: string) => {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName)
 }
 
 /**
  * @param {string} projectName
  */
-function toValidPackageName(projectName: string): string {
+const toValidPackageName = (projectName: string): string => {
   return projectName
     .trim()
     .toLowerCase()
@@ -307,7 +306,7 @@ function toValidPackageName(projectName: string): string {
  * @param {string} srcDir
  * @param {string} destDir
  */
-function copyDir(srcDir: string, destDir: string) {
+const copyDir = (srcDir: string, destDir: string) => {
   fs.mkdirSync(destDir, { recursive: true })
   for (const file of fs.readdirSync(srcDir)) {
     const srcFile = path.resolve(srcDir, file)
@@ -319,7 +318,7 @@ function copyDir(srcDir: string, destDir: string) {
 /**
  * @param {string} path
  */
-function isEmpty(path: string) {
+const isEmpty = (path: string) => {
   const files = fs.readdirSync(path)
   return files.length === 0 || (files.length === 1 && files[0] === '.git')
 }
@@ -327,7 +326,7 @@ function isEmpty(path: string) {
 /**
  * @param {string} dir
  */
-function emptyDir(dir: string) {
+const emptyDir = (dir: string) => {
   if (!fs.existsSync(dir)) {
     return
   }
@@ -340,10 +339,9 @@ function emptyDir(dir: string) {
  * @param {string | undefined} userAgent process.env.npm_config_user_agent
  * @returns object | undefined
  */
-function pkgFromUserAgent(userAgent: string | undefined) {
+const pkgFromUserAgent = (userAgent: string | undefined) => {
   if (!userAgent) return undefined
-  const pkgSpec = userAgent.split(' ')[0]
-  const pkgSpecArr = pkgSpec.split('/')
+  const pkgSpecArr = userAgent?.split(' ')?.[0]?.split('/') ?? []
   return {
     name: pkgSpecArr[0],
     version: pkgSpecArr[1],

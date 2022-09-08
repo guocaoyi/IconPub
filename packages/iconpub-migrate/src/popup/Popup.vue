@@ -43,7 +43,7 @@ a {
   text-decoration: none;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 30rem) {
   h3 {
     max-width: none;
   }

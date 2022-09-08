@@ -97,8 +97,8 @@ import config from '@/config'
 }
 
 .avator {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
 }
 </style>
