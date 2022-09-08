@@ -1,8 +1,8 @@
 /**
  * css template
  * @param {string} param.className
- * @param {string} param.className
- * @param {string} param.className
+ * @param {string} param.fontName
+ * @param {string} param.fontPath
  * @param {string} param.hash hash
  */
 export const css = ({ className, fontName, fontPath, hash }: any) => `

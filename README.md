@@ -13,13 +13,13 @@ IconPub is an icon management system!
 
 ### Solutions
 
-|            | Client          | Runtime        | Auth           | Storage   | File Storage  |
-| :--------- | :-------------- | :------------- | :------------- | :-------- | :------------ |
-| Community  | iconpub-web     | iconpub-server | social \ email | mysql     | bucket \ file |
-| Enterprise | iconpub-web     | iconpub-server | ldap           | mysql     | bucket \ file |
-| Personal   | iconpub-desktop | iconpub-server | -              | sqlite    | bucket \ file |
-| Git        | git repo        | ci/cd          | -              | lock file | bucket \ npm  |
-| Plugin     | -               | iconpub-plugin | -              | lock file | output file   |
+|                | Client          | Runtime        | Auth           | Storage   | File Storage  |
+| :------------- | :-------------- | :------------- | :------------- | :-------- | :------------ |
+| Community      | iconpub-web     | iconpub-server | social \ email | mysql     | bucket \ file |
+| Enterprise     | iconpub-web     | iconpub-server | ldap           | mysql     | bucket \ file |
+| Personal       | iconpub-desktop | iconpub-server | -              | sqlite    | bucket \ file |
+| Git            | git repo        | ci/cd          | -              | lock file | bucket \ npm  |
+| Bundler Plugin | -               | iconpub-plugin | -              | lock file | output file   |
 
 ### Schedules
 

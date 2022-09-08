@@ -1,12 +1,12 @@
 import crypto from 'node:crypto'
-import path from 'node:path'
 import fs from 'node:fs'
+import path from 'node:path'
+import process from 'node:process'
 import stream from 'node:stream'
 
 import SVGIcons2SVGFontStream from 'svgicons2svgfont'
 import cosmiconfig from 'cosmiconfig'
 import deepmerge from 'deepmerge'
-
 import globby from 'globby'
 
 import { getGlyphsData } from './glyphsData'
@@ -55,6 +55,7 @@ const toSvg = (glyphsData, options) => {
     }
 
     const fontStream = new SVGIcons2SVGFontStream({
+      ...options,
       ascent: options.ascent,
       centerHorizontally: options.centerHorizontally,
       descent: options.descent,
@@ -64,10 +65,10 @@ const toSvg = (glyphsData, options) => {
       fontName: options.fontName,
       fontStyle: options.fontStyle,
       fontWeight: options.fontWeight,
-      log,
       metadata: options.metadata,
       normalize: options.normalize,
       round: options.round,
+      log,
     })
       .on('finish', () => resolve(result))
       .on('data', (data) => {
