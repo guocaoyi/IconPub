@@ -13,7 +13,7 @@ export class EventPo {
   /** 事件名（中文） */
   eventNameCn: string
   /** 事件区域 */
-  eventRegion: 'ap-guangzhou'
+  eventRegion: string
   /** 事件源 */
   eventSource: 'account.api.icons.pub'
   /** 事件时间 */
@@ -37,7 +37,7 @@ export class EventPo {
 
   /**
    * 位置（运营商）
-   * @example 中国 江苏省 南京市 中国联通
+   * @example
    */
   location: string
 

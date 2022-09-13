@@ -1,21 +1,18 @@
 /** */
-export class AccountVo {
-  /** 账号组织编号 */
+export class AccountPo {
   accountGroupId: number
-  /** 头像（URI） */
-  avatarUri: string
-  /** 账号创建时间 */
-  createTime: number
 
-  /** 账号创建时间 */
+  avatarUri: string
+
   description: string
+
   deviceId: '0'
 
   email: string
   gender: 0
   hasPassword: boolean
   loginName: ''
-  mobile: string // 脱敏处理
+  mobile: string
   mobileId: '0'
   mobileType: 0
   screenName: string
@@ -23,13 +20,16 @@ export class AccountVo {
   userType: 1
 
   /**
-   * 账号拥有者
+   * account type (rule)
    * @type { 0 | 1 | 2 | 3 }
-   * 0: 所有者
-   * 1: 可编辑
-   * 2: 可阅读
-   * 3: 管理员
+   * 0: owner
+   * 1: author
+   * 2: reader
+   * 3: manager
    */
   authorityType: 0 | 1 | 2 | 3
-  password: ''
+
+  password: string
+
+  createAt: number
 }

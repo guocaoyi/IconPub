@@ -1,16 +1,22 @@
 /**
- * 消息实例
+ * unread count
  */
-export class UnreadCountVo {
+export class UnreadCountPo {
   chats_count: 0
+
   collection_review: 0
+
   comment: 0
+
   notice: 0
+
   official: 0
+
   official_notice: 0
+
   totalcount: 0
 }
 
-export class MessageVo {
+export class MessagePo {
   id: number
 }

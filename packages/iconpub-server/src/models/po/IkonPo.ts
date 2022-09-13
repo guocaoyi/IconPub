@@ -42,12 +42,12 @@ export class IkonPo {
 
   color_type: 1
 
-  description: 'preview-open'
+  description: string
   /** 分组编号 */
   groupID: number
   iconVersion: null
 
-  ownerID: '3523296614707965'
+  ownerID: string
   render_type: 1
   resource: string
   sourceType: 0
@@ -64,3 +64,5 @@ export class IkonPo {
 export type CatDocument = IkonPo & Document
 
 export const IkonSchema = SchemaFactory.createForClass(IkonPo)
+
+export class FontIcon extends IkonPo {}
