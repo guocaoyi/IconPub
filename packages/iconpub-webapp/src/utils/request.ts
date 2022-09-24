@@ -8,8 +8,10 @@ if (process.env.NODE_ENV === 'development') {
   axios.defaults.baseURL = 'https://icons.pub'
 }
 
-// get
-export const get = ({ url, params = {} }: any) =>
+/**
+ * get method
+ */
+export const get = (url: string, params = {}) =>
   new Promise((resolve, reject) => {
     axios({
       url,
@@ -24,7 +26,9 @@ export const get = ({ url, params = {} }: any) =>
       })
   })
 
-// post
+/**
+ * post method
+ */
 export const post = ({ url, data = {}, params = {} }: any) =>
   new Promise((resolve, reject) => {
     axios({

@@ -65,6 +65,7 @@ import config from '@/config'
     cursor: pointer;
     line-height: 3rem;
     align-items: center;
+    text-decoration: none;
   }
 }
 

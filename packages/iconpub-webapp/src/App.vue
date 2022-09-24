@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Vue from 'vue'
+</script>
+
 <template>
   <el-config-provider namespace="ep">
     <LayoutHeader />

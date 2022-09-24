@@ -1,7 +1,7 @@
 export const en = {
   page: {
     home: {
-      morning: 'Coming soon...',
+      morning: 'coming soon...',
       slogen: 'Personal or Enterprise users, please set your own bucket or private deployment',
     },
   },
