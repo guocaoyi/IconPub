@@ -8,7 +8,7 @@ import config from '@/config'
       <div class="about-columns">
         <div class="column-title">{{ $t('about.project.label') }}</div>
         <p>
-          <a href="https://icons.pub" target="_blank" rel="noopener">{{
+          <a :href="config.host.site" target="_blank" rel="noopener">{{
             $t('about.project.about')
           }}</a>
         </p>
@@ -56,7 +56,7 @@ import config from '@/config'
     </div>
 
     <footer>
-      <span>© 2022 {{ config.author.toUpperCase() }} &nbsp;</span>
+      <span>©Copyright 2022 {{ config.author.toUpperCase() }} &nbsp;</span>
       <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010602011142">
         {{ $t('about.license.police') }} &nbsp;</a
       >

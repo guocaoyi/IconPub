@@ -9,7 +9,6 @@ export const menus = {}
 export const routes = [
   // home
   { path: '/', component: Home },
-  { path: '/libs', component: Home },
   { path: '/projects', component: Home },
 
   // protocol

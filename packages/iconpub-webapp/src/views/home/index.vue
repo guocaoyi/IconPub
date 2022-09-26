@@ -6,6 +6,15 @@ import Vue from 'vue'
   <div class="home-content">
     <div class="home-slogen">
       <p>{{ $t('page.home.morning') }}</p>
+      <p>{{ $t('page.home.morning') }}</p>
+      <p>{{ $t('page.home.morning') }}</p>
+      <p>{{ $t('page.home.morning') }}</p>
+      <p>{{ $t('page.home.morning') }}</p>
+      <p>{{ $t('page.home.morning') }}</p>
+      <p>{{ $t('page.home.morning') }}</p>
+
+      <p>{{ $t('page.home.morning') }}</p>
+      <p>{{ $t('page.home.morning') }}</p>
     </div>
   </div>
 </template>

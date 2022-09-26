@@ -1,20 +1,26 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import Vue from 'vue'
 </script>
 
 <template>
-  <el-config-provider namespace="ep">
-    <LayoutHeader />
-    <router-view></router-view>
-    <LayoutFooter />
-  </el-config-provider>
+  <LayoutHeader />
+  <router-view></router-view>
+  <LayoutFooter />
 </template>
 
 <style>
+body {
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #app {
-  color: var(--ep-text-color-primary);
+  min-height: 50rem;
+
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 </style>

@@ -1,11 +1,12 @@
 import axios from 'axios'
+import config from '@/config'
 
 import type { App, Plugin } from 'vue'
 
 if (process.env.NODE_ENV === 'development') {
-  axios.defaults.baseURL = 'http://icons.dev.pub'
+  axios.defaults.baseURL = 'http://127.0.0.1:4001'
 } else if (process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = 'https://icons.pub'
+  axios.defaults.baseURL = config.host.site
 }
 
 /**

@@ -1,105 +1,63 @@
 <script lang="ts" setup>
-import { ElMessage } from 'element-plus'
 import { toggleDark } from '@/composables'
 import config from '@/config'
+
+const tools = [
+  { path: '/', title: 'header.pub' },
+  { path: '/libs', title: 'header.libs' },
+  { path: '/projects', title: 'header.project' },
+]
+
+const shield = 'https://img.shields.io/github/stars/guocaoyi?style=social'
+const avator = ''
 </script>
 
 <template>
-  <div class="header">
-    <div class="spacer">
-      <a style="height: 2rem; border-radius: 50%" title="iconpub">
-        <img style="height: 2rem" src="@/assets/iconpub.png" alt="iconpub" />
+  <div flex items-center justify-between p="x-12" h-16 font-500>
+    <div flex text-center items-center>
+      <a title="iconpub" border="rd-1/2" h="8">
+        <img h="8" src="@/assets/iconpub.png" alt="iconpub" />
       </a>
-      <router-link class="header-link" to="/">{{ $t('header.pub') }}</router-link>
-      <router-link class="header-link" to="/libs">{{ $t('header.libs') }}</router-link>
-      <router-link class="header-link" to="/projects">{{ $t('header.project') }}</router-link>
+      <router-link
+        m="x-4"
+        items-center
+        no-underline
+        text-xl
+        c-black
+        v-for="(item, index) in tools"
+        :key="index"
+        :to="item.path"
+      >
+        {{ $t(item.title) }}
+      </router-link>
     </div>
 
-    <div class="info">
-      <select class="header-tool selecter" v-model="$i18n.locale">
+    <div flex>
+      <a flex items-center h-8 mr-4 :href="config.github" target="_blank">
+        <img h-5 :src="shield" alt="preview badge" />
+      </a>
+
+      <select flex items-center h-8 mr-4 border-none bg-transparent text-xs v-model="$i18n.locale">
         <option v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`" :value="locale">
           {{ (locale === 'zh' ? '中' : locale)?.toUpperCase?.() }}
         </option>
       </select>
 
-      <a class="header-tool" @click="toggleDark()" target="_blank">
+      <!-- <a flex items-center h-8 mr-4 text-xs @click="toggleDark()">
         <i inline-flex i="dark:ep-moon ep-sunny" />
+      </a> -->
+
+      <a flex items-center h-8 mr-4 text-xs v-if="!!avator">
+        <img w-8 h-8 border="rd-1/2" src="https://" alt="" />
       </a>
 
-      <a target="_blank" :href="config.github" class="header-tool"
-        ><img
-          style="height: 1.2rem"
-          src="https://img.shields.io/github/stars/guocaoyi?style=social"
-          alt="preview badge"
-      /></a>
-
-      <a class="header-tool">
-        <img class="avator" src="https://" alt="" v-if="false" />
+      <a flex items-center h-8 mr-4 text-xs>
         <span>{{ $t('account.sign.in') }}</span>
+      </a>
+
+      <a flex items-center h-8 mr-4 text-xs>
+        <span>{{ $t('account.sign.up') }}</span>
       </a>
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 4rem;
-  min-height: 4rem;
-  min-width: 85rem;
-
-  background-color: transparent;
-
-  padding: 0 3rem;
-
-  font-weight: 500;
-
-  .header-link {
-    color: var(--ep-text-color-primary);
-    font-size: 1rem;
-    margin: 0 1rem;
-    cursor: pointer;
-    line-height: 3rem;
-    align-items: center;
-    text-decoration: none;
-  }
-}
-
-.spacer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.info {
-  display: flex;
-}
-
-.header-tool {
-  color: var(--ep-text-color-primary);
-  height: 2rem;
-  margin-right: 1rem;
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
-}
-
-.selecter {
-  border: none;
-  background-color: transparent;
-}
-
-.byted-link {
-  width: 5rem;
-}
-
-.avator {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-}
-</style>

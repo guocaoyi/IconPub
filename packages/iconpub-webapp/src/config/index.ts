@@ -1,4 +1,8 @@
+import * as menus from './menu'
+
 export const config = {
+  ...menus,
+
   author: 'yalda',
 
   appName: import.meta.env.VITE_APP_NAME ?? '',
