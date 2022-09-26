@@ -1,4 +1,4 @@
-import * as BaseBannerLocale from '@/components/BaseBanner/locale'
+import * as BaseModalLocale from '@/components/BaseModal/locale'
 import * as LayoutFooterLocale from '@/components/LayoutFooter/locale'
 import * as LayoutHeaderLocale from '@/components/LayoutHeader/locale'
 
@@ -7,7 +7,7 @@ import * as HomeLocale from '@/views/home/locale'
 export const messages = {
   en: {
     // components
-    ...BaseBannerLocale.en,
+    ...BaseModalLocale.en,
     ...LayoutFooterLocale.en,
     ...LayoutHeaderLocale.en,
 
@@ -16,7 +16,7 @@ export const messages = {
   },
   zh: {
     // components
-    ...BaseBannerLocale.zh,
+    ...BaseModalLocale.zh,
     ...LayoutFooterLocale.zh,
     ...LayoutHeaderLocale.zh,
 

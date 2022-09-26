@@ -1,7 +1,6 @@
-export const host = {
-  site: 'https://icons.pub',
-}
-
+/**
+ * menus
+ */
 export const menus = {
   home: '/',
   dashboard: '/dashboard',

@@ -33,7 +33,7 @@ const avator = ''
     </div>
 
     <div flex>
-      <a flex items-center h-8 mr-4 :href="config.github" target="_blank">
+      <a flex items-center h-8 mr-4 :href="config.socialGithub" target="_blank">
         <img h-5 :src="shield" alt="preview badge" />
       </a>
 

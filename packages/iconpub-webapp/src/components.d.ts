@@ -7,7 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BaseBanner: typeof import('./components/BaseBanner/index.vue')['default']
+    BaseAbout: typeof import('./components/LayoutFooter/BaseAbout.vue')['default']
+    BaseFooter: typeof import('./components/LayoutFooter/BaseFooter.vue')['default']
     BaseModal: typeof import('./components/BaseModal/index.vue')['default']
     LayoutBlank: typeof import('./components/LayoutBlank/index.vue')['default']
     LayoutFooter: typeof import('./components/LayoutFooter/index.vue')['default']

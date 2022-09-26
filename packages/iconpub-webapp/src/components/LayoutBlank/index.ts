@@ -1,8 +1,8 @@
 import { withInstall } from '@/components/utils'
 
-import Banner from './index.vue'
+import Blank from './index.vue'
 
-export const BaseBanner = withInstall(Banner)
-export default BaseBanner
+export const LayoutBlank = withInstall(Blank)
+export default LayoutBlank
 
 export * from './index.vue'
