@@ -30,7 +30,7 @@ export const get = (url: string, params = {}) =>
 /**
  * post method
  */
-export const post = ({ url, data = {}, params = {} }: any) =>
+export const post = ({ url = '', data = {}, params = {} }) =>
   new Promise((resolve, reject) => {
     axios({
       url,

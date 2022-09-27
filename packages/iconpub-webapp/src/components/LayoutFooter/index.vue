@@ -1,10 +1,7 @@
-<script lang="ts" setup>
-import BaseAbout from './BaseAbout.vue'
-import BaseFooter from './BaseFooter.vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div bg-gray bg-op-20>
+  <div bg="light dark:dark-800">
     <BaseAbout />
     <BaseFooter />
   </div>

@@ -1,4 +1,4 @@
-import { withInstall } from '@/components/utils'
+import { withInstall } from '@/components/install'
 
 import Blank from './index.vue'
 

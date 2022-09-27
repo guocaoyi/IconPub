@@ -1,12 +1,12 @@
 export const en = {
-  'base.modal': {
+  modal: {
     cancel: 'Cancel',
     ok: 'OK',
   },
 }
 
 export const zh = {
-  'base.about': {
+  modal: {
     cancel: '取消',
     ok: '确认',
   },

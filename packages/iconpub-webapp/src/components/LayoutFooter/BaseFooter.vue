@@ -1,20 +1,46 @@
 <script lang="ts" setup>
 import config from '@/config'
 
+const id = config.domainBeian.match(/\d+/gi)?.[0] ?? ''
 const licenses = [
   {
-    src: 'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010602011142',
-    lable: 'about.license.police',
+    lable: config.domainBeian,
+    type: 'police',
+    link: `http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${id}`,
   },
-  { src: 'https://beian.miit.gov.cn/#/integrated/index', lable: 'about.license.icp' },
-]
+  {
+    lable: config.domainIcp,
+    type: 'icp',
+    link: 'https://beian.miit.gov.cn',
+  },
+].filter((license) => !!license.lable)
 </script>
 
 <template>
-  <footer h-12 flex justify-center items-center text-xs>
-    <span>©Copyright 2022-{{ config.siteBegin }} {{ config.siteName.toUpperCase() }} &nbsp;</span>
-    <a c-black decoration-none mr-1 v-for="(item, index) in licenses" :key="index" :href="item.src">
-      {{ $t(item.lable) }}</a
+  <footer
+    bg="light dark:dark-800"
+    mx-4
+    flex
+    flex-col
+    text-xs
+    md:mx-20
+    md:h-12
+    md:flex-col
+    xl:flex-col
+  >
+    <span c="dark-800 dark:light" mr-2>
+      ©Copyright 2022-{{ config.now }} {{ config.siteName.toUpperCase() }}
+    </span>
+    <a
+      v-for="(item, i) in licenses"
+      :key="i"
+      :href="item.link"
+      target="_blank"
+      decoration-none
+      mr-2
+      c="dark-800 dark:light"
     >
+      {{ $t(item.lable) }}
+    </a>
   </footer>
 </template>

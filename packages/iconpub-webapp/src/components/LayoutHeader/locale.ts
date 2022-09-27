@@ -1,28 +1,25 @@
 export const en = {
-  account: {
-    sign: {
-      in: 'Sign in',
-      up: 'Sign up',
-    },
-  },
   header: {
-    pub: 'Land',
-    libs: 'Libs',
+    home: 'Home',
+    illu: 'Illus',
     project: 'Projects',
+    doc: 'Docs',
+
+    //
+    signin: 'Sign in',
+    signup: 'Sign up',
   },
 }
 
 export const zh = {
-  account: {
-    sign: {
-      in: '登录',
-      up: '注册',
-    },
-  },
   header: {
-    pub: '基地',
-    libs: '图标库',
+    home: '首页',
+    illu: '插画库',
     project: '我的项目',
+    doc: '使用文档',
+
+    signin: '登录',
+    signup: '注册',
   },
 }
 

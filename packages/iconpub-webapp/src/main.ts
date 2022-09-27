@@ -4,22 +4,23 @@ import * as VueRouter from 'vue-router'
 
 import App from '@/App.vue'
 import request from '@/utils/request'
-import { routes } from '@/router'
 import { messages } from '@/locales'
+import { routes } from '@/router'
 
 import 'normalize.css/normalize.css'
 import 'uno.css'
 
 // i18n & locales
 const i18n = VueI18n.createI18n({
-  locale: 'en',
-  fallbackLocale: 'en',
+  locale: localStorage.getItem('__ICON_PUB_LOCALE') ?? 'zh', // en
+  fallbackLocale: 'zh',
+  allowComposition: true,
   messages,
 })
 
 // router
 const router = VueRouter.createRouter({
-  history: VueRouter.createMemoryHistory(),
+  history: VueRouter.createWebHistory(),
   routes,
 })
 

@@ -5,7 +5,7 @@ export const en = {
       label: 'IconPub',
       about: 'Chrome Extension',
       readme: 'Creater',
-      issues: 'Desktop App',
+      issues: 'Feedback',
       license: 'Apache-2.0 License',
     },
     dev: {
@@ -16,16 +16,13 @@ export const en = {
     },
     source: {
       label: 'Open Source',
-      react: 'React NPM Libs',
+      react: 'NPM Libs',
       docker: 'Docker Images',
     },
     social: {
       label: 'Social',
-      github: '',
-    },
-    license: {
-      police: '苏公网安备 32010602011142号',
-      icp: '苏ICP备2022030674号-1',
+      github: 'GitHub',
+      twitter: 'Twitter',
     },
   },
 }
@@ -53,11 +50,8 @@ export const zh = {
     },
     social: {
       label: '社交',
-      github: '',
-    },
-    license: {
-      police: '苏公网安备 32010602011142号',
-      icp: '苏ICP备 2022030674号-1',
+      github: 'GitHub',
+      twitter: '推特',
     },
   },
 }

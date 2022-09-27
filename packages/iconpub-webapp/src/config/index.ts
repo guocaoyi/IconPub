@@ -1,4 +1,4 @@
-import * as menus from './menu'
+import { menus } from './menu'
 
 /**
  * host
@@ -15,9 +15,13 @@ export const config = {
 
   host,
 
-  siteAuthor: import.meta.env.VITE_SITE_AUTHOR ?? '',
+  now: import.meta.env.VITE_NOW ?? '',
+  org: import.meta.env.VITE_ORG ?? '',
+  author: import.meta.env.VITE_AUTHOR ?? '',
   siteName: import.meta.env.VITE_SITE_NAME ?? '',
-  siteBegin: import.meta.env.VITE_SITE_BEGIN ?? '',
+
+  domainBeian: import.meta.env.VITE_DOMAIN_BEIAN ?? '',
+  domainIcp: import.meta.env.VITE_DOMAIN_ICP ?? '',
 
   socialGmail: import.meta.env.VITE_SOCIAL_GMAIL ?? '',
   socialGithub: import.meta.env.VITE_SOCIAL_GITHUB ?? '',

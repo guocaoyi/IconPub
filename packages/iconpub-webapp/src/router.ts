@@ -1,19 +1,76 @@
-import Home from '@/views/home/index.vue'
-import Legal from '@/views/legal/index.vue'
-import Privacy from '@/views/privacy/index.vue'
-
-import NotFound from '@/views/error/notfound.vue'
-
-export const menus = {}
+import LayoutBlank from './components/LayoutBlank'
 
 export const routes = [
-  // home
-  { path: '/', component: Home },
-  { path: '/projects', component: Home },
+  {
+    path: '/',
+    redirect: '/home',
+    component: LayoutBlank,
+    children: [
+      {
+        path: '/',
+        name: 'dashboard',
+        component: () => import('@/views/home/index.vue'),
+      },
 
-  // protocol
-  { path: '/legal', component: Legal },
-  { path: '/privacy', component: Privacy },
+      {
+        path: '/projects',
+        name: 'project collection',
+        component: () => import('@/views/project/index.vue'),
+      },
+      {
+        path: '/project/:id',
+        name: 'project detail',
+        component: () => import('@/views/project/project-detail.vue'),
+      },
+      { path: '/illus', name: 'illustrations', component: () => import('@/views/illu/index.vue') },
+      {
+        path: '/illu/:id',
+        name: 'illustration details',
+        component: () => import('@/views/illu/illu-detail.vue'),
+      },
+      {
+        path: '/account',
+        name: 'account setting',
+        component: () => import('@/views/account/index.vue'),
+      },
+    ],
+  },
 
-  { path: '/*', component: NotFound },
+  // unauth
+  {
+    path: '/*',
+    name: 'NotFound',
+    component: LayoutBlank,
+    children: [
+      {
+        path: '/docs/legal',
+        name: 'user legal',
+        component: () => import('@/views/docs/doc-legal.vue'),
+      },
+      {
+        path: '/docs/privacy',
+        name: 'privacy protocol',
+        component: () => import('@/views/docs/doc-privacy.vue'),
+      },
+
+      // docs & articles
+      {
+        path: '/docs/:id',
+        name: 'articles',
+        component: () => import('@/views/docs/index.vue'),
+      },
+
+      // feedback
+      {
+        path: '/feedback',
+        name: 'feedback',
+        component: () => import('@/views/feedback/index.vue'),
+      },
+      {
+        path: '/*',
+        name: 'NotFound',
+        component: () => import('@/views/error/not-found.vue'),
+      },
+    ],
+  },
 ]

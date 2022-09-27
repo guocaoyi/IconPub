@@ -1,29 +1,42 @@
 <script lang="ts" setup>
 interface Props {
   title: string
-  dispaly: boolean
+  display?: boolean
 }
-
-const props = defineProps({
-  title: String,
-  dispaly: Boolean,
+const props = withDefaults(defineProps<Props>(), {
+  title: '',
+  display: false,
 })
+
+defineEmits(['ok', 'cancle'])
 </script>
 
 <template>
   <Transition name="modal">
     <div
-      v-if="dispaly"
+      v-if="display"
       class="modal-mask"
       z-36
       fixed
       width="w-1/1"
       height="h-1/1"
-      bg-black
-      bg-op-50
+      bg="black op-50"
+      top-0
+      left-0
+      table
+      transition="opacity 30 ease"
     >
-      <div table-cell v-middle>
-        <div class="modal-container" w-80 px-8 py-5 c-white rd-1 shadow>
+      <div v-middle table-cell>
+        <div
+          class="modal-container"
+          w-80
+          p="x-8 y-5"
+          c-white
+          rd-1
+          shadow
+          margin-a
+          transition="all 30 ease"
+        >
           <div mt-0 c-balck>
             <slot name="header">{{ props.title }}</slot>
           </div>
@@ -47,15 +60,10 @@ const props = defineProps({
 
 <style>
 .modal-mask {
-  top: 0;
-  left: 0;
-
-  display: table;
   transition: opacity 0.3s ease;
 }
 
 .modal-container {
-  margin: 0px auto;
   transition: all 0.3s ease;
 }
 

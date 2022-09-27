@@ -42,7 +42,6 @@
 
     <style>
       body {
-        height: 100vh;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
           'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
         -webkit-font-smoothing: antialiased;
@@ -64,7 +63,8 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=/%VITE_GA_ID%/"></script>
     <script>
-      location.host.includes('icons.pub') && // for production
+      location.host.includes('icons.pub') &&
+        '/%VITE_GA_ID%/' &&
         (() => {
           window.dataLayer = window.dataLayer || []
           function gtag() {

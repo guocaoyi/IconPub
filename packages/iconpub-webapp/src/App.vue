@@ -1,6 +1,4 @@
-<script lang="ts" setup>
-import Vue from 'vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <LayoutHeader />
