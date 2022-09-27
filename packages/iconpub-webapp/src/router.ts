@@ -11,7 +11,6 @@ export const routes = [
         name: 'dashboard',
         component: () => import('@/views/home/index.vue'),
       },
-
       {
         path: '/projects',
         name: 'project collection',
@@ -22,7 +21,11 @@ export const routes = [
         name: 'project detail',
         component: () => import('@/views/project/project-detail.vue'),
       },
-      { path: '/illus', name: 'illustrations', component: () => import('@/views/illu/index.vue') },
+      {
+        path: '/illus',
+        name: 'illustrations',
+        component: () => import('@/views/illu/index.vue'),
+      },
       {
         path: '/illu/:id',
         name: 'illustration details',
@@ -35,25 +38,29 @@ export const routes = [
       },
     ],
   },
-
   // unauth
   {
     path: '/*',
     name: 'NotFound',
     component: LayoutBlank,
     children: [
+      // docs & articles
       {
-        path: '/docs/legal',
+        path: '/docs',
+        name: 'articles',
+        component: () => import('@/views/docs/index.vue'),
+      },
+      {
+        path: '/legal',
         name: 'user legal',
         component: () => import('@/views/docs/doc-legal.vue'),
       },
       {
-        path: '/docs/privacy',
+        path: '/privacy',
         name: 'privacy protocol',
         component: () => import('@/views/docs/doc-privacy.vue'),
       },
 
-      // docs & articles
       {
         path: '/docs/:id',
         name: 'articles',

@@ -23,12 +23,13 @@ const licenses = [
     flex
     flex-col
     text-xs
-    md:mx-20
-    md:h-12
-    md:flex-col
-    xl:flex-col
+    md:mx-10
+    xl:mx-20
+    xl:flex-row
+    xl:items-center
+    xl:justify-center
   >
-    <span c="dark-800 dark:light" mr-2>
+    <span c="dark-800 dark:light" mr-2 h-6>
       ©Copyright 2022-{{ config.now }} {{ config.siteName.toUpperCase() }}
     </span>
     <a
@@ -38,6 +39,7 @@ const licenses = [
       target="_blank"
       decoration-none
       mr-2
+      h-6
       c="dark-800 dark:light"
     >
       {{ $t(item.lable) }}
