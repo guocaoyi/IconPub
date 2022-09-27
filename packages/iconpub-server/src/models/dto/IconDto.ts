@@ -9,14 +9,14 @@ export class PreviewIcon extends BasicIcon {
 }
 
 export class FontIconDto extends BasicIcon {
-  id: 27923659
+  id: number
   name: string
   unicode: number /** unicode 码 */
 
-  projectId: 3487347
-  project_id: 3487347
+  projectId: number
+  project_id: number
 
-  font_class: 'hanbao'
+  font_class: string
   freeze: 0
   path_attributes: 'fill="#25467A"|fill="#EE6F0B"|fill="#EE6F0B"|fill="#7CB342"|fill="#D9792B"|fill="#FFBC00"|fill="#7CB342"|fill="#D9792B"|fill="#FBC02D"|fill="#25467A"|fill="#25467A"|fill="#25467A"|fill="#FFA726"'
   show_svg: string
@@ -27,11 +27,11 @@ export class IconDto {
   id: number
 
   /** 名称 */
-  name: 'preview-open'
+  name: string
   /** 名称（英文）*/
-  name_en: 'preview-open'
+  name_en: string
   /** 名称（中文）*/
-  name_zh: '预览-打开'
+  name_zh: string
   /** 名称（中文简拼）*/
   name_zh_jp: string
   /** 名称（中文全拼）*/
@@ -42,12 +42,12 @@ export class IconDto {
 
   color_type: 1
 
-  description: 'preview-open'
+  description: string
   /** 分组编号 */
-  groupID: 13582
+  groupID: number
   iconVersion: null
 
-  ownerID: '3523296614707965'
+  ownerID: string
   render_type: 1
   resource: string
   sourceType: 0

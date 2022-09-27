@@ -1,8 +1,10 @@
 import { withInstall } from '@/components/utils'
 
-import Footer from './index.vue'
+import Index from './index.vue'
 
-export const BaseFooter = withInstall(Footer)
-export default BaseFooter
+export const LayoutIndex = withInstall(Index)
+export default LayoutIndex
 
 export * from './index.vue'
+export * from './BaseAbout.vue'
+export * from './BaseFooter.vue'

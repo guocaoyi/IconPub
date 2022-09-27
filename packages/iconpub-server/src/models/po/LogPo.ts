@@ -1,7 +1,7 @@
 /**
  * 操作日志
  */
-export class ActiveLogVo {
+export class ActiveLogPo {
   id: number
   /** 项目编号 */
   groupID: number

@@ -11,7 +11,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta
       name="keywords"
-      content="IconPub,iconpub,iconfont,iconspub,图标管理系统,矢量图标,字体图标,开源图标库,设计师,图标设计,svg,icon,ikon,iconpark,iconsvg,fontsvg"
+      content="iconpub,iconspub,图标管理系统,矢量图标,字体图标,开源图标库,设计师,图标设计,svg,icon,ikon,iconfont,iconpark,iconsvg,fontsvg"
     />
     <meta
       name="description"
@@ -23,11 +23,9 @@
     <meta property="og:image" content="./iconpub.png" />
     <meta property="og:description" content="IconPub is an icon management system!" />
     <meta property="og:site_name" content="IconPub" />
-    <meta property="og:url" content="https://icons.pub" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="zh_CN" />
-    <meta property="og:locale:alternate" content="zh_TW" />
 
     <meta property="twitter:title" content="IconPub" />
     <meta property="twitter:image" content="./iconpub.png" />
@@ -42,24 +40,29 @@
     <link rel="apple-touch-icon-precomposed" href="./iconpub.png" />
     <title>IconPub - 开源图标管理系统</title>
 
-    <script>
-      // baidu analytics
-      var _hmt = _hmt || []
-      location.host.includes('icons.pub') && // for production
-        (function () {
-          var hm = document.createElement('script')
-          hm.src = 'https://hm.baidu.com/hm.js?73787dc886ae6d27ba7c5f4b0604fc40'
-          var s = document.getElementsByTagName('script')[0]
-          s.parentNode.insertBefore(hm, s)
-        })()
-    </script>
+    <style>
+      body {
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+          'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      #app {
+        min-height: 50rem;
+
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYF7WXXMDG"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=/%VITE_GA_ID%/"></script>
     <script>
       location.host.includes('icons.pub') && // for production
         (() => {
@@ -69,7 +72,7 @@
           }
           gtag('js', new Date())
 
-          gtag('config', 'G-SYF7WXXMDG')
+          gtag('config', '/%VITE_GA_ID%/')
         })()
     </script>
   </body>

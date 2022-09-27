@@ -3,24 +3,9 @@ import Vue from 'vue'
 </script>
 
 <template>
-  <div class="home-content">
-    <div class="home-slogen">
+  <div flex flex-col flex-1 justify-center items-center>
+    <div items-center>
       <p>{{ $t('page.home.morning') }}</p>
     </div>
   </div>
 </template>
-
-<style>
-.home-content {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-}
-
-.home-slogen {
-  align-items: center;
-  text-align: center;
-}
-</style>

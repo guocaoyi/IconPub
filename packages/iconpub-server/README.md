@@ -32,7 +32,7 @@
 - 图册分册（volume）
 - 账户（account） // 特指当前用户
 - 用户（user） // 特指其他用户
-- 三方账号（email、tel、微信号、chrome、github）
+- 三方账号（phone、微信号、google、github）
 - 图像 (ikon: icon \ sketch \ lottie)
 - 缓存篮（basket） // 临时储存，通常为用户勾选的图标集合
 

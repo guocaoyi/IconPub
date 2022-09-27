@@ -8,14 +8,14 @@ class Group {
 export class FontProjectDto {
   id: number
   description: string
-  create_user_id: '4844256'
+  create_user_id: string
 
   font_family: 'iconpub'
   font_format: 'woff2,woff,ttf,eot'
   font_is_old: 0
   guid: null
-  name: '测试图标项目'
-  prefix: 'qm-icon-'
+  name: string
+  prefix: 'icon-'
   status: null
 
   created_at: string
@@ -87,7 +87,5 @@ export class CollectionDto {
   url: ''
 
   createdAt: string
-  created_at: string
   updatedAt: string
-  updated_at: string
 }

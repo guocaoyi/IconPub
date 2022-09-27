@@ -7,7 +7,7 @@ export const xx = `
 
 .iconpub {
   font-family: 'iconpub' !important;
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */

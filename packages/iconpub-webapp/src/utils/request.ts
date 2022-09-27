@@ -1,15 +1,18 @@
 import axios from 'axios'
+import config from '@/config'
 
 import type { App, Plugin } from 'vue'
 
 if (process.env.NODE_ENV === 'development') {
-  axios.defaults.baseURL = 'http://icons.dev.pub'
+  axios.defaults.baseURL = 'http://127.0.0.1:4001'
 } else if (process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = 'https://icons.pub'
+  axios.defaults.baseURL = config.host.site
 }
 
-// get
-export const get = ({ url, params = {} }: any) =>
+/**
+ * get method
+ */
+export const get = (url: string, params = {}) =>
   new Promise((resolve, reject) => {
     axios({
       url,
@@ -24,7 +27,9 @@ export const get = ({ url, params = {} }: any) =>
       })
   })
 
-// post
+/**
+ * post method
+ */
 export const post = ({ url, data = {}, params = {} }: any) =>
   new Promise((resolve, reject) => {
     axios({

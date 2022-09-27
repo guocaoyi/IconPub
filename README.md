@@ -4,8 +4,9 @@ IconPub is an icon management system!
 
 ## Features
 
-- Icon Font file compiler
+- IconFont file compiler
 - FrontEnd app + Node Server
+- Desktop(base on Electron + Netron)
 - Docker Images
 - Chrome Extensions for icons migration
 - Git repository to manage icons
@@ -15,23 +16,25 @@ IconPub is an icon management system!
 
 |                | Client          | Runtime        | Auth           | Storage   | File Storage  |
 | :------------- | :-------------- | :------------- | :------------- | :-------- | :------------ |
-| Community      | iconpub-web     | iconpub-server | social \ email | mysql     | bucket \ file |
-| Enterprise     | iconpub-web     | iconpub-server | ldap           | mysql     | bucket \ file |
+| Community      | iconpub-web     | iconpub-server | social \ phone | mysql     | bucket \ file |
+| Ultimate       | iconpub-web     | iconpub-server | ldap           | mysql     | bucket \ file |
 | Personal       | iconpub-desktop | iconpub-server | -              | sqlite    | bucket \ file |
-| Git            | git repo        | ci/cd          | -              | lock file | bucket \ npm  |
-| Bundler Plugin | -               | iconpub-plugin | -              | lock file | output file   |
+| Git Repository | create-iconpub  | ci/cd scripts  | -              | lock file | bucket \ npm  |
+| Bundler Plugin | iconpub-plugin  | -              | -              | lock file | output file   |
 
 ### Schedules
 
-- [x] Core [2022.08] (0%)
-- [ ] WebApp (Host + Domain + UI + Gateway) [2022.09] (0%)
-- [ ] Node Server(Core + Storage + File Storage + OpenApi) [2022.09] (0%)
-- [ ] Auth(Email \ GitHub \ WeChat \ LDAP) [2022.09] (0%)
-- [ ] Chrome Extensions [2022.10] (0%)
-- [ ] Repo Creater(Git CI/CD Scripts + Boilerplate) [2022.10] (0%)
-- [ ] Preivew Server(Demo page + Download) [2022.10] (0%)
-- [ ] Desktop [2022.10] (0%)
-- [ ] Plugin(Webpack \ Vite) [2022.10 - 2022.11] (0%)
+- [x] Core [2022.08] (10%)
+- [x] Gateway (Host \ Domain \ SSL) [2022.08] (100%)
+- [x] Deployment （DockerFile \ Images） [2022.08] (100%)
+- [ ] WebApp [2022.09] (0%)
+- [ ] Backend Service (Core \ Storage \ File Storage \ OpenApi) [2022.09] (0%)
+- [ ] Authorization (GitHub \ WeChat \ LDAP \ Phone) [2022.09] (0%)
+- [ ] Creater (Git CI/CD Scripts \ Boilerplate) [2022.10] (0%)
+- [ ] Chrome Extensions (Ext \ Schemas \ Batch Export & Import) [2022.10] (0%)
+- [ ] Preivew Server (Demo page \ Download) [2022.10] (0%)
+- [ ] Bundler Plugin (Webpack \ Vite \ Rollup) [2022.10] (0%)
+- [ ] Desktop [2022.10 - 2022.11] (0%)
 
 ## Development
 

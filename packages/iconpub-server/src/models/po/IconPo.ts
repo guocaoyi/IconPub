@@ -1,4 +1,4 @@
-export class IconVo {
+export class IconPo {
   /** icon id */
   id: number
   /** icon ablum id */

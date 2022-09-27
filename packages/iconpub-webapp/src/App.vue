@@ -1,16 +1,9 @@
-<template>
-  <el-config-provider namespace="ep">
-    <LayoutHeader />
-    <router-view></router-view>
-    <LayoutFooter />
-  </el-config-provider>
-</template>
+<script lang="ts" setup>
+import Vue from 'vue'
+</script>
 
-<style>
-#app {
-  color: var(--ep-text-color-primary);
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-</style>
+<template>
+  <LayoutHeader />
+  <RouterView />
+  <LayoutFooter />
+</template>

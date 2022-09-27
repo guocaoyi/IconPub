@@ -2,7 +2,7 @@ type URI = string
 
 export class Creator {
   id: number
-  nid: 'YZBT8e6tpzST'
+  nid: string
   nickname: string
 
   account_type: 1

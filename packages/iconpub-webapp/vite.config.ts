@@ -1,31 +1,39 @@
 import path from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import UnpluginVueComps from 'unplugin-vue-components/vite'
-import { defineConfig } from 'vite'
+import Unocss from 'unocss/vite'
+import { presetAttributify, presetUno } from 'unocss'
+import { defineConfig, loadEnv } from 'vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
-import type { UserConfigExport } from 'vite'
 
 const pathSrc = path.resolve(__dirname, 'src')
 
-export default defineConfig({
-  mode: 'development',
+function htmlPlugin(env: ReturnType<typeof loadEnv>) {
+  return {
+    name: 'html-transform-plugin',
+    transformIndexHtml: {
+      enforce: 'pre' as const,
+      transform: (html: string): string =>
+        html.replace(/\/%(.*?)%\//g, (match, p1) => env[p1] ?? match),
+    },
+  }
+}
 
+export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       '@/': `${pathSrc}/`,
     },
   },
 
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "@/styles/element/index.scss" as *;`,
-      },
-    },
-  },
+  css: {},
 
   plugins: [
+    Unocss({
+      presets: [presetAttributify(), presetUno()],
+    }),
+
+    htmlPlugin(loadEnv(mode, '.')),
     vue(),
     UnpluginVueComps({
       // allow auto load markdown components under `./src/components/`
@@ -52,7 +60,7 @@ export default defineConfig({
       },
     },
     host: '0.0.0.0',
-    port: 8000,
+    port: 3000,
     cors: true,
   },
 
@@ -61,4 +69,4 @@ export default defineConfig({
     port: 8080,
     cors: true,
   },
-} as UserConfigExport)
+}))
