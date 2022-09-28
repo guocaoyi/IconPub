@@ -13,9 +13,9 @@ export const en = {
 export const zh: typeof en = {
   header: {
     home: '首页',
-    icon: '我的项目',
-    illu: '我的插画',
-    doc: '文档',
+    icon: '图标管理',
+    illu: '插画管理',
+    doc: '说明文档',
 
     signin: '登录',
     signup: '注册',

@@ -1,11 +1,10 @@
 import * as Vue from 'vue'
 import * as VueI18n from 'vue-i18n'
-import * as VueRouter from 'vue-router'
 
 import App from '@/App.vue'
 import request from '@/utils/request'
 import { messages } from '@/locales'
-import { routes } from '@/router'
+import { router } from '@/router'
 
 import 'normalize.css/normalize.css'
 import 'uno.css'
@@ -16,12 +15,6 @@ const i18n = VueI18n.createI18n({
   fallbackLocale: 'zh',
   allowComposition: true,
   messages,
-})
-
-// router
-const router = VueRouter.createRouter({
-  history: VueRouter.createWebHistory(),
-  routes,
 })
 
 // app instance

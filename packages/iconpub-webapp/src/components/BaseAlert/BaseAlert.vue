@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import close from '@/assets/icons/close.svg'
+import IconClose from '@/assets/icons/IconClose.vue'
 </script>
 
 <template>
   <div class="flash">
     username has exited!
     <button class="flash-close">
-      <img :src="close" h-4 w-4 />
+      <IconClose />
     </button>
   </div>
 </template>
