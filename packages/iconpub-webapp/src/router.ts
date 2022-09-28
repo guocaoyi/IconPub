@@ -1,54 +1,33 @@
-import LayoutBlank from './components/LayoutBlank'
+import LayoutAuthed from '@/components/Layout/LayoutAuthed.vue'
+import LayoutBlank from '@/components/Layout/LayoutBlank.vue'
 
-export const routes = [
+import type { RouteRecordRaw } from 'vue-router'
+
+export const routes: Readonly<RouteRecordRaw[]> = [
   {
     path: '/',
     redirect: '/home',
     component: LayoutBlank,
     children: [
       {
-        path: '/',
+        path: '/home',
         name: 'dashboard',
-        component: () => import('@/views/home/index.vue'),
+        component: () => import('@/views/home/dash-board.vue'),
       },
       {
-        path: '/projects',
-        name: 'project collection',
-        component: () => import('@/views/project/index.vue'),
+        path: '/signin',
+        name: 'signin',
+        component: () => import('@/views/sign/sign-in.vue'),
       },
       {
-        path: '/project/:id',
-        name: 'project detail',
-        component: () => import('@/views/project/project-detail.vue'),
+        path: '/signup',
+        name: 'signup',
+        component: () => import('@/views/sign/sign-up.vue'),
       },
-      {
-        path: '/illus',
-        name: 'illustrations',
-        component: () => import('@/views/illu/index.vue'),
-      },
-      {
-        path: '/illu/:id',
-        name: 'illustration details',
-        component: () => import('@/views/illu/illu-detail.vue'),
-      },
-      {
-        path: '/account',
-        name: 'account setting',
-        component: () => import('@/views/account/index.vue'),
-      },
-    ],
-  },
-  // unauth
-  {
-    path: '/*',
-    name: 'NotFound',
-    component: LayoutBlank,
-    children: [
-      // docs & articles
       {
         path: '/docs',
-        name: 'articles',
-        component: () => import('@/views/docs/index.vue'),
+        name: 'article colltions',
+        component: () => import('@/views/docs/doc-colls.vue'),
       },
       {
         path: '/legal',
@@ -60,23 +39,47 @@ export const routes = [
         name: 'privacy protocol',
         component: () => import('@/views/docs/doc-privacy.vue'),
       },
-
       {
         path: '/docs/:id',
-        name: 'articles',
-        component: () => import('@/views/docs/index.vue'),
-      },
-
-      // feedback
-      {
-        path: '/feedback',
-        name: 'feedback',
-        component: () => import('@/views/feedback/index.vue'),
+        name: 'article detail',
+        component: () => import('@/views/docs/doc-detail.vue'),
       },
       {
         path: '/*',
         name: 'NotFound',
         component: () => import('@/views/error/not-found.vue'),
+      },
+    ],
+  },
+  {
+    path: '/user',
+    redirect: '/user/ikons',
+    component: LayoutAuthed,
+    children: [
+      {
+        path: 'ikons',
+        name: 'user-ikons',
+        component: () => import('@/views/ikon/ikon-colls.vue'),
+      },
+      {
+        path: 'ikon/:id',
+        name: 'user-ikon-detail',
+        component: () => import('@/views/ikon/ikon-detail.vue'),
+      },
+      {
+        path: 'illus',
+        name: 'user-illustrations',
+        component: () => import('@/views/illu/illu-colls.vue'),
+      },
+      {
+        path: 'illu/:id',
+        name: 'user-illu-detsil',
+        component: () => import('@/views/illu/illu-detail.vue'),
+      },
+      {
+        path: 'account',
+        name: 'user-account',
+        component: () => import('@/views/account/user-account.vue'),
       },
     ],
   },

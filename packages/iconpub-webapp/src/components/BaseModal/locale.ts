@@ -5,7 +5,7 @@ export const en = {
   },
 }
 
-export const zh = {
+export const zh: typeof en = {
   modal: {
     cancel: '取消',
     ok: '确认',

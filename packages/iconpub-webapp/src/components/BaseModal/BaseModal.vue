@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-interface Props {
+interface Prop {
   title: string
   display?: boolean
 }
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Prop>(), {
   title: '',
   display: false,
 })

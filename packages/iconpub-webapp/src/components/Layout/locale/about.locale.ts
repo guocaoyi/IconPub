@@ -1,6 +1,5 @@
 export const en = {
   about: {
-    me: 'IconPub open source project',
     project: {
       label: 'IconPub',
       about: 'Chrome Extension',
@@ -16,7 +15,7 @@ export const en = {
     },
     source: {
       label: 'Open Source',
-      react: 'NPM Libs',
+      npm: 'NPM Libs',
       docker: 'Docker Images',
     },
     social: {
@@ -27,9 +26,8 @@ export const en = {
   },
 }
 
-export const zh = {
+export const zh: typeof en = {
   about: {
-    me: 'IconPub开源图标管理系统',
     project: {
       label: 'IconPub',
       about: '关于项目',
@@ -45,7 +43,7 @@ export const zh = {
     },
     source: {
       label: '开源代码仓库',
-      react: 'React 图标代码库',
+      npm: '图标代码库',
       docker: 'Docker 镜像',
     },
     social: {

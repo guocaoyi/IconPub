@@ -1,5 +1,5 @@
 export const en = {}
 
-export const zh = {}
+export const zh: typeof en = {}
 
 export default { en, zh }

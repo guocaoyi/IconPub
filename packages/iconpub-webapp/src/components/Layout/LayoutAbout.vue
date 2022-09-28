@@ -1,8 +1,5 @@
 <script lang="ts" setup>
 import config from '@/config'
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
 
 const abouts = [
   {
@@ -25,7 +22,7 @@ const abouts = [
   {
     title: 'about.source.label',
     items: [
-      { label: 'about.source.react', link: config.host.site },
+      { label: 'about.source.npm', link: config.host.site },
       {
         label: 'about.source.docker',
         link: `https://hub.docker.com/search?q=${config.org}/${config.siteName}`,
@@ -45,30 +42,26 @@ const abouts = [
 <template>
   <div
     bg="light dark:dark-800"
-    c="dark-800 dark:light"
-    pt-1
-    mx-4
+    text="xs dark-800 dark:light"
+    pt-4
+    px-4
     flex
     flex-col
-    text-xs
-    md:pt-2
-    md:mx-10
     md:flex-row
-    xl:pt-2
-    xl:mx-20
-    xl:flex-row
+    md:px-10
+    xl:px-20
   >
-    <div v-for="(about, index) in abouts" :key="index" w-50 mr-12 block bg="light dark:dark-800">
-      <div font-600 pt-5 mt-1>{{ t(about.title) }}</div>
+    <div v-for="(about, index) in abouts" :key="index" md:w-45 xl:w-60>
+      <p font-500>{{ $t(about.title) }}</p>
       <p v-for="(item, i) in about.items" :key="i">
         <a
-          decoration-none
-          :target="item.link.startsWith('/') ? '_self' : '_blank'"
-          rel="noopener"
+          :target="item.link?.startsWith?.('/') ? '_self' : '_blank'"
           :href="item.link"
+          rel="noopener"
+          decoration-none
           c="dark-800 dark:light"
         >
-          {{ t(item.label) }}
+          {{ $t(item.label) }}
         </a>
       </p>
     </div>

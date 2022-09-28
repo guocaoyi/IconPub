@@ -7,7 +7,7 @@ export const en = {
   },
 }
 
-export const zh = {
+export const zh: typeof en = {
   page: {
     home: {
       morning: '即将上线！',

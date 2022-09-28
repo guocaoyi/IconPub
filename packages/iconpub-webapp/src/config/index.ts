@@ -3,7 +3,7 @@ import { menus } from './menu'
 /**
  * host
  */
-export const host = {
+const host = {
   site: 'https://icons.pub',
 }
 
