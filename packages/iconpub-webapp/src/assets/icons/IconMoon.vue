@@ -6,7 +6,7 @@
     width="1em"
     height="1em"
     focusable="false"
-    aria-hidden="true"
+    aria-label="moon"
   >
     <path
       fill-rule="evenodd"

@@ -1,11 +1,9 @@
-<script lang="ts" setup>
-import IconClose from '@/assets/icons/IconClose.vue'
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <div class="flash">
+  <div class="flash" p-4>
     username has exited!
-    <button class="flash-close">
+    <button class="flash-close" align-center>
       <IconClose />
     </button>
   </div>
@@ -30,11 +28,9 @@ import IconClose from '@/assets/icons/IconClose.vue'
   float: right;
   padding: 16px;
   margin: -16px;
-  text-align: center;
   cursor: pointer;
   background: none;
   border: 0;
-  -webkit-appearance: none;
   appearance: none;
 }
 </style>

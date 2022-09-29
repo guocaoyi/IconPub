@@ -16,7 +16,7 @@
 │   ├── locales          # i18n
 │   ├── styles           # common & global styles
 │   ├── utils            # lib & utils
-│   ├── views            # pages
+│   ├── views            # views
 │   ├── App.vue          # vue template entry
 │   ├── main.ts          # main entry
 │   └── router.ts        # router entry

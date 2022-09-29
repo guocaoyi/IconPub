@@ -10,9 +10,11 @@ import * as ViewDocsLocale from '@/views/docs/locale'
 import * as ViewErrorLocale from '@/views/error/locale'
 import * as ViewFeedBackLocale from '@/views/feedback/locale'
 import * as ViewHomeLocale from '@/views/home/locale'
-import * as ViewIkonLocale from '@/views/ikon/locale'
+import * as ViewIconLocale from '@/views/icon/locale'
 import * as ViewIlluLocale from '@/views/illu/locale'
 import * as ViewSignLocale from '@/views/sign/locale'
+
+import * as MenusLocale from '@/config/menu.locale'
 
 export const messages = {
   en: {
@@ -30,9 +32,12 @@ export const messages = {
     ...ViewErrorLocale.en,
     ...ViewFeedBackLocale.en,
     ...ViewHomeLocale.en,
-    ...ViewIkonLocale.en,
+    ...ViewIconLocale.en,
     ...ViewIlluLocale.en,
     ...ViewSignLocale.en,
+
+    // others
+    ...MenusLocale.en,
   },
   zh: {
     // components
@@ -49,8 +54,11 @@ export const messages = {
     ...ViewErrorLocale.zh,
     ...ViewFeedBackLocale.zh,
     ...ViewHomeLocale.zh,
-    ...ViewIkonLocale.zh,
+    ...ViewIconLocale.zh,
     ...ViewIlluLocale.zh,
     ...ViewSignLocale.zh,
+
+    // others
+    ...MenusLocale.zh,
   },
 }

@@ -1,12 +1,12 @@
 <template>
   <svg
+    aria-label="sunny"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     width="1em"
     height="1em"
     focusable="false"
-    aria-hidden="true"
   >
     <path
       d="M10.5 1.5C10.5 0.671573 11.1716 0 12 0C12.8284 0 13.5 0.671573 13.5 1.5V2.5C13.5 3.32843 12.8284 4 12 4C11.1716 4 10.5 3.32843 10.5 2.5V1.5Z"

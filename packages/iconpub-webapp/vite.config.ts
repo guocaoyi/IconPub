@@ -27,6 +27,11 @@ export default defineConfig(({ mode }) => ({
   },
 
   css: {},
+  build: {
+    cssCodeSplit: false,
+    chunkSizeWarningLimit: 300,
+    emptyOutDir: true,
+  },
 
   plugins: [
     Unocss({
@@ -52,7 +57,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     proxy: {
       '/api': {
-        target: 'http://icons.dev.pub',
+        target: 'http://icons.pub',
         changeOrigin: true,
         pathRewrite: {
           '/api': '',

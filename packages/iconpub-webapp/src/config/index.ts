@@ -1,19 +1,11 @@
 import { menus } from './menu'
 
 /**
- * host
- */
-const host = {
-  site: 'https://icons.pub',
-}
-
-/**
  * configuration
  */
 export const config = {
-  ...menus,
-
-  host,
+  menus,
+  cname: 'https://icons.pub',
 
   now: import.meta.env.VITE_NOW ?? '',
   org: import.meta.env.VITE_ORG ?? '',
@@ -29,4 +21,6 @@ export const config = {
   traceId: import.meta.env.VITE_TRACE_ID ?? '',
 }
 
+export { menus } from './menu'
+export type { Menu } from './menu'
 export default config

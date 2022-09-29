@@ -12,7 +12,6 @@ declare module '@vue/runtime-core' {
     BaseModal: typeof import('./components/BaseModal/BaseModal.vue')['default']
     LayoutAbout: typeof import('./components/Layout/LayoutAbout.vue')['default']
     LayoutAuthed: typeof import('./components/Layout/LayoutAuthed.vue')['default']
-    LayoutBlank: typeof import('./components/Layout/LayoutBlank.vue')['default']
     LayoutFooter: typeof import('./components/Layout/LayoutFooter.vue')['default']
     LayoutNavAside: typeof import('./components/Layout/LayoutNavAside.vue')['default']
     LayoutNavHeader: typeof import('./components/Layout/LayoutNavHeader.vue')['default']

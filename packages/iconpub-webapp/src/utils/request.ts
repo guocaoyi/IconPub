@@ -6,7 +6,7 @@ import type { App, Plugin } from 'vue'
 if (process.env.NODE_ENV === 'development') {
   axios.defaults.baseURL = 'http://127.0.0.1:4001'
 } else if (process.env.NODE_ENV === 'production') {
-  axios.defaults.baseURL = config.host.site
+  axios.defaults.baseURL = config.cname
 }
 
 /**
@@ -75,9 +75,9 @@ export const post = ({ url = '', data = {}, params = {} }) =>
 // - error check & data
 // - analysis
 export const requestPlugin: Plugin = {
-  install: (app: App, ...options: any[]) => {
+  install: (app: App, params: { timeout: number }) => {
     app.provide('request', () => {
-      console.info('request', options)
+      console.info(params)
     })
   },
 }

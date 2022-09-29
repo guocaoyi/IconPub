@@ -1,13 +1,12 @@
 <template>
   <svg
-    aria-label="Dismiss"
+    aria-label="close"
     role="img"
     height="16"
     viewBox="0 0 16 16"
     version="1.1"
     width="16"
     data-view-component="true"
-    class="octicon octicon-x"
   >
     <path
       fill-rule="evenodd"

@@ -1,20 +1,20 @@
 <script lang="ts" setup>
-import config from '@/config'
+import config, { menus } from '@/config'
 
 const abouts = [
   {
-    title: 'about.project.label',
+    title: 'about.project.title',
     items: [
-      { label: 'about.project.whoami', link: config.host.site },
-      { label: 'about.project.legal', link: '/doc/legal' },
-      { label: 'about.project.privacy', link: '/doc/privacy' },
-      { label: 'about.project.feedback', link: '/feedback' },
+      { label: 'about.project.whoami', link: menus.home.path },
+      { label: 'about.project.term', link: menus.terms.path },
+      { label: 'about.project.privacy', link: menus.privacy.path },
+      { label: 'about.project.feedback', link: menus.feedback.path },
       { label: 'about.source.license' },
     ],
   },
   {
     // source
-    title: 'about.source.label',
+    title: 'about.source.title',
     items: [
       {
         label: 'about.source.github',
@@ -29,20 +29,22 @@ const abouts = [
     ],
   },
   {
-    title: 'about.dev.label',
+    // development
+    title: 'about.dev.title',
     items: [
-      { label: 'about.dev.deploy', link: config.host.site },
-      { label: 'about.dev.bucket' },
+      { label: 'about.dev.repo' },
       { label: 'about.dev.plugin' },
-      { label: 'about.dev.desktop' },
+      { label: 'about.dev.bucket' },
+      { label: 'about.dev.deploy' },
     ],
   },
   {
     // social
-    title: 'about.social.label',
+    title: 'about.social.title',
     items: [
       { label: 'about.social.github', link: `https://github.com/${config.author}` },
       { label: 'about.social.twitter', link: `https://twitter.com/${config.socialTwitter}` },
+      { label: 'about.social.email', link: `mailto:${config.socialGmail}` },
     ],
   },
 ]
@@ -50,17 +52,13 @@ const abouts = [
 
 <template>
   <div
-    bg="light dark:dark-800"
-    text="xs dark-800 dark:light"
-    pt-4
-    px-4
-    flex
-    flex-col
-    md:flex-row
-    md:px-10
-    xl:px-20
+    display-flex
+    flex="col md:row"
+    p="t-4 x-4 md:x-10 xl:x-20"
+    text="xs dark dark:light"
+    bg="light dark:dark"
   >
-    <div v-for="(about, index) in abouts" :key="index" md:w-45 xl:w-60>
+    <div v-for="(about, index) in abouts" :key="index" w="md:45 xl:60">
       <p font-800>{{ $t(about.title) }}</p>
       <p v-for="(item, i) in about.items" :key="i">
         <a
@@ -69,7 +67,7 @@ const abouts = [
           :href="item.link"
           rel="noopener"
           decoration-none
-          c="dark-800 dark:light"
+          c="dark dark:light"
         >
           {{ $t(item.label) }}
         </a>

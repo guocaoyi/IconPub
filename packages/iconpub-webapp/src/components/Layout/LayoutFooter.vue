@@ -19,23 +19,31 @@ const licenses = [
 
 <template>
   <footer
-    bg="light dark:dark-800"
+    bg="light dark:dark"
     h-15
+    px-4
     flex
     flex-col
-    px-4
     md:flex-row
     md:items-center
     md:justify-center
-    md:h-9
+    md:h-8
     md:px-10
     xl:px-20
   >
-    <span text-xs lh-5 text="xs dark dark:light-600">
+    <span text="xs dark dark:light" lh-5>
       ©{{ $t('footer.right') }} 2022-{{ config.now }} {{ config.siteName.toUpperCase() }} &nbsp;
     </span>
-    <a v-for="(item, i) in licenses" :key="i" :href="item.link" target="_blank" decoration-none>
-      <span text="xs dark dark:light-600" lh-5>{{ item.lable }} &nbsp;</span>
+    <a
+      v-for="(item, i) in licenses"
+      :key="i"
+      :href="item.link"
+      target="_blank"
+      lh-5
+      flex
+      decoration-none
+    >
+      <span text="xs dark dark:light">{{ item.lable }} &nbsp;</span>
     </a>
   </footer>
 </template>
