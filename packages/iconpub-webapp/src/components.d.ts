@@ -7,12 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BaseAbout: typeof import('./components/LayoutFooter/BaseAbout.vue')['default']
-    BaseFooter: typeof import('./components/LayoutFooter/BaseFooter.vue')['default']
-    BaseModal: typeof import('./components/BaseModal/index.vue')['default']
-    LayoutBlank: typeof import('./components/LayoutBlank/index.vue')['default']
-    LayoutFooter: typeof import('./components/LayoutFooter/index.vue')['default']
-    LayoutHeader: typeof import('./components/LayoutHeader/index.vue')['default']
+    BaseAlert: typeof import('./components/BaseAlert/BaseAlert.vue')['default']
+    BaseFeedBack: typeof import('./components/BaseFeedBack/BaseFeedBack.vue')['default']
+    BaseModal: typeof import('./components/BaseModal/BaseModal.vue')['default']
+    LayoutAbout: typeof import('./components/Layout/LayoutAbout.vue')['default']
+    LayoutAuthed: typeof import('./components/Layout/LayoutAuthed.vue')['default']
+    LayoutFooter: typeof import('./components/Layout/LayoutFooter.vue')['default']
+    LayoutNavAside: typeof import('./components/Layout/LayoutNavAside.vue')['default']
+    LayoutNavHeader: typeof import('./components/Layout/LayoutNavHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

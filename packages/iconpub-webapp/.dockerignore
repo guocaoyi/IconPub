@@ -12,6 +12,8 @@ Dockerfile
 
 # workspace
 index.html
+.eslintignore
+.eslintrc.cjs
 tsconfig.json
 vite.config.ts
 

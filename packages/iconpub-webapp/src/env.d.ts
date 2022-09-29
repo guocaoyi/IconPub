@@ -8,9 +8,16 @@ declare module '*.vue' {
 }
 
 interface ImportMetaEnv {
-  readonly VITE_APP_NAME: string
-  readonly VITE_SOME_KEY: string
-  readonly VITE_GITHUB_URL: string
+  readonly VITE_NOW: number
+  readonly VITE_ORG: string
+  readonly VITE_AUTHOR: string
+  readonly VITE_SITE_NAME: string
+  readonly VITE_DOMAIN_BEIAN: string
+  readonly VITE_DOMAIN_ICPreadonly: string
+  readonly VITE_SOCIAL_GMAIL: string
+  readonly VITE_SOCIAL_GITHUB: string
+  readonly VITE_SOCIAL_TWITTERreadonly: string
+  readonly VITE_GA_ID: string
   readonly VITE_TRACE_ID: string
 }
 

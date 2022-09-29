@@ -1,4 +1,3 @@
 {
-  "editor.formatOnSave": true,
-  "unocss.root": "packages/iconpub-webapp"
+  "editor.formatOnSave": true
 }

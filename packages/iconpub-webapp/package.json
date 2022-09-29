@@ -2,31 +2,40 @@
   "name": "@iconpub/webapp",
   "private": true,
   "version": "0.0.1",
-  "license": "Apache-2.0 License",
+  "license": "Apache License 2.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.cjs,.ts --fix --ignore-path .gitignore",
+    "fmt": "prettier --write '**/*.{ts,vue,cjs,mjs,json}'"
   },
   "dependencies": {
     "@vueuse/core": "^9.2.0",
     "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
+    "marked": "^4.1.0",
     "normalize.css": "^8.0.1",
     "unocss": "^0.45.23",
-    "vue": "^3.2.38"
+    "vue": "^3.2.38",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
     "@types/node": "^14.18.28",
     "@unocss/preset-attributify": "^0.45.23",
     "@unocss/preset-uno": "^0.45.23",
     "@vitejs/plugin-vue": "^3.1.0",
-    "sass": "^1.54.8",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "eslint": "^8.23.1",
+    "eslint-plugin-vue": "^9.5.1",
+    "prettier": "^2.7.1",
     "typescript": "^4.8.2",
     "unplugin-vue-components": "^0.22.4",
     "vite": "^3.1.0",
-    "vue-i18n": "^9.2.2",
-    "vue-router": "^4.1.5",
     "vue-tsc": "^0.40.10"
   }
 }
