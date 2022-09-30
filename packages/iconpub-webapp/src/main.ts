@@ -25,7 +25,7 @@ app.config.warnHandler = (msg, instance, trace) => {
   console.warn(msg, trace)
 }
 app.config.errorHandler = (err, instance, info) => {
-  console.warn(err, info)
+  console.error(err, info)
 }
 
 app

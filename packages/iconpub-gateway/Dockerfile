@@ -9,8 +9,8 @@ EXPOSE 80
 EXPOSE 443
 
 # copy file
-COPY ./runner.sh ./
-COPY ./public /usr/share/nginx/html
+COPY ./public /usr/share/nginx/public
 COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./runner.sh ./
 
-# CMD ["sh", "./runner.sh"]
+CMD ["sh", "./runner.sh"]

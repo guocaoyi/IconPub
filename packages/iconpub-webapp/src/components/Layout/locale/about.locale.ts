@@ -50,13 +50,13 @@ export const zh: typeof en = {
     },
     dev: {
       title: '渐进式使用',
-      repo: '基于仓库 Hooks',
-      plugin: '基于打包插件',
+      repo: '基于仓库 CI/CD 管理',
+      plugin: '基于打包插件管理',
       bucket: '私有对象存储桶',
       deploy: '私有化部署',
     },
     social: {
-      title: '社交',
+      title: '关注我们',
       github: 'GitHub Issues',
       twitter: '推特',
       email: '邮箱',

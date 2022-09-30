@@ -8,10 +8,9 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseAlert: typeof import('./components/BaseAlert/BaseAlert.vue')['default']
-    BaseFeedBack: typeof import('./components/BaseFeedBack/BaseFeedBack.vue')['default']
     BaseModal: typeof import('./components/BaseModal/BaseModal.vue')['default']
     LayoutAbout: typeof import('./components/Layout/LayoutAbout.vue')['default']
-    LayoutAuthed: typeof import('./components/Layout/LayoutAuthed.vue')['default']
+    LayoutBasic: typeof import('./components/Layout/LayoutBasic.vue')['default']
     LayoutFooter: typeof import('./components/Layout/LayoutFooter.vue')['default']
     LayoutNavAside: typeof import('./components/Layout/LayoutNavAside.vue')['default']
     LayoutNavHeader: typeof import('./components/Layout/LayoutNavHeader.vue')['default']

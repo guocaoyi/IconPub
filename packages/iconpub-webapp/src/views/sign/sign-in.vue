@@ -5,7 +5,7 @@
     <div class="auth-form px-3">
       <input type="hidden" name="ga_id" class="js-octo-ga-id-input" />
       <div class="auth-form-header p-0">
-        <h1>Sign in to GitHub</h1>
+        <h1>Sign in to IconPub</h1>
       </div>
 
       <BaseAlert />
@@ -59,9 +59,8 @@
       </div>
 
       <p class="login-callout mt-3">
-        New to GitHub?
+        New to IconPub?
         <a href="/signup">Create an account</a>
-        .
       </p>
     </div>
   </main>
