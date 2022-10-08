@@ -21,27 +21,22 @@ export const routes: Readonly<RouteRecordRaw[]> = [
       {
         path: menus.home.path,
         meta: { requiresAuth: false, ...menus.home },
-        component: () => import('@/views/home/dash-board.vue'),
+        component: () => import('@/views/home/home-index.vue'),
       },
       {
         path: menus.space.path,
         meta: { requiresAuth: false, ...menus.space },
-        component: () => import('@/views/home/dash-board.vue'),
+        component: () => import('@/views/home/home-space.vue'),
       },
       {
-        path: menus.sign.path,
-        meta: { requiresAuth: false, ...menus.sign },
+        path: menus.album.path,
+        meta: { requiresAuth: false, ...menus.album },
+        component: () => import('@/views/albums/albums-index.vue'),
+      },
+      {
+        path: menus.signin.path,
+        meta: { requiresAuth: false, ...menus.signin },
         component: () => import('@/views/sign/sign-in.vue'),
-      },
-      {
-        path: menus.account.path,
-        meta: { requiresAuth: false, ...menus.docs },
-        component: () => import('@/views/docs/docs-index.vue'),
-      },
-      {
-        path: menus.docs.path,
-        meta: { requiresAuth: false, ...menus.docs },
-        component: () => import('@/views/docs/docs-index.vue'),
       },
       {
         path: menus.docs.path,
@@ -56,12 +51,7 @@ export const routes: Readonly<RouteRecordRaw[]> = [
       {
         path: menus.account.path,
         meta: { requiresAuth: true, ...menus.account },
-        component: () => import('@/views/user/user-index.vue'),
-      },
-      {
-        path: menus.feedback.path,
-        meta: { requiresAuth: true, ...menus.feedback },
-        component: () => import('@/views/user/user-feedback.vue'),
+        component: () => import('@/views/account/account-index.vue'),
       },
       {
         path: ':pathMatch(.*)*',
@@ -81,7 +71,7 @@ export const router = VueRouter.createRouter({
 router.beforeEach((to) => {
   if (to.meta.requiresAuth) {
     return {
-      path: menus.sign.path,
+      path: menus.signin.path,
       query: { redirect: to.fullPath },
     }
   }

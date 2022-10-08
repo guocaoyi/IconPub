@@ -11,8 +11,10 @@ import 'uno.css'
 
 // i18n & locales
 const i18n = VueI18n.createI18n({
-  locale: localStorage.getItem('__ICON_PUB_LOCALE') ?? 'zh', // en
-  fallbackLocale: 'zh',
+  legacy: false,
+  locale: localStorage.getItem('__ICON_PUB_LOCALE') ?? 'en', // en
+  globalInjection: true,
+  fallbackLocale: 'en',
   allowComposition: true,
   messages,
 })

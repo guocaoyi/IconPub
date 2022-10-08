@@ -9,8 +9,8 @@ import IconMoon from '@/assets/icons/IconMoon.vue'
 
 const links = [
   { label: menus.home.locale, link: menus.home.path },
-  { label: menus.icons.locale, link: menus.icons.path },
-  { label: menus.illus.locale, link: menus.illus.path },
+  { label: menus.space.locale, link: menus.space.path },
+  { label: menus.albums.locale, link: menus.albums.path },
   { label: menus.docs.locale, link: menus.docs.path },
 ]
 const { locale } = useI18n()
@@ -56,7 +56,7 @@ const avator = ''
       </a>
       <router-link
         v-else
-        :to="menus.sign.path"
+        :to="menus.signin.path"
         h-7
         w-16
         ml-2
@@ -67,7 +67,7 @@ const avator = ''
         bg="white dark:dark"
         border="1px solid #9254de rd-1"
       >
-        <span text="sm dark dark:light">{{ $t(menus.sign.locale) }}</span>
+        <span text="sm dark dark:light">{{ $t(menus.signin.locale) }}</span>
       </router-link>
     </div>
   </div>

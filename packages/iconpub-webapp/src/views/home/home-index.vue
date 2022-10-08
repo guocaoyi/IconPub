@@ -11,6 +11,7 @@ import IlluBuilding from '@/assets/illus/IlluBuilding.vue'
     items-center
     text="4 dark dark:light"
     min-height="[cacl(100vh - 18rem)]"
+    class="page-conatienr"
   >
     <IlluBuilding />
     <p>{{ $t('home.morning') }}</p>

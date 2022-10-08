@@ -8,7 +8,6 @@ const abouts = [
       { label: 'about.project.whoami', link: menus.home.path },
       { label: 'about.project.term', link: menus.terms.path },
       { label: 'about.project.privacy', link: menus.privacy.path },
-      { label: 'about.project.feedback', link: menus.feedback.path },
       { label: 'about.source.license' },
     ],
   },

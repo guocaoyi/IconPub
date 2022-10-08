@@ -11,6 +11,8 @@ export const menus = {
   root: { name: 'root', path: '/' },
   home: { name: 'home', path: '/home', locale: 'menu.home' },
   space: { name: 'space', path: '/space', locale: 'menu.space' },
+  albums: { name: 'albums', path: '/albums', locale: 'menu.album' },
+  album: { name: 'album-detail', path: '/album/:id', locale: 'menu.album' },
   signin: { name: 'signin', path: '/signin', locale: 'menu.signin' },
 
   // docs
@@ -21,6 +23,4 @@ export const menus = {
 
   // account
   account: { name: 'account', path: '/account', locale: 'menu.account' },
-  albums: { name: 'albums', path: '/albums', locale: 'menu.album' },
-  album: { name: 'album-detail', path: '/album/:id', locale: 'menu.album' },
 }

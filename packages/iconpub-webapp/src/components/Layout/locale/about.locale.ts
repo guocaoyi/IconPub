@@ -5,7 +5,6 @@ export const en = {
       whoami: 'About',
       term: 'Terms',
       privacy: 'Privacy',
-      feedback: 'Feedback',
     },
     source: {
       title: 'Open Source',
@@ -38,7 +37,6 @@ export const zh: typeof en = {
       whoami: '关于项目',
       term: '用户协议',
       privacy: '隐私条款',
-      feedback: '反馈建议',
     },
     source: {
       title: '开源仓库',

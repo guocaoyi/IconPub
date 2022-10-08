@@ -4,6 +4,7 @@ import config from '@/config'
 const licenses = [
   {
     lable: config.domainBeian,
+    locale: 'footer.beian',
     type: 'police',
     link: `http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${
       config.domainBeian.match(/\d+/gi)?.[0] ?? ''
@@ -11,6 +12,7 @@ const licenses = [
   },
   {
     lable: config.domainIcp,
+    locale: 'footer.icp',
     type: 'icp',
     link: 'https://beian.miit.gov.cn',
   },
