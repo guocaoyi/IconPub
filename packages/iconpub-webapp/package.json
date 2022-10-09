@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.cjs,.ts --fix --ignore-path .gitignore",
-    "fmt": "prettier --write '**/*.{ts,vue,cjs,mjs,json}'"
+    "fmt": "prettier --write '**/*.{ts,vue,cjs,mjs,json,md}'"
   },
   "dependencies": {
     "@vueuse/core": "^9.2.0",

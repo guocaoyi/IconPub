@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 
 /**
  * IKON Service
- * @author gyaldacy
+ * @author yalda
  * @description_zh IKON Service
  */
 @Injectable()

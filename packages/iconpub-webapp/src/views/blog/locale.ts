@@ -1,5 +1,5 @@
 export const en = {
-  docs: {
+  blog: {
     notfound: {
       title: '404',
       description: 'not thing found',
@@ -8,7 +8,7 @@ export const en = {
 }
 
 export const zh: typeof en = {
-  docs: {
+  blog: {
     notfound: {
       title: '404',
       description: '啥也妹有',

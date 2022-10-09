@@ -7,6 +7,12 @@ declare module '*.vue' {
   export default component
 }
 
+declare module '*.md' {
+  import type { ComponentOptions } from 'vue'
+  const Component: ComponentOptions
+  export default Component
+}
+
 interface ImportMetaEnv {
   readonly VITE_NOW: number
   readonly VITE_ORG: string

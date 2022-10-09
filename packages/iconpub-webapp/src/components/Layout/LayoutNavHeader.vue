@@ -1,19 +1,20 @@
 <script lang="ts" setup>
 import config, { menus } from '@/config'
-import { useI18n } from 'vue-i18n'
 import { isDark, toggleDark } from '@/store/useDark'
+import { useI18nPlus } from '@/store/useI18nPlus'
 
 import IconI18n from '@/assets/icons/IconI18n.vue'
 import IconSunny from '@/assets/icons/IconSunny.vue'
 import IconMoon from '@/assets/icons/IconMoon.vue'
 
+const { toggleLocale, alias } = useI18nPlus()
+
 const links = [
   { label: menus.home.locale, link: menus.home.path },
-  { label: menus.space.locale, link: menus.space.path },
+  { label: menus.pub.locale, link: menus.pub.path },
   { label: menus.albums.locale, link: menus.albums.path },
-  { label: menus.docs.locale, link: menus.docs.path },
+  { label: menus.blogs.locale, link: menus.blogs.path },
 ]
-const { locale } = useI18n()
 
 const shield = `https://img.shields.io/github/stars/${config.author}?style=social`
 const avator = ''
@@ -22,7 +23,7 @@ const avator = ''
 <template>
   <div flex items-center justify-between h-16 lh-16 px="4 md:10 xl:20" font-500>
     <nav flex items-center>
-      <a :title="config.siteName" flex m="r-2 md:r-4 xl:6">
+      <a :title="config.siteName" flex m="r-2 md:r-4 xl:r-6">
         <img src="@/assets/logo.png" :alt="config.siteName" h-8 border="rd-1/2" />
       </a>
       <router-link
@@ -41,9 +42,9 @@ const avator = ''
         <img h-5 :src="shield" alt="preview badge" />
       </a>
 
-      <a items-center hidden md:flex mx-2 @click="$i18n.locale = locale == 'zh' ? 'en' : 'zh'">
+      <a items-center hidden md:flex mx-2 @click="toggleLocale">
         <IconI18n />
-        {{ locale == 'zh' ? '中' : 'EN' }}
+        {{ alias }}
       </a>
 
       <a items-center hidden md:flex mx-2 @click="toggleDark()">

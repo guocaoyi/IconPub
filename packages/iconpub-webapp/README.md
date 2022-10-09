@@ -8,13 +8,11 @@
 │   └── iconpub.ico      # ico
 │   └── iconpub.png      # logo
 ├── src
-│   ├── articles             # web apis
 │   ├── assets           # static
 │   ├── components       # common components
 │   ├── composables      # composition apis
 │   ├── config           # config & import.meta.env
 │   ├── locales          # i18n
-│   ├── styles           # common & global styles
 │   ├── utils            # lib & utils
 │   ├── views            # views
 │   ├── App.vue          # vue template entry
@@ -24,26 +22,12 @@
 └── package.json
 ```
 
-## Views
-
-```bash
-- [✓] 首页 # / or /home
-- [ ] 官方图标库 # /offical
-- [ ] 插画库 # /illustrations
-- [ ] 项目 # /projects
-- [ ] 项目详情 # /project/:id
-- [ ] 个人设置 # /user
-- [ ] 预览 # /previewd
-- [ ] 反馈 # /feedback
-- [ ] 帮助中心 # /wiki
-- [ ] 404 # /notfound
-```
-
 ## TODOs
 
 - [x] Arch: SPA (browser router)
 - [x] Arch: i18n(zh_CH, en)
-- [ ] Style: theme dark mode
+- [x] Style: theme dark mode
+- [x] Style: responsive layout design
 - [ ] Feature: blog(markdown support)
 
 ## Project setup

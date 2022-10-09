@@ -52,8 +52,9 @@
               class="label-link position-absolute top-0 right-0"
               tabindex="0"
               href="/password_reset"
-              >Forgot password?</a
             >
+              Forgot password?
+            </a>
           </div>
         </form>
       </div>

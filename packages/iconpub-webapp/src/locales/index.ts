@@ -5,7 +5,7 @@ import * as LayoutFooterLocale from '@/components/Layout/locale/footer.locale'
 
 import * as ViewAccountLocale from '@/views/account/locale'
 import * as ViewAlbumsLocale from '@/views/albums/locale'
-import * as ViewDocsLocale from '@/views/docs/locale'
+import * as ViewBlogLocale from '@/views/blog/locale'
 import * as ViewErrorLocale from '@/views/error/locale'
 import * as ViewHomeLocale from '@/views/home/locale'
 import * as ViewSignLocale from '@/views/sign/locale'
@@ -24,7 +24,7 @@ export const messages = {
     // views
     ...ViewAccountLocale.en,
     ...ViewAlbumsLocale.en,
-    ...ViewDocsLocale.en,
+    ...ViewBlogLocale.en,
     ...ViewErrorLocale.en,
     ...ViewHomeLocale.en,
 
@@ -43,7 +43,7 @@ export const messages = {
 
     // views
     ...ViewAccountLocale.zh,
-    ...ViewDocsLocale.zh,
+    ...ViewBlogLocale.zh,
     ...ViewAlbumsLocale.zh,
     ...ViewErrorLocale.zh,
     ...ViewHomeLocale.zh,

@@ -10,7 +10,6 @@ import IlluBuilding from '@/assets/illus/IlluBuilding.vue'
     justify-center
     items-center
     text="4 dark dark:light"
-    min-height="[cacl(100vh - 18rem)]"
     class="page-conatienr"
   >
     <IlluBuilding />
@@ -22,7 +21,7 @@ import IlluBuilding from '@/assets/illus/IlluBuilding.vue'
 <style scoped>
 @media (min-width: 48rem) {
   .page-conatienr {
-    min-height: calc(100vh - 18rem);
+    min-height: calc(100vh - 16.5rem);
   }
 }
 </style>

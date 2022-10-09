@@ -41,7 +41,10 @@ const abouts = [
     // social
     title: 'about.social.title',
     items: [
-      { label: 'about.social.github', link: `https://github.com/${config.author}` },
+      {
+        label: 'about.social.github',
+        link: `https://github.com/${config.author}/${config.siteName}/issues`,
+      },
       { label: 'about.social.twitter', link: `https://twitter.com/${config.socialTwitter}` },
       { label: 'about.social.email', link: `mailto:${config.socialGmail}` },
     ],

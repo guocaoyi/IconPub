@@ -1,18 +1,16 @@
 export const en = {
   menu: {
     home: 'Home',
-    space: 'IconSpace',
+    pub: 'Public',
     album: 'Albums',
-    signin: 'Sign in',
-    signup: 'Sign up',
-    signout: 'Sign out',
 
-    // docs
-    doc: 'Docs',
+    blog: 'Blog',
     terms: 'Terms',
     privacy: 'Privacy',
 
-    // account
+    signin: 'Sign in',
+    signup: 'Sign up',
+    signout: 'Sign out',
     account: 'Account',
   },
 }
@@ -20,18 +18,16 @@ export const en = {
 export const zh: typeof en = {
   menu: {
     home: '首页',
-    space: '图标库',
+    pub: '公共库',
     album: '图库管理',
-    signin: '登录',
-    signout: '注册',
-    signup: '退出账号',
 
-    // docs
-    doc: '帮忙文档',
+    blog: '帮忙文档',
     terms: '用户协议',
     privacy: '隐私条款',
 
-    // account
+    signin: '登录',
+    signout: '注册',
+    signup: '退出账号',
     account: '账号管理',
   },
 }

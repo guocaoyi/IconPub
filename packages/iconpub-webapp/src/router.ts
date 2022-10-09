@@ -24,29 +24,29 @@ export const routes: Readonly<RouteRecordRaw[]> = [
         component: () => import('@/views/home/home-index.vue'),
       },
       {
-        path: menus.space.path,
-        meta: { requiresAuth: false, ...menus.space },
-        component: () => import('@/views/home/home-space.vue'),
+        path: menus.pub.path,
+        meta: { requiresAuth: false, ...menus.pub },
+        component: () => import('@/views/home/home-pub.vue'),
       },
       {
         path: menus.album.path,
-        meta: { requiresAuth: false, ...menus.album },
+        meta: { requiresAuth: true, ...menus.album },
         component: () => import('@/views/albums/albums-index.vue'),
+      },
+      {
+        path: menus.albums.path,
+        meta: { requiresAuth: true, ...menus.albums },
+        component: () => import('@/views/albums/album-detail.vue'),
+      },
+      {
+        path: menus.blog.path,
+        meta: { requiresAuth: false, ...menus.blog },
+        component: () => import('@/views/blog/blog-content.vue'),
       },
       {
         path: menus.signin.path,
         meta: { requiresAuth: false, ...menus.signin },
         component: () => import('@/views/sign/sign-in.vue'),
-      },
-      {
-        path: menus.docs.path,
-        meta: { requiresAuth: false, ...menus.docs },
-        component: () => import('@/views/docs/docs-index.vue'),
-      },
-      {
-        path: menus.doc.path,
-        meta: { requiresAuth: false, ...menus.doc },
-        component: () => import('@/views/docs/doc-detail.vue'),
       },
       {
         path: menus.account.path,
