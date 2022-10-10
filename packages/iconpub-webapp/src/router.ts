@@ -14,8 +14,7 @@ declare module 'vue-router' {
 
 export const routes: Readonly<RouteRecordRaw[]> = [
   {
-    path: menus.root.path,
-    redirect: menus.home.path,
+    path: menus.home.path,
     component: LayoutBasic,
     children: [
       {
@@ -39,9 +38,14 @@ export const routes: Readonly<RouteRecordRaw[]> = [
         component: () => import('@/views/albums/album-detail.vue'),
       },
       {
+        path: menus.blogs.path,
+        meta: { requiresAuth: false, ...menus.blogs },
+        component: () => import('@/views/blog/blog-posts.vue'),
+      },
+      {
         path: menus.blog.path,
         meta: { requiresAuth: false, ...menus.blog },
-        component: () => import('@/views/blog/blog-content.vue'),
+        component: () => import('@/views/blog/blog-article.vue'),
       },
       {
         path: menus.signin.path,

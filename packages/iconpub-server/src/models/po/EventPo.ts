@@ -1,5 +1,4 @@
 export class EventPo {
-  /** 用户名 */
   accountID: number
   /** 操作人 */
   username: string

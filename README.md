@@ -68,8 +68,13 @@ docker run --name iconpub-gateway \
 -p 80:80 \
 -p 443:443 \
 -itd \
--m 256m \
+-m 512m \
 iconpub-gateway:latest
+```
+
+```bash
+# db
+docker run --name iconpub-mongo -itd -p 27017:27017 -m 4096m mongo:5.0.8
 ```
 
 ```bash
@@ -79,5 +84,5 @@ docker run --name iconpub-server -itd -p 4001:4001 -m 2048m iconpub-server:lates
 
 ```bash
 # webapp
-docker run --name iconpub-webapp -itd -p 4000:4000 -m 256m iconpub-webapp:latest
+docker run --name iconpub-webapp -itd -p 4000:4000 -m 512m iconpub-webapp:latest
 ```

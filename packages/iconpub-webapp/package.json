@@ -12,7 +12,8 @@
     "fmt": "prettier --write '**/*.{ts,vue,cjs,mjs,json,md}'"
   },
   "dependencies": {
-    "@vueuse/core": "^9.2.0",
+    "@vueuse/core": "^9.3.0",
+    "@vueuse/integrations": "^9.3.0",
     "axios": "^0.27.2",
     "dayjs": "^1.11.5",
     "marked": "^4.1.0",

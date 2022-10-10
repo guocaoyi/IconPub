@@ -5,7 +5,7 @@ import { IkonService } from '../service/ikon.service'
 /**
  * project controller
  * @author yalda
- * @date 2020-10-09
+ * @date 2022-10-09
  */
 @Controller('/project')
 export class ProjectController {

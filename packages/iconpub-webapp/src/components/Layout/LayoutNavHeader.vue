@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import config, { menus } from '@/config'
-import { isDark, toggleDark } from '@/store/useDark'
-import { useI18nPlus } from '@/store/useI18nPlus'
+import { isDark, toggleDark } from '@/composables/useDark'
+import { useI18nPlus } from '@/composables/useI18nPlus'
 
 import IconI18n from '@/assets/icons/IconI18n.vue'
 import IconSunny from '@/assets/icons/IconSunny.vue'

@@ -112,7 +112,6 @@ importers:
       prettier: ^2.7.1
       reflect-metadata: ^0.1.13
       rimraf: ^3.0.2
-      rxjs: ^7.5.6
       sequelize: ^6.21.4
       sequelize-typescript: ^2.1.3
       source-map-support: ^0.5.21
@@ -123,14 +122,13 @@ importers:
       tsconfig-paths: ^4.1.0
       typescript: ^4.8.2
     dependencies:
-      '@nestjs/common': 9.1.2_c667cf017b020ad25d054a461e0ef748
-      '@nestjs/core': 9.1.2_ce43feedde757addda27731e58aac0fd
-      '@nestjs/mongoose': 9.2.0_64cd7b94622f47ec130a555d0d7a2467
+      '@nestjs/common': 9.1.2_reflect-metadata@0.1.13
+      '@nestjs/core': 9.1.2_127952e364c81b3305470b500cd907a7
+      '@nestjs/mongoose': 9.2.0_66dd4c276751cd6e663d32ce3bae041f
       '@nestjs/platform-express': 9.1.2_a30697a3c584796adbfb8ed8799c3859
       '@nestjs/swagger': 6.1.2_c640c6247b8cc634c4c28f08d53cb53b
       mongoose: 6.6.2
       reflect-metadata: 0.1.13
-      rxjs: 7.5.7
     devDependencies:
       '@nestjs/cli': 9.1.3
       '@nestjs/schematics': 9.0.3_typescript@4.8.3
@@ -167,7 +165,8 @@ importers:
       '@vitejs/plugin-vue': ^3.1.0
       '@vue/eslint-config-prettier': ^7.0.0
       '@vue/eslint-config-typescript': ^11.0.2
-      '@vueuse/core': ^9.2.0
+      '@vueuse/core': ^9.3.0
+      '@vueuse/integrations': ^9.3.0
       axios: ^0.27.2
       dayjs: ^1.11.5
       eslint: ^8.23.1
@@ -185,6 +184,7 @@ importers:
       vue-tsc: ^0.40.10
     dependencies:
       '@vueuse/core': 9.3.0_vue@3.2.39
+      '@vueuse/integrations': 9.3.0_axios@0.27.2+vue@3.2.39
       axios: 0.27.2
       dayjs: 1.11.5
       marked: 4.1.0
@@ -1239,7 +1239,7 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nestjs/common/9.1.2_c667cf017b020ad25d054a461e0ef748:
+  /@nestjs/common/9.1.2_reflect-metadata@0.1.13:
     resolution: {integrity: sha512-zpF4DaLvvsCVqfrf9LJfSeYP+SBCWCFbOCTOmEZ5Gs6Hralia6s2kS+CSicJKx8IpnyC6ZReuqdTbjcPl4yunA==}
     peerDependencies:
       cache-manager: '*'
@@ -1257,12 +1257,11 @@ packages:
     dependencies:
       iterare: 1.2.1
       reflect-metadata: 0.1.13
-      rxjs: 7.5.7
       tslib: 2.4.0
       uuid: 9.0.0
     dev: false
 
-  /@nestjs/core/9.1.2_ce43feedde757addda27731e58aac0fd:
+  /@nestjs/core/9.1.2_127952e364c81b3305470b500cd907a7:
     resolution: {integrity: sha512-wrb/U8PN50K9wEHOLifR9bFKDH8+Dr37rXBB5J+9v3tSWEHkT4o2OiJ8qFmfX5B9GwGE/YRKaJqxw/ScvYvPFw==}
     requiresBuild: true
     peerDependencies:
@@ -1280,7 +1279,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.2_c667cf017b020ad25d054a461e0ef748
+      '@nestjs/common': 9.1.2_reflect-metadata@0.1.13
       '@nestjs/platform-express': 9.1.2_a30697a3c584796adbfb8ed8799c3859
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
@@ -1288,7 +1287,6 @@ packages:
       object-hash: 3.0.0
       path-to-regexp: 3.2.0
       reflect-metadata: 0.1.13
-      rxjs: 7.5.7
       tslib: 2.4.0
       uuid: 9.0.0
     transitivePeerDependencies:
@@ -1308,11 +1306,11 @@ packages:
       class-validator:
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.2_c667cf017b020ad25d054a461e0ef748
+      '@nestjs/common': 9.1.2_reflect-metadata@0.1.13
       reflect-metadata: 0.1.13
     dev: false
 
-  /@nestjs/mongoose/9.2.0_64cd7b94622f47ec130a555d0d7a2467:
+  /@nestjs/mongoose/9.2.0_66dd4c276751cd6e663d32ce3bae041f:
     resolution: {integrity: sha512-fC33b8nwR7C3y6hlTyKjiHQVU57SFOd3Dwa6alWj3BOhK5bHt8Ld6qOK2G35/XXPHjtSIk3LIKEqwyK5xGcmBA==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
@@ -1321,11 +1319,10 @@ packages:
       reflect-metadata: ^0.1.12
       rxjs: ^7.0.0
     dependencies:
-      '@nestjs/common': 9.1.2_c667cf017b020ad25d054a461e0ef748
-      '@nestjs/core': 9.1.2_ce43feedde757addda27731e58aac0fd
+      '@nestjs/common': 9.1.2_reflect-metadata@0.1.13
+      '@nestjs/core': 9.1.2_127952e364c81b3305470b500cd907a7
       mongoose: 6.6.2
       reflect-metadata: 0.1.13
-      rxjs: 7.5.7
     dev: false
 
   /@nestjs/platform-express/9.1.2_a30697a3c584796adbfb8ed8799c3859:
@@ -1334,8 +1331,8 @@ packages:
       '@nestjs/common': ^9.0.0
       '@nestjs/core': ^9.0.0
     dependencies:
-      '@nestjs/common': 9.1.2_c667cf017b020ad25d054a461e0ef748
-      '@nestjs/core': 9.1.2_ce43feedde757addda27731e58aac0fd
+      '@nestjs/common': 9.1.2_reflect-metadata@0.1.13
+      '@nestjs/core': 9.1.2_127952e364c81b3305470b500cd907a7
       body-parser: 1.20.0
       cors: 2.8.5
       express: 4.18.1
@@ -1384,8 +1381,8 @@ packages:
       '@fastify/static':
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.2_c667cf017b020ad25d054a461e0ef748
-      '@nestjs/core': 9.1.2_ce43feedde757addda27731e58aac0fd
+      '@nestjs/common': 9.1.2_reflect-metadata@0.1.13
+      '@nestjs/core': 9.1.2_127952e364c81b3305470b500cd907a7
       '@nestjs/mapped-types': 1.1.0_f7ecf6ac06c3f701d460a8758a6be350
       js-yaml: 4.1.0
       lodash: 4.17.21
@@ -1410,8 +1407,8 @@ packages:
       '@nestjs/platform-express':
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.2_c667cf017b020ad25d054a461e0ef748
-      '@nestjs/core': 9.1.2_ce43feedde757addda27731e58aac0fd
+      '@nestjs/common': 9.1.2_reflect-metadata@0.1.13
+      '@nestjs/core': 9.1.2_127952e364c81b3305470b500cd907a7
       '@nestjs/platform-express': 9.1.2_a30697a3c584796adbfb8ed8799c3859
       tslib: 2.4.0
     dev: true
@@ -2301,6 +2298,50 @@ packages:
       '@types/web-bluetooth': 0.0.15
       '@vueuse/metadata': 9.3.0
       '@vueuse/shared': 9.3.0_vue@3.2.39
+      vue-demi: 0.13.11_vue@3.2.39
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/integrations/9.3.0_axios@0.27.2+vue@3.2.39:
+    resolution: {integrity: sha512-KkJpC97VioZUpSw7rvgnqoLgTztLlLLGdYp6WQKn69cJiItsJVSRZrmI+X9YVxPBzuLvRymYZfp0RMyISVFHTw==}
+    peerDependencies:
+      async-validator: '*'
+      axios: '*'
+      change-case: '*'
+      drauu: '*'
+      focus-trap: '*'
+      fuse.js: '*'
+      jwt-decode: '*'
+      nprogress: '*'
+      qrcode: '*'
+      universal-cookie: '*'
+    peerDependenciesMeta:
+      async-validator:
+        optional: true
+      axios:
+        optional: true
+      change-case:
+        optional: true
+      drauu:
+        optional: true
+      focus-trap:
+        optional: true
+      fuse.js:
+        optional: true
+      jwt-decode:
+        optional: true
+      nprogress:
+        optional: true
+      qrcode:
+        optional: true
+      universal-cookie:
+        optional: true
+    dependencies:
+      '@vueuse/core': 9.3.0_vue@3.2.39
+      '@vueuse/shared': 9.3.0_vue@3.2.39
+      axios: 0.27.2
       vue-demi: 0.13.11_vue@3.2.39
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -6260,6 +6301,7 @@ packages:
     resolution: {integrity: sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==}
     dependencies:
       tslib: 2.4.0
+    dev: true
 
   /safe-buffer/5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}

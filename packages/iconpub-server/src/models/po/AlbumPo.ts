@@ -24,11 +24,10 @@ export class AlbumPo {
   /** 项目下辖图标数 */
   resourceCount: number
 
-  /** 分组 */
   tags: string[]
   subgroupInfo: GroupPo[]
   extraInfo: { tags: string[]; subgroupInfo: GroupPo[] }
-  type: 1
+  type: 0 | 1 | 2
 
   createdAt: string
 

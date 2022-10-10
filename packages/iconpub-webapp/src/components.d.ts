@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseAlert: typeof import('./components/BaseAlert/BaseAlert.vue')['default']
+    BaseArticleWrap: typeof import('./components/BaseArticleWrap/BaseArticleWrap.vue')['default']
     BaseModal: typeof import('./components/BaseModal/BaseModal.vue')['default']
     LayoutAbout: typeof import('./components/Layout/LayoutAbout.vue')['default']
     LayoutBasic: typeof import('./components/Layout/LayoutBasic.vue')['default']

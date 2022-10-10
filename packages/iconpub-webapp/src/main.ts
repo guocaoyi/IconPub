@@ -33,13 +33,10 @@ app.config.errorHandler = (err, instance, info) => {
 app
   .use(i18n)
   .use(router)
-  .use(request, { timeout: 10 * 10000 })
+  .use(request, { timeout: 10 * 1000 })
   .mount('#app')
 
 if (process.env.NODE_ENV === 'development') {
   globalThis.__VUE_OPTIONS_API__ = true
   globalThis.__VUE_PROD_DEVTOOLS__ = true
-} else {
-  globalThis.__VUE_OPTIONS_API__ = false
-  globalThis.__VUE_PROD_DEVTOOLS__ = false
 }
