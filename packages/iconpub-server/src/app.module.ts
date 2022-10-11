@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common'
-import { MongooseModule } from '@nestjs/mongoose'
+// import { MongooseModule } from '@nestjs/mongoose'
 
 import { AccountController } from './controller/account.controller'
 import { AlbumController } from './controller/album.controller'
@@ -9,6 +9,8 @@ import { SystemController } from './controller/system.controller'
 import { UserController } from './controller/user.controller'
 
 import { AppService } from './service/app.service'
+import { IkonService } from './service/ikon.service'
+import { UserService } from './service/user.service'
 
 @Module({
   // imports: [MongooseModule.forRoot('mongodb://127.0.0.1/iconpub')],
@@ -21,6 +23,6 @@ import { AppService } from './service/app.service'
     SystemController,
     UserController,
   ],
-  providers: [AppService],
+  providers: [AppService, IkonService, UserService],
 })
 export class AppModule {}

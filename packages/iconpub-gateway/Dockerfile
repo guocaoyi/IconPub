@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:1.23-alpine
 
 LABEL maintainer="IconPub Gateway <icons.pub>"
 
@@ -9,8 +9,7 @@ EXPOSE 80
 EXPOSE 443
 
 # copy file
-COPY ./public /usr/share/nginx/public
+COPY ./public /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./runner.sh ./
 
-CMD ["sh", "./runner.sh"]
+# CMD ["sh", "./runner.sh"]

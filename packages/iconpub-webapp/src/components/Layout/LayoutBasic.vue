@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, onUpdated } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { menus } from '@/config'
 
 const { path } = useRoute()

@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import axios from 'axios'
 
 import { useArticle } from '@/composables/useArticle'
 

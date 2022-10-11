@@ -1,57 +1,80 @@
-# IconPub WebApp
+# IconPub
 
-## Reference
+矢量图标管理平台（字体图标、浏览器迁移插件、自定义存储桶、私有化部署）
+
+## 功能特性
+
+- 图标字体文件构建
+- 前端应用 + 后端运行时
+- 支持 Docker 容器打包，快速部署私服
+- 提供 Chrome 浏览器插件进行转移图标
+- Git 仓库方式维护图标
+- 前端编译时插件提供
+
+### 方案
+
+|              | 客户端         | 运行时         | 鉴权           | 持久化    | 文件储存       |
+| :----------- | :------------- | :------------- | :------------- | :-------- | :------------- |
+| 社区版       | iconpub-web    | iconpub-server | social \ phone | mysql     | bucket \ file  |
+| 私服版       | iconpub-web    | iconpub-server | ldap \ account | mysql     | bucket \ file  |
+| 仓库托管方案 | create-iconpub | iconpub-core   | -              | lock file | bucket \ npm   |
+| 编译插件方案 | iconpub-plugin | vite/webpack   | -              | lock file | output bunlder |
+
+### 开发进度
+
+- [x] 核心包 [2022.08] (10%)
+- [x] 网关 （主机、域名、证书）[2022.08] (100%)
+- [x] 运维部署 （Docker 脚本、镜像发布）[2022.08] (100%)
+- [ ] 前端应用 [2022.09] (20%)
+- [ ] 后台服务 （核心功能、持久层、文件储存、开放接口） [2022.09] (5%)
+- [ ] 鉴权 （GitHub、微信、LDAP、手机号） [2022.09] (0%)
+- [ ] 脚手架 （Git CI/CD 脚本、模板项目） [2022.10] (10%)
+- [ ] 浏览器插件 （迁移插件、协议、批量导入导出）[2022.10] (10%)
+- [ ] 预览服务 [2022.10] (0%)
+- [ ] 打包插件 （Webpack、Vite、Rollup） [2022.10] (0%)
+
+## 开发
+
+### 构建镜像
 
 ```bash
-├── mock                 # mock data
-├── public
-│   └── iconpub.ico      # ico
-│   └── iconpub.png      # logo
-├── src
-│   ├── assets           # static
-│   ├── components       # common components
-│   ├── composables      # composition apis
-│   ├── config           # config & import.meta.env
-│   ├── locales          # i18n
-│   ├── utils            # lib & utils
-│   ├── views            # views
-│   ├── App.vue          # vue template entry
-│   ├── main.ts          # main entry
-│   └── router.ts        # router entry
-├── README.md
-└── package.json
+# gateway
+cd packages/iconpub-gateway
+docker build -t iconpub-gateway .
+
+# server
+cd packages/iconpub-server
+docker build -t iconpub-server .
+
+# webapp
+cd packages/iconpub-webapp
+docker build -t iconpub-webapp .
 ```
 
-## TODOs
-
-- [x] Arch: SPA (browser router)
-- [x] Arch: i18n(zh_CH, en)
-- [x] Style: theme dark mode
-- [x] Style: responsive layout design
-- [ ] Feature: blog(markdown support)
-
-## Project setup
+### 运行容器
 
 ```bash
-npm install
+# docker compose
+docker compose up -d
 ```
 
-### Compiles and hot-reloads for development
-
 ```bash
-npm run dev
+# gateway (repalce *** to you folder)
+docker run --name iconpub-gateway \
+-v /***/nginx:/etc/ssl \
+-p 80:80 \
+-p 443:443 \
+-itd \
+-m 256m \
+iconpub-gateway:latest
 ```
 
-### Compiles and minifies for production
-
 ```bash
-npm run build
+# server
+docker run --name iconpub-server -itd -p 4001:4001 -m 2048m iconpub-server:latest
 ```
 
-## Usage
-
 ```bash
-cd iconpub/packages/iconpub-webapp
-npm i
-npm run dev
+# webapp
+docker run --name iconpub-webapp -itd -p 4000:4000 -m 256m iconpub-webapp:latest
 ```

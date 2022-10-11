@@ -14,7 +14,7 @@ export class SignLogPo {
 /**
  * ActiveLog Dto
  * @description log for active
- * @description_chinese 操作日志
+ * @description_zh 操作日志
  */
 export class ActiveLogDto {
   id: number

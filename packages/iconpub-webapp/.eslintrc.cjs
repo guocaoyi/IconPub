@@ -13,7 +13,6 @@ module.exports = {
     'vue/setup-compiler-macros': true,
   },
   rules: {
-    // all rules docs https://eslint.org/docs/rules/
     'prettier/prettier': [
       'error',
       {

@@ -38,14 +38,14 @@ export const routes: Readonly<RouteRecordRaw[]> = [
         component: () => import('@/views/albums/album-detail.vue'),
       },
       {
-        path: menus.blogs.path,
-        meta: { requiresAuth: false, ...menus.blogs },
-        component: () => import('@/views/blog/blog-posts.vue'),
-      },
-      {
         path: menus.blog.path,
         meta: { requiresAuth: false, ...menus.blog },
         component: () => import('@/views/blog/blog-article.vue'),
+      },
+      {
+        path: menus.blogs.path,
+        meta: { requiresAuth: false, ...menus.blogs },
+        component: () => import('@/views/blog/blog-posts.vue'),
       },
       {
         path: menus.signin.path,

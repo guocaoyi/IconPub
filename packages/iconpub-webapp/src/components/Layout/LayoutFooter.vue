@@ -18,7 +18,7 @@ const mainlandLicenses = [
 ].filter((license) => !!license.lable)
 
 const i18n = useI18n()
-const licenses = ref(mainlandLicenses.filter(() => i18n.locale.value === 'zh'))
+const licenses = ref(i18n.locale.value === 'zh' ? mainlandLicenses : [])
 
 watch(i18n.locale, () => {
   licenses.value = i18n.locale.value === 'zh' ? mainlandLicenses : []
