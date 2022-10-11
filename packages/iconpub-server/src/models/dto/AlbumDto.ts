@@ -18,9 +18,9 @@ export class FontProjectDto {
   prefix: 'icon-'
   status: null
 
-  created_at: string
-  updated_at: string
-  deleted_at?: string
+  createdAt: string
+  updatedAt: string
+  deletedAt?: string
 }
 
 export class ProjectDto {
@@ -40,9 +40,9 @@ export class ProjectDto {
   subgroupInfo: Group[]
   extraInfo: { tags: string[]; subgroupInfo: Group[] }
   type: 1
-  created_at: string
-  updated_at?: string
-  deleted_at?: string
+  createdAt: string
+  updatedAt?: string
+  deletedAt?: string
 }
 
 /**
@@ -63,15 +63,15 @@ export class CollectionDto {
   icons: []
 
   /** count */
-  all_count: number
+  allCount: number
   /** 点赞数 */
-  favorite_count: number
+  favoriteCount: number
   /** 图标统计 */
-  icons_count: number
+  iconsCount: number
   /** 点赞数 */
-  likes_count: number
+  likesCount: number
   /** 访问数 */
-  visits_count: number
+  visitsCount: number
 
   is_colorful: 1
   is_official: 0

@@ -21,7 +21,7 @@ import IlluNofound from '@/assets/illus/IlluNofound.vue'
 <style scoped>
 @media (min-width: 48rem) {
   .page-conatienr {
-    min-height: calc(100vh - 18rem);
+    min-height: calc(100vh - 16.5rem);
   }
 }
 </style>

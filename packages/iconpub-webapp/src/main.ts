@@ -11,8 +11,10 @@ import 'uno.css'
 
 // i18n & locales
 const i18n = VueI18n.createI18n({
-  locale: localStorage.getItem('__ICON_PUB_LOCALE') ?? 'zh', // en
-  fallbackLocale: 'zh',
+  legacy: false,
+  locale: localStorage.getItem('__ICON_PUB_LOCALE') ?? 'en', // en
+  globalInjection: true,
+  fallbackLocale: 'en',
   allowComposition: true,
   messages,
 })
@@ -25,19 +27,16 @@ app.config.warnHandler = (msg, instance, trace) => {
   console.warn(msg, trace)
 }
 app.config.errorHandler = (err, instance, info) => {
-  console.warn(err, info)
+  console.error(err, info)
 }
 
 app
   .use(i18n)
   .use(router)
-  .use(request, { timeout: 10 * 10000 })
+  .use(request, { timeout: 10 * 1000 })
   .mount('#app')
 
 if (process.env.NODE_ENV === 'development') {
   globalThis.__VUE_OPTIONS_API__ = true
   globalThis.__VUE_PROD_DEVTOOLS__ = true
-} else {
-  globalThis.__VUE_OPTIONS_API__ = false
-  globalThis.__VUE_PROD_DEVTOOLS__ = false
 }

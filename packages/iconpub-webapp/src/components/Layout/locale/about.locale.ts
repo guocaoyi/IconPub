@@ -5,7 +5,6 @@ export const en = {
       whoami: 'About',
       term: 'Terms',
       privacy: 'Privacy',
-      feedback: 'Feedback',
     },
     source: {
       title: 'Open Source',
@@ -38,7 +37,6 @@ export const zh: typeof en = {
       whoami: '关于项目',
       term: '用户协议',
       privacy: '隐私条款',
-      feedback: '反馈建议',
     },
     source: {
       title: '开源仓库',
@@ -50,14 +48,14 @@ export const zh: typeof en = {
     },
     dev: {
       title: '渐进式使用',
-      repo: '基于仓库 Hooks',
-      plugin: '基于打包插件',
+      repo: '基于仓库持续构建',
+      plugin: '基于打包插件编译',
       bucket: '私有对象存储桶',
       deploy: '私有化部署',
     },
     social: {
-      title: '社交',
-      github: 'GitHub Issues',
+      title: '关注我们',
+      github: 'GitHub 提问',
       twitter: '推特',
       email: '邮箱',
     },

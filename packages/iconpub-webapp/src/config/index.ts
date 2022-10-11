@@ -1,4 +1,4 @@
-import { menus } from './menu'
+import { menus } from './menus'
 
 /**
  * configuration
@@ -21,6 +21,6 @@ export const config = {
   traceId: import.meta.env.VITE_TRACE_ID ?? '',
 }
 
-export { menus } from './menu'
-export type { Menu } from './menu'
+export { menus } from './menus'
+export type { Menu } from './menus'
 export default config

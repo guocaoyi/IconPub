@@ -2,21 +2,23 @@
  * unread count
  */
 export class UnreadCountPo {
-  chats_count: 0
+  chatsCount: number
 
-  collection_review: 0
+  collectionReview: number
 
-  comment: 0
+  comment: number
 
-  notice: 0
+  notice: number
 
-  official: 0
+  official: number
 
-  official_notice: 0
+  officialNotice: number
 
-  totalcount: 0
+  totalcount: number
 }
 
 export class MessagePo {
   id: number
+
+  unread: UnreadCountPo
 }

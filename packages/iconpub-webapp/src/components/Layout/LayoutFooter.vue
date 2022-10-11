@@ -1,20 +1,28 @@
 <script lang="ts" setup>
+import { watch, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import config from '@/config'
 
-const licenses = [
+// just for China mainland domain policy
+const mainlandLicenses = [
   {
     lable: config.domainBeian,
-    type: 'police',
     link: `http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${
       config.domainBeian.match(/\d+/gi)?.[0] ?? ''
     }`,
   },
   {
     lable: config.domainIcp,
-    type: 'icp',
     link: 'https://beian.miit.gov.cn',
   },
 ].filter((license) => !!license.lable)
+
+const i18n = useI18n()
+const licenses = ref(i18n.locale.value === 'zh' ? mainlandLicenses : [])
+
+watch(i18n.locale, () => {
+  licenses.value = i18n.locale.value === 'zh' ? mainlandLicenses : []
+})
 </script>
 
 <template>

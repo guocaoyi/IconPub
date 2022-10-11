@@ -1,5 +1,9 @@
-export const en = {}
+export const en = {
+  alert: {},
+}
 
-export const zh: typeof en = {}
+export const zh: typeof en = {
+  alert: {},
+}
 
 export default { en, zh }

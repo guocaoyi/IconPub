@@ -3,20 +3,21 @@
  */
 export class FontDto {
   id: number
-  owner_id: number
-  owner_type: 'Project' | ''
+  ownerId: number
+  ownerType: 'Project' | ''
 
-  css_file: string
-  eot_file: string
-  js_file: string
-  json_file: string
-  svg_file: string
-  ttf_file: string
-  woff2_file: string
-  woff_file: string
-  demo_file: string
+  cssFontFaceSrc: string
 
-  css_font_face_src: string
+  eotFile: string
+  ttfFile: string
+  woff2File: string
+  woffFile: string
+
+  cssFile: string
+  jsFile: string
+  jsonFile: string
+  svgFile: string
+  demoFile: string
 
   createdAt: string
   updatedAt: string

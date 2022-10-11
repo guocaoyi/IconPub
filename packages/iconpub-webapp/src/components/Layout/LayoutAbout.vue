@@ -8,7 +8,6 @@ const abouts = [
       { label: 'about.project.whoami', link: menus.home.path },
       { label: 'about.project.term', link: menus.terms.path },
       { label: 'about.project.privacy', link: menus.privacy.path },
-      { label: 'about.project.feedback', link: menus.feedback.path },
       { label: 'about.source.license' },
     ],
   },
@@ -42,7 +41,10 @@ const abouts = [
     // social
     title: 'about.social.title',
     items: [
-      { label: 'about.social.github', link: `https://github.com/${config.author}` },
+      {
+        label: 'about.social.github',
+        link: `https://github.com/${config.author}/${config.siteName}/issues`,
+      },
       { label: 'about.social.twitter', link: `https://twitter.com/${config.socialTwitter}` },
       { label: 'about.social.email', link: `mailto:${config.socialGmail}` },
     ],

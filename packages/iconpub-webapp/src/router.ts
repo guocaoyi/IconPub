@@ -1,6 +1,6 @@
 import 'vue-router'
 import * as VueRouter from 'vue-router'
-import LayoutAuthed from '@/components/Layout/LayoutAuthed.vue'
+import LayoutBasic from '@/components/Layout/LayoutBasic.vue'
 import { menus } from '@/config'
 
 import type { Menu } from '@/config'
@@ -14,60 +14,48 @@ declare module 'vue-router' {
 
 export const routes: Readonly<RouteRecordRaw[]> = [
   {
-    path: menus.root.path,
-    redirect: menus.home.path,
-    component: LayoutAuthed,
+    path: menus.home.path,
+    component: LayoutBasic,
     children: [
       {
         path: menus.home.path,
         meta: { requiresAuth: false, ...menus.home },
-        component: () => import('@/views/home/dash-board.vue'),
+        component: () => import('@/views/home/home-index.vue'),
       },
       {
-        path: menus.sign.path,
-        meta: { requiresAuth: false, ...menus.sign },
+        path: menus.pub.path,
+        meta: { requiresAuth: false, ...menus.pub },
+        component: () => import('@/views/home/home-pub.vue'),
+      },
+      {
+        path: menus.album.path,
+        meta: { requiresAuth: true, ...menus.album },
+        component: () => import('@/views/albums/albums-index.vue'),
+      },
+      {
+        path: menus.albums.path,
+        meta: { requiresAuth: true, ...menus.albums },
+        component: () => import('@/views/albums/album-detail.vue'),
+      },
+      {
+        path: menus.blog.path,
+        meta: { requiresAuth: false, ...menus.blog },
+        component: () => import('@/views/blog/blog-article.vue'),
+      },
+      {
+        path: menus.blogs.path,
+        meta: { requiresAuth: false, ...menus.blogs },
+        component: () => import('@/views/blog/blog-posts.vue'),
+      },
+      {
+        path: menus.signin.path,
+        meta: { requiresAuth: false, ...menus.signin },
         component: () => import('@/views/sign/sign-in.vue'),
-      },
-      {
-        path: menus.docs.path,
-        meta: { requiresAuth: false, ...menus.docs },
-        component: () => import('@/views/docs/doc-colls.vue'),
-      },
-      {
-        path: menus.doc.path,
-        meta: { requiresAuth: false, ...menus.doc },
-        component: () => import('@/views/docs/doc-detail.vue'),
-      },
-
-      {
-        path: menus.icons.path,
-        meta: { requiresAuth: true, ...menus.icons },
-        component: () => import('@/views/icon/icon-colls.vue'),
-      },
-      {
-        path: menus.icon.path,
-        meta: { requiresAuth: true, ...menus.icon },
-        component: () => import('@/views/icon/icon-detail.vue'),
-      },
-      {
-        path: menus.illus.path,
-        meta: { requiresAuth: true, ...menus.illus },
-        component: () => import('@/views/illu/illu-colls.vue'),
-      },
-      {
-        path: menus.illu.path,
-        meta: { requiresAuth: true, ...menus.illu },
-        component: () => import('@/views/illu/illu-detail.vue'),
-      },
-      {
-        path: menus.feedback.path,
-        meta: { requiresAuth: true, ...menus.feedback },
-        component: () => import('@/views/account/user-account.vue'),
       },
       {
         path: menus.account.path,
         meta: { requiresAuth: true, ...menus.account },
-        component: () => import('@/views/account/user-account.vue'),
+        component: () => import('@/views/account/account-index.vue'),
       },
       {
         path: ':pathMatch(.*)*',
@@ -87,7 +75,7 @@ export const router = VueRouter.createRouter({
 router.beforeEach((to) => {
   if (to.meta.requiresAuth) {
     return {
-      path: menus.sign.path,
+      path: menus.signin.path,
       query: { redirect: to.fullPath },
     }
   }
