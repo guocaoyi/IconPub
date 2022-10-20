@@ -36,9 +36,9 @@ export interface IconSchema {
 }
 
 interface FontSvg {
-  id: 120097
+  id: number
 
-  owner_id: 255055
+  owner_id: number
   owner_type: 'Project'
 
   json_file: string

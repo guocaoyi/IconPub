@@ -5,21 +5,21 @@ export class Creator {
   nid: string
   nickname: string
 
-  account_type: 1
+  accountType: 1
 
   bio: ';=;'
 
-  job_title: 'student'
+  jobTitle: 'student'
   role: 0
   status: null
 
-  avatar_file_name: null
-  avatar_small_file_name: null
-  avatar_tiny_file_name: null
-
   avatar: URI
-  alipay_code: URI
-  weixin_code: URI
+  avatarFileName: null
+  avatarSmallFileName: null
+  avatarTinyFileName: null
+
+  alipayCode: URI
+  weixinCode: URI
 
   createdAt: string
   updatedAt: string

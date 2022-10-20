@@ -14,11 +14,11 @@ export class ObjectStoragePo {
 
   /** 管理员编号 */
   @Prop({ required: true })
-  ownerID: string
+  ownerId: string
 
   /** 项目编号 */
   @Prop()
-  groupID: number
+  groupId: number
   /** 项目内图标数 */
   iconCount: number
 

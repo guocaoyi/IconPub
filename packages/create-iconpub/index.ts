@@ -38,7 +38,7 @@ export const Storage = [
   },
 ]
 
-/** 存储桶厂商 */
+/** bucket firm */
 export const BucketFirm = [
   {
     name: 'Ali OSS',

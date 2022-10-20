@@ -1,5 +1,4 @@
 import crypto from 'node:crypto'
-import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import stream from 'node:stream'
@@ -17,8 +16,12 @@ import type { Readable } from 'node:stream'
 import type { Format, GlyphData, InitialOptions } from '../types'
 import type { Result } from '../types/Result'
 
-const buildConfig = async (options) => {
-  let searchPath = process.cwd()
+interface Webfont {
+  (initialOptions?: InitialOptions): Promise<Result>
+}
+
+export const buildConfig = async (options) => {
+  let searchPath: string | null = process.cwd()
   let configPath = null
 
   if (options.configFile) {
@@ -41,7 +44,7 @@ const buildConfig = async (options) => {
   return config
 }
 
-const toSvg = (glyphsData, options) => {
+export const toSvg = (glyphsData, options) => {
   let result = ''
 
   return new Promise((resolve, reject) => {
@@ -93,17 +96,13 @@ const toSvg = (glyphsData, options) => {
   })
 }
 
-const toTtf = (buffer, options) => Buffer.from(svg2ttf(buffer, options).buffer)
+export const toTtf = (buffer, options) => Buffer.from(svg2ttf(buffer, options).buffer)
 
-const toEot = (buffer) => Buffer.from(ttf2eot(buffer).buffer)
+export const toEot = (buffer) => Buffer.from(ttf2eot(buffer).buffer)
 
-const toWoff = (buffer, options) => Buffer.from(ttf2woff(buffer, options).buffer)
+export const toWoff = (buffer, options) => Buffer.from(ttf2woff(buffer, options).buffer)
 
-const toWoff2 = (buffer) => wawoff2.compress(buffer)
-
-interface Webfont {
-  (initialOptions?: InitialOptions): Promise<Result>
-}
+export const toWoff2 = (buffer) => wawoff2.compress(buffer)
 
 export const webfont: Webfont = async (initialOptions) => {
   let options = getOptions(initialOptions)

@@ -11,7 +11,9 @@ export class PreviewIcon extends BasicIcon {
 export class FontIconDto extends BasicIcon {
   id: number
   name: string
-  unicode: number /** unicode 码 */
+
+  /** unicode code */
+  unicode: number
 
   projectId: number
 
@@ -43,14 +45,14 @@ export class IconDto {
 
   description: string
   /** 分组编号 */
-  groupID: number
+  groupId: number
   iconVersion: null
 
-  ownerID: string
+  ownerId: string
   renderType: 1
   resource: string
   sourceType: 0
-  subgroupID: 0
+  subgroupId: 0
   type: 0
 
   extraInfo: null

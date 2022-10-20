@@ -4,7 +4,7 @@
 export class ActiveLogPo {
   id: number
   /** 项目编号 */
-  groupID: number
+  groupId: number
 
   /** 内容 */
   content: string
@@ -16,7 +16,7 @@ export class ActiveLogPo {
   type: 0 | 1 | 2
 
   /** 操作行为（Event）编号 */
-  operatorID: string
+  operatorId: string
 
   /** 操作行为（Event）名称 */
   operatorName: string

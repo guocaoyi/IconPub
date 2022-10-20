@@ -8,7 +8,7 @@ class Group {
 export class FontProjectDto {
   id: number
   description: string
-  create_user_id: string
+  createUserId: string
 
   font_family: 'iconpub'
   font_format: 'woff2,woff,ttf,eot'
@@ -29,7 +29,7 @@ export class ProjectDto {
   description: string
   logo: string
   authorInfo: []
-  ownerID: string
+  ownerId: string
   ownerInfo: AccountDto
   /** */
   readerInfo: AccountDto[]
@@ -48,14 +48,14 @@ export class ProjectDto {
 /**
  * 图标集合（项目、等同 Project）
  */
-export class CollectionDto {
+export class AlbumDto {
   id: number
   name: string
   description: string
 
   copyright: null
-  cover_icon_id: null
-  create_user_id: number
+  coverCconId: null
+  createUserId: number
 
   fees: null
   has_secret: number

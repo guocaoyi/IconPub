@@ -10,9 +10,9 @@ export class ObjectStorageDto {
   id: number
 
   /** 管理员编号 */
-  ownerID: string
+  ownerId: string
   /** 项目编号 */
-  groupID: number
+  groupId: number
   /** 项目内图标数 */
   iconCount: number
 
