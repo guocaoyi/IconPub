@@ -31,11 +31,8 @@ export class ProjectDto {
   authorInfo: []
   ownerId: string
   ownerInfo: AccountDto
-  /** */
   readerInfo: AccountDto[]
-  /** 项目下辖图标数 */
   resourceCount: number
-  /** 分组 */
   tags: string[]
   subgroupInfo: Group[]
   extraInfo: { tags: string[]; subgroupInfo: Group[] }
@@ -64,13 +61,9 @@ export class AlbumDto {
 
   /** count */
   allCount: number
-  /** 点赞数 */
   favoriteCount: number
-  /** 图标统计 */
-  iconsCount: number
-  /** 点赞数 */
   likesCount: number
-  /** 访问数 */
+  iconsCount: number
   visitsCount: number
 
   is_colorful: 1

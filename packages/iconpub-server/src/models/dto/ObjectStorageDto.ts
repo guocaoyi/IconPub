@@ -6,7 +6,6 @@ export class ObjectStorageFormDto {}
  * @description_zh 对象储存传输层对象
  */
 export class ObjectStorageDto {
-  /** 编号 */
   id: number
 
   /** 管理员编号 */

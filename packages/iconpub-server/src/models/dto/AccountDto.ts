@@ -26,14 +26,9 @@ export class Creator {
 }
 
 export class AccountDto {
-  /** 账号组织编号 */
   accountGroupId: number
 
-  /** 头像（URI） */
   avatarUri: string
-
-  /** 账号创建时间 */
-  createTime: number
 
   description: string
 
@@ -41,7 +36,6 @@ export class AccountDto {
 
   email: string
 
-  /** 是否已设置密码 */
   hasPassword: boolean
   loginName: string
 
@@ -60,4 +54,7 @@ export class AccountDto {
   userType: 0 | 1
 
   password: string
+
+  createdAt: string
+  updatedAt?: string
 }

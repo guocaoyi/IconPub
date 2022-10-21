@@ -24,18 +24,12 @@ export class FontIconDto extends BasicIcon {
 }
 
 export class IconDto {
-  /** 图标编号 */
   id: number
 
-  /** 名称 */
   name: string
-  /** 名称（英文）*/
   nameEn: string
-  /** 名称（中文）*/
   nameZh: string
-  /** 名称（中文简拼）*/
   nameZhJp: string
-  /** 名称（中文全拼）*/
   nameZhQp: string
 
   categoryEn: null
@@ -44,7 +38,6 @@ export class IconDto {
   colorType: 1
 
   description: string
-  /** 分组编号 */
   groupId: number
   iconVersion: null
 

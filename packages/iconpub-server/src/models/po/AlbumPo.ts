@@ -20,13 +20,10 @@ export class AlbumPo {
 
   authorInfo: AccountPo[]
 
-  /** 所有者 */
   ownerInfo: AccountPo
 
-  /** 参与者 */
   readerInfo: AccountPo[]
 
-  /** 项目下辖图标数 */
   resourceCount: number
 
   tags: string[]

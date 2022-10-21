@@ -11,15 +11,10 @@ export class IconPo {
   @Prop()
   id: number
 
-  /** 名称 */
-  name: 'preview-open'
-  /** 名称（英文）*/
-  name_en: 'preview-open'
-  /** 名称（中文）*/
-  name_zh: '预览-打开'
-  /** 名称（中文简拼）*/
+  name: string
+  name_en: string
+  name_zh: string
   name_zh_jp: string
-  /** 名称（中文全拼）*/
   name_zh_qp: string
 
   category_en: null
@@ -28,7 +23,7 @@ export class IconPo {
   color_type: 1
 
   description: string
-  /** 分组编号 */
+
   groupId: number
   iconVersion: null
 
@@ -60,7 +55,7 @@ export class IconPo {
   categoryEn: null
   categoryZh: null
 
-  unicode: number /** unicode 码 */
+  unicode: number /** unicode */
 
   projectId: number
   project_id: number

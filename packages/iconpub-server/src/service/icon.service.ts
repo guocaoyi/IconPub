@@ -6,7 +6,7 @@ import { Injectable } from '@nestjs/common'
  * @description_zh IKON Service
  */
 @Injectable()
-export class IkonService {
+export class IconService {
   getIkon(): any {
     return { name: '' }
   }

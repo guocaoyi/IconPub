@@ -5,7 +5,7 @@ import { Controller, Get } from '@nestjs/common'
  * @author yalda
  * @date 2022-10-10
  */
-@Controller('/system')
+@Controller('system')
 export class SystemController {
   /**
    * health check
@@ -22,10 +22,18 @@ export class SystemController {
    * @description app process health check
    * @description_zh 应用健康检查
    */
-  @Get('/log:id')
-  log(): string {
-    return 'ok'
+  @Get('/log/stats')
+  stats(): number {
+    return 0
   }
 
-  //
+  /**
+   * health check
+   * @description app process health check
+   * @description_zh 应用健康检查
+   */
+  @Get('/log/:id')
+  details(): string {
+    return 'ok'
+  }
 }

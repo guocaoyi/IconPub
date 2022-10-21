@@ -5,7 +5,7 @@ import { Controller, Get } from '@nestjs/common'
  * @author yalda
  * @date 2022-10-10
  */
-@Controller()
+@Controller('album')
 export class AlbumController {
   /**
    * health check

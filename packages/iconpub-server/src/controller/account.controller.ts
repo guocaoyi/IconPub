@@ -12,11 +12,20 @@ export class AccountController {
   constructor(private readonly appService: AppService) {}
 
   /**
-   * 返回账号信息
+   *
    */
-  @Get()
-  getHello(@Session() session: { name: string }): string {
+  @Get('/info')
+  info(@Session() session: { name: string }): string {
     console.info(JSON.stringify(session))
+    return this.appService.getHello()
+  }
+
+  /**
+   *
+   */
+  @Get('/destory')
+  destory(@Session() session: { name: string }): string {
+    console.info('name', session.name)
     return this.appService.getHello()
   }
 }
