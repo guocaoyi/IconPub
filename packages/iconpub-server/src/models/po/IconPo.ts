@@ -17,10 +17,10 @@ export class IconPo {
   name_zh_jp: string
   name_zh_qp: string
 
-  category_en: null
-  category_zh: null
+  category_en: string
+  category_zh: string
 
-  color_type: 1
+  colorType: number
 
   description: string
 
@@ -28,13 +28,13 @@ export class IconPo {
   iconVersion: null
 
   ownerId: string
-  render_type: 1
+  renderType: number
   resource: string
-  sourceType: 0
-  subgroupId: 0
-  type: 0
+  sourceType: number
+  subgroupId: number
+  type: number
 
-  _extraInfo: null
+  _extraInfo: string
 
   createdAt: string
   updatedAt?: string
@@ -58,9 +58,8 @@ export class IconPo {
   unicode: number /** unicode */
 
   projectId: number
-  project_id: number
 
-  font_class: string /** font class */
+  fontClass: string /** font class */
   freeze: 0 | 1
   path_attributes: 'fill="#25467A"|fill="#EE6F0B"'
   show_svg: string
@@ -68,6 +67,6 @@ export class IconPo {
 
 export type CatDocument = IconPo & Document
 
-export const IkonSchema = SchemaFactory.createForClass(IconPo)
+export const IconSchema = SchemaFactory.createForClass(IconPo)
 
 export class FontIcon extends IconPo {}

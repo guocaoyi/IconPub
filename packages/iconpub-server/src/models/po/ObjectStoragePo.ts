@@ -14,11 +14,10 @@ export class ObjectStoragePo {
   @Prop({ required: true })
   ownerId: string
 
-  @Prop()
+  @Prop({ required: true })
   groupId: number
 
   iconCount: number
-
   isOutdated: boolean
 
   fileSize: number

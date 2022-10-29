@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, Post } from '@nestjs/common'
 
 import { IconService } from '../service/icon.service'
 
@@ -14,5 +14,10 @@ export class ProjectController {
   @Get('/')
   getProjects(): string {
     return ''
+  }
+
+  @Post('/')
+  post(): void {
+    //
   }
 }

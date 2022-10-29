@@ -21,9 +21,9 @@ export const zh: typeof en = {
     pub: '公共库',
     album: '图库管理',
 
-    blog: '帮忙文档',
-    terms: '用户协议',
-    privacy: '隐私条款',
+    blog: '帮助文档',
+    terms: '用户条款',
+    privacy: '隐私协议',
 
     signin: '登录',
     signout: '注册',

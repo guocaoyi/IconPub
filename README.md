@@ -75,6 +75,11 @@ docker run --name iconpub-mongo -itd -p 27017:27017 -m 4096m mongo:5.0.8
 ```
 
 ```bash
+# mysql
+docker run --name iconpub-mongo -itd -p 27017:27017 -m 4096m mongo:5.0.8
+```
+
+```bash
 # server
 docker run --name iconpub-server -itd -p 4001:4001 -m 2048m iconpub-server:latest
 ```
