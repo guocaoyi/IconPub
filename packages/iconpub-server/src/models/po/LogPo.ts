@@ -1,4 +1,4 @@
-class LogPo {
+export class LogPo {
   id: number
 }
 

@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common'
-import { HealthCheck, HealthCheckService } from '@nestjs/terminus'
+import { HealthCheck, HealthCheckService, DNSHealthIndicator } from '@nestjs/terminus'
 
 @Controller('health')
 export class HealthController {
@@ -7,7 +7,12 @@ export class HealthController {
 
   @Get()
   @HealthCheck()
-  check() {
+  healthCheck() {
     return this.health.check([() => this.dns.pingCheck('nestjs-docs', 'https://docs.nestjs.com')])
+  }
+
+  @Get('/check')
+  check(): string {
+    return 'ok'
   }
 }

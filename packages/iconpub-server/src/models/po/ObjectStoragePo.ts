@@ -4,7 +4,6 @@ import { Document } from 'mongoose'
 /**
  * ObjectStoragePo
  * @description object storage po
- * @description_zh 对象储存持久对象
  */
 @Schema()
 export class ObjectStoragePo {

@@ -19,7 +19,7 @@ export class FontIconDto extends BasicIcon {
 
   fontClass: string
   freeze: 0
-  pathattributes: 'fill="#25467A"|fill="#EE6F0B"|fill="#EE6F0B"|fill="#7CB342"|fill="#D9792B"|fill="#FFBC00"|fill="#7CB342"|fill="#D9792B"|fill="#FBC02D"|fill="#25467A"|fill="#25467A"|fill="#25467A"|fill="#FFA726"'
+  pathattributes: 'fill="#25467A"|fill="#EE6F0B""'
   showSvg: string
 }
 

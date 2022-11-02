@@ -10,7 +10,6 @@ export class AlbumController {
   /**
    * health check
    * @description app process health check
-   * @description_zh 应用健康检查
    */
   @Get('/:id')
   albums(): string {

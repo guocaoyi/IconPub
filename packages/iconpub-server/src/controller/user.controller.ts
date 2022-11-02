@@ -16,7 +16,7 @@ export class UserController {
     return this.appService.getHello()
   }
 
-  @Post('/')
+  @Post('/:id')
   users(): string {
     return this.appService.getHello()
   }

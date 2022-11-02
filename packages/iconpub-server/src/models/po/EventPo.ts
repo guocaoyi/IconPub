@@ -9,7 +9,7 @@ export class EventPo {
   eventName: string
   eventNameCn: string
   eventRegion: string
-  eventSource: 'account.api.icons.pub'
+  eventSource: 'api.icons.pub'
   eventTime: string
 
   requestId: string

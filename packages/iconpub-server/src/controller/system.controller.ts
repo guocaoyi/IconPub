@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, Post } from '@nestjs/common'
 
 /**
  * system controller
@@ -10,7 +10,6 @@ export class SystemController {
   /**
    * health check
    * @description app process health check
-   * @description_zh 应用健康检查
    */
   @Get('/log')
   logs(): string[] {
@@ -20,7 +19,6 @@ export class SystemController {
   /**
    * health check
    * @description app process health check
-   * @description_zh 应用健康检查
    */
   @Get('/log/stats')
   stats(): number {
@@ -30,9 +28,8 @@ export class SystemController {
   /**
    * health check
    * @description app process health check
-   * @description_zh 应用健康检查
    */
-  @Get('/log/:id')
+  @Post('/log/:id')
   details(): string {
     return 'ok'
   }

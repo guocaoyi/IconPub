@@ -48,7 +48,6 @@ export class AccountDto {
 
   /**
    * user type
-   * @description_zh 用户类型
    * @enum { 0 | 1 } 0: personal user 1: enterprise user
    */
   userType: 0 | 1

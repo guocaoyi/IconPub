@@ -76,7 +76,7 @@ export class AlbumDto {
   slug: string
   source_file_type: null
   tag_ids: '6,20'
-  type: 'icon' | 'ikon' | ''
+  type: 'icon' | 'illu' | 'lottie' | 'svg'
   url: ''
 
   createdAt: string
