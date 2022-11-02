@@ -1,5 +1,5 @@
 /**
- * 字体链接实例
+ * font dto
  */
 export class FontDto {
   id: number

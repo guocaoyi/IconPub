@@ -8,7 +8,7 @@ class Group {
 export class FontProjectDto {
   id: number
   description: string
-  create_user_id: string
+  createUserId: string
 
   font_family: 'iconpub'
   font_format: 'woff2,woff,ttf,eot'
@@ -29,13 +29,10 @@ export class ProjectDto {
   description: string
   logo: string
   authorInfo: []
-  ownerID: string
+  ownerId: string
   ownerInfo: AccountDto
-  /** */
   readerInfo: AccountDto[]
-  /** 项目下辖图标数 */
   resourceCount: number
-  /** 分组 */
   tags: string[]
   subgroupInfo: Group[]
   extraInfo: { tags: string[]; subgroupInfo: Group[] }
@@ -48,14 +45,14 @@ export class ProjectDto {
 /**
  * 图标集合（项目、等同 Project）
  */
-export class CollectionDto {
+export class AlbumDto {
   id: number
   name: string
   description: string
 
   copyright: null
-  cover_icon_id: null
-  create_user_id: number
+  coverCconId: null
+  createUserId: number
 
   fees: null
   has_secret: number
@@ -64,13 +61,9 @@ export class CollectionDto {
 
   /** count */
   allCount: number
-  /** 点赞数 */
   favoriteCount: number
-  /** 图标统计 */
-  iconsCount: number
-  /** 点赞数 */
   likesCount: number
-  /** 访问数 */
+  iconsCount: number
   visitsCount: number
 
   is_colorful: 1
@@ -83,7 +76,7 @@ export class CollectionDto {
   slug: string
   source_file_type: null
   tag_ids: '6,20'
-  type: 'icon' | 'ikon' | ''
+  type: 'icon' | 'illu' | 'lottie' | 'svg'
   url: ''
 
   createdAt: string

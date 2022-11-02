@@ -22,9 +22,12 @@
   "dependencies": {
     "@nestjs/common": "^9.1.4",
     "@nestjs/core": "^9.1.4",
+    "@nestjs/jwt": "^9.0.0",
     "@nestjs/mongoose": "^9.2.0",
+    "@nestjs/passport": "^9.0.0",
     "@nestjs/platform-express": "^9.1.4",
     "@nestjs/swagger": "^6.1.2",
+    "@nestjs/terminus": "^9.1.2",
     "mongoose": "^6.6.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.7"

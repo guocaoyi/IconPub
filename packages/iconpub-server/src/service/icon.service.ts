@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common'
 
 /**
- * IKON Service
+ * ICON Service
  * @author yalda
- * @description_zh IKON Service
  */
 @Injectable()
-export class IkonService {
-  getIkon(): any {
+export class IconService {
+  getIcon(): any {
     return { name: '' }
   }
 }

@@ -2,7 +2,7 @@ export const en = {
   error: {
     notfound: {
       title: '404',
-      description: 'not thing found',
+      description: 'Nothing found',
     },
   },
 }

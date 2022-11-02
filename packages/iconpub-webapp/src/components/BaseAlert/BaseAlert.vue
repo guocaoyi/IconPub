@@ -1,8 +1,10 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const msg = ''
+</script>
 
 <template>
   <div class="flash" p-4>
-    username has exited!
+    {{ msg }}!
     <button class="flash-close" align-center>
       <IconClose />
     </button>

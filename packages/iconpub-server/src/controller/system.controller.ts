@@ -1,16 +1,15 @@
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, Post } from '@nestjs/common'
 
 /**
  * system controller
  * @author yalda
  * @date 2022-10-10
  */
-@Controller('/system')
+@Controller('system')
 export class SystemController {
   /**
    * health check
    * @description app process health check
-   * @description_zh 应用健康检查
    */
   @Get('/log')
   logs(): string[] {
@@ -20,12 +19,18 @@ export class SystemController {
   /**
    * health check
    * @description app process health check
-   * @description_zh 应用健康检查
    */
-  @Get('/log:id')
-  log(): string {
-    return 'ok'
+  @Get('/log/stats')
+  stats(): number {
+    return 0
   }
 
-  //
+  /**
+   * health check
+   * @description app process health check
+   */
+  @Post('/log/:id')
+  details(): string {
+    return 'ok'
+  }
 }

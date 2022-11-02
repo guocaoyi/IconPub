@@ -1,22 +1,20 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import config from '@/config'
+</script>
 
 <template>
   <main>
     <div class="auth-form px-3">
       <input type="hidden" name="ga_id" class="js-octo-ga-id-input" />
       <div class="auth-form-header p-0">
-        <h1>Sign in to IconPub</h1>
+        <h1>Sign in to {{ config.siteName }}</h1>
       </div>
 
       <BaseAlert />
 
       <div class="auth-form-body mt-3">
-        <form data-turbo="false" action="/session" accept-charset="UTF-8" method="post">
-          <input
-            name="authenticity_token"
-            value="eoSpkuXbUnQKwMfh8To4erA1Bhv_Jqje_rfaSWb42TzF63ECse4218Ljtnzq5nt_UXpk0yypIhHsOCU9MOJxWw"
-            hidden
-          />
+        <form action="/session" accept-charset="UTF-8" method="post">
+          <input name="" value="" hidden />
           <label for="login_field"> Username or email address </label>
           <input
             type="text"
@@ -42,16 +40,13 @@
               name="commit"
               value="Sign in"
               class="btn btn-primary btn-block js-sign-in-button"
-              data-disable-with="Signing in…"
-              data-signin-label="Sign in"
-              data-sso-label="Sign in with your identity provider"
               development="false"
             />
 
             <a
               class="label-link position-absolute top-0 right-0"
               tabindex="0"
-              href="/password_reset"
+              href="/password/reset"
             >
               Forgot password?
             </a>
@@ -60,7 +55,7 @@
       </div>
 
       <p class="login-callout mt-3">
-        New to IconPub?
+        New to {{ config.siteName }}?
         <a href="/signup">Create an account</a>
       </p>
     </div>

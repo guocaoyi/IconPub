@@ -1,18 +1,23 @@
-import { Controller, Get } from '@nestjs/common'
+import { Controller, Get, Post } from '@nestjs/common'
 
-import { IkonService } from '../service/ikon.service'
+import { IconService } from '../service/icon.service'
 
 /**
  * project controller
  * @author yalda
  * @date 2022-10-09
  */
-@Controller('/project')
+@Controller('project')
 export class ProjectController {
-  constructor(private readonly ikonService: IkonService) {}
+  constructor(private readonly iconService: IconService) {}
 
   @Get('/')
   getProjects(): string {
     return ''
+  }
+
+  @Post('/')
+  post(): void {
+    //
   }
 }

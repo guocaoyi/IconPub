@@ -1,11 +1,47 @@
-export class IconPo {
-  /** icon id */
-  id: number
-  /** icon ablum id */
-  albumID: number
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { Document } from 'mongoose'
 
-  /** name */
+/**
+ * IconPo
+ * @description object storage po
+ */
+@Schema()
+export class IconPo {
+  @Prop()
+  id: number
+
   name: string
+  name_en: string
+  name_zh: string
+  name_zh_jp: string
+  name_zh_qp: string
+
+  category_en: string
+  category_zh: string
+
+  colorType: number
+
+  description: string
+
+  groupId: number
+  iconVersion: null
+
+  ownerId: string
+  renderType: number
+  resource: string
+  sourceType: number
+  subgroupId: number
+  type: number
+
+  _extraInfo: string
+
+  createdAt: string
+  updatedAt?: string
+  deletedAt?: string
+
+  /** icon ablum id */
+  albumId: number
+
   /** name(eg) */
   nameEn: string
   /** name(zh_CN) */
@@ -18,25 +54,18 @@ export class IconPo {
   categoryEn: null
   categoryZh: null
 
-  color_type: 1
+  unicode: number /** unicode */
 
-  description: string
+  projectId: number
 
-  /** 分组编号 */
-  groupID: number
-
-  iconVersion: null
-
-  ownerID: string
-  render_type: 1
-  resource: string
-  sourceType: 0
-  subgroupID: 0
-  type: 0
-
-  _extraInfo: null
-
-  createdAt: string
-  updatedAt?: string
-  deletedAt?: string
+  fontClass: string /** font class */
+  freeze: 0 | 1
+  path_attributes: 'fill="#25467A"|fill="#EE6F0B"'
+  show_svg: string
 }
+
+export type CatDocument = IconPo & Document
+
+export const IconSchema = SchemaFactory.createForClass(IconPo)
+
+export class FontIcon extends IconPo {}
