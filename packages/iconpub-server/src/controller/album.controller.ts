@@ -3,7 +3,6 @@ import { Controller, Get, Delete } from '@nestjs/common'
 /**
  * album controller
  * @author yalda
- * @date 2022-10-10
  */
 @Controller('album')
 export class AlbumController {

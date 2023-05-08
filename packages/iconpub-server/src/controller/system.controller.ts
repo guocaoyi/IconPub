@@ -3,7 +3,6 @@ import { Controller, Get, Post } from '@nestjs/common'
 /**
  * system controller
  * @author yalda
- * @date 2022-10-10
  */
 @Controller('system')
 export class SystemController {

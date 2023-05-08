@@ -45,7 +45,6 @@ const bootstrap = async () => {
   SwaggerModule.setup('/swagger', app, document)
 
   // storage & cache
-  // - redis
   // - mongo
 
   await app.listen(4001)

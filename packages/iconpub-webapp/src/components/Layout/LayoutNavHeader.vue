@@ -16,7 +16,7 @@ const links = [
   { label: menus.blogs.locale, link: menus.blogs.path },
 ]
 
-const shield = `https://img.shields.io/github/stars/${config.author}?style=social`
+const shield = `https://img.shields.io/github/stars/${config.author}/${config.siteName}?style=social`
 const avator = ''
 </script>
 
@@ -55,6 +55,7 @@ const avator = ''
       <a v-if="!!avator" hidden md:flex items-center h-8 mx-2>
         <img h-8 w-8 border="rd-1/2" src="https://" alt="" />
       </a>
+
       <router-link
         v-else
         :to="menus.signin.path"

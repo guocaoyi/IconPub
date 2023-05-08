@@ -5,7 +5,6 @@ import { IconService } from '../service/icon.service'
 /**
  * project controller
  * @author yalda
- * @date 2022-10-09
  */
 @Controller('project')
 export class ProjectController {

@@ -3,7 +3,6 @@ import { Controller, Get } from '@nestjs/common'
 /**
  * app controller
  * @author yalda
- * @date 2022-08-10
  */
 @Controller()
 export class AppController {
