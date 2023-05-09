@@ -4,15 +4,15 @@ import config from '@/config'
 
 <template>
   <main>
-    <div class="auth-form px-3">
+    <div class="px-3">
       <input type="hidden" name="ga_id" class="js-octo-ga-id-input" />
-      <div class="auth-form-header p-0">
+      <div class="p-0">
         <h1>Sign in to {{ config.siteName }}</h1>
       </div>
 
       <BaseAlert />
 
-      <div class="auth-form-body mt-3">
+      <div class="mt-3">
         <form action="/session" accept-charset="UTF-8" method="post">
           <input name="" value="" hidden />
           <label for="login_field"> Username or email address </label>

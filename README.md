@@ -15,8 +15,8 @@ IconPub is an icon management platform(IconFont„ÄÅChrome Extension for migraton„
 
 |                | Client         | Runtime        | Auth           | Storage   | File Storage   |
 | :------------- | :------------- | :------------- | :------------- | :-------- | :------------- |
-| Community      | iconpub-web    | iconpub-server | social \ phone | mysql     | bucket \ file  |
-| Ultimate       | iconpub-web    | iconpub-server | ldap \ account | mysql     | bucket \ file  |
+| Community      | iconpub-web    | iconpub-server | social \ phone | mongo     | bucket \ file  |
+| Ultimate       | iconpub-web    | iconpub-server | ldap \ account | mongo     | bucket \ file  |
 | Git Repository | create-iconpub | iconpub-core   | -              | lock file | bucket \ npm   |
 | Bundler Plugin | iconpub-plugin | vite/webpack   | -              | lock file | output bunlder |
 
@@ -71,11 +71,6 @@ iconpub-gateway:latest
 
 ```bash
 # db
-docker run --name iconpub-mongo -itd -p 27017:27017 -m 4096m mongo:5.0.8
-```
-
-```bash
-# mysql
 docker run --name iconpub-mongo -itd -p 27017:27017 -m 4096m mongo:5.0.8
 ```
 

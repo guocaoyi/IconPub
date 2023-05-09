@@ -15,8 +15,8 @@
 
 |              | 客户端         | 运行时         | 鉴权           | 持久化    | 文件储存       |
 | :----------- | :------------- | :------------- | :------------- | :-------- | :------------- |
-| 社区版       | iconpub-web    | iconpub-server | social \ phone | mysql     | bucket \ file  |
-| 私服版       | iconpub-web    | iconpub-server | ldap \ account | mysql     | bucket \ file  |
+| 社区版       | iconpub-web    | iconpub-server | social \ phone | mongo     | bucket \ file  |
+| 私服版       | iconpub-web    | iconpub-server | ldap \ account | mongo     | bucket \ file  |
 | 仓库托管方案 | create-iconpub | iconpub-core   | -              | lock file | bucket \ npm   |
 | 编译插件方案 | iconpub-plugin | vite/webpack   | -              | lock file | output bunlder |
 

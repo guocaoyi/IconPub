@@ -3,10 +3,9 @@ import { Document } from 'mongoose'
 
 /**
  * ObjectStoragePo
- * @description object storage po
  */
 @Schema()
-export class ObjectStoragePo {
+export class ObjectStorage {
   @Prop({ required: false })
   id: number
 
@@ -16,14 +15,28 @@ export class ObjectStoragePo {
   @Prop({ required: true })
   groupId: number
 
+  @Prop({ required: true })
   iconCount: number
+
+  @Prop({ required: true })
   isOutdated: boolean
 
+  @Prop({ required: true })
   fileSize: number
+
+  @Prop({ required: true })
   legacyFileSize: number
+
+  @Prop({ required: true })
   legacyWebUri: string
+
+  @Prop({ required: true })
   previewUri: string
+
+  @Prop({ required: true })
   typeUri: string
+
+  @Prop({ required: true })
   webUri: string
 
   @Prop({ alias: 'created_at', required: true })
@@ -36,6 +49,6 @@ export class ObjectStoragePo {
   deletedAt?: string
 }
 
-export type ObjectStorageDocument = ObjectStoragePo & Document
+export type ObjectStorageDocument = ObjectStorage & Document
 
-export const ObjectStorageSchema = SchemaFactory.createForClass(ObjectStoragePo)
+export const ObjectStorageSchema = SchemaFactory.createForClass(ObjectStorage)

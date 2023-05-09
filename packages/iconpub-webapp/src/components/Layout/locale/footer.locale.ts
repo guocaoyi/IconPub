@@ -11,9 +11,25 @@ export const en = {
 export const zh: typeof en = {
   footer: {
     right: '版权所有',
-    beian: '',
-    icp: '',
+    beian: config.domainBeian,
+    icp: config.domainIcp,
   },
 }
 
-export default { en, zh }
+export const ja = {
+  footer: {
+    right: '著作権',
+    beian: config.domainBeian,
+    icp: config.domainIcp,
+  },
+}
+
+export const ko = {
+  footer: {
+    right: '저작권',
+    beian: config.domainBeian,
+    icp: config.domainIcp,
+  },
+}
+
+export default { en, zh, ja, ko }

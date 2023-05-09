@@ -2,22 +2,22 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
 /**
- * IconPo
- * @description object storage po
+ * Icon
  */
 @Schema()
-export class IconPo {
-  @Prop()
+export class Icon {
+  @Prop({ required: true })
   id: number
 
+  @Prop({ required: true })
   name: string
-  name_en: string
-  name_zh: string
-  name_zh_jp: string
+  name_zh_py: string
   name_zh_qp: string
 
-  category_en: string
-  category_zh: string
+  @Prop([String])
+  category: string[]
+  categoryEn: null
+  categoryZh: null
 
   colorType: number
 
@@ -35,10 +35,6 @@ export class IconPo {
 
   _extraInfo: string
 
-  createdAt: string
-  updatedAt?: string
-  deletedAt?: string
-
   /** icon ablum id */
   albumId: number
 
@@ -51,21 +47,23 @@ export class IconPo {
   /** name() */
   nameZhQp: string
 
-  categoryEn: null
-  categoryZh: null
-
   unicode: number /** unicode */
 
   projectId: number
 
   fontClass: string /** font class */
+
   freeze: 0 | 1
+
   path_attributes: 'fill="#25467A"|fill="#EE6F0B"'
+
   show_svg: string
+
+  createdAt: string
+  updatedAt?: string
+  deletedAt?: string
 }
 
-export type CatDocument = IconPo & Document
+export type IconDocument = Icon & Document
 
-export const IconSchema = SchemaFactory.createForClass(IconPo)
-
-export class FontIcon extends IconPo {}
+export const IconSchema = SchemaFactory.createForClass(Icon)

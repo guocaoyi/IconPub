@@ -3,17 +3,21 @@ import { Controller, Get, Delete } from '@nestjs/common'
 /**
  * album controller
  * @author yalda
- * @date 2022-10-10
  */
-@Controller('album')
+@Controller('/api/album')
 export class AlbumController {
   /**
    * health check
    * @description app process health check
    */
   @Get('/:id')
-  albums(): string {
-    return 'ok'
+  albums() {
+    return [
+      { id: 1, name: 'album1', label: 'test album1', description: 'test album1' },
+      { id: 2, name: 'album2', label: 'test album2', description: 'test album2' },
+      { id: 3, name: 'album3', label: 'test album3', description: 'test album3' },
+      { id: 4, name: 'album4', label: 'test album4', description: 'test album4' },
+    ]
   }
 
   /**

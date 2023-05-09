@@ -1,6 +1,6 @@
-export class AlbumFormPo {}
+import { AccountPo } from './account.schema'
 
-import { AccountPo } from './AccountPo'
+export class AlbumFormPo {}
 
 export class GroupPo {}
 

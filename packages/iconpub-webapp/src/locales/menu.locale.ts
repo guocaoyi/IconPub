@@ -32,4 +32,38 @@ export const zh: typeof en = {
   },
 }
 
+export const ja = {
+  menu: {
+    home: 'ホーム',
+    pub: 'パブリック',
+    album: 'アルバム',
+
+    blog: 'ブログ',
+    terms: '利用規約',
+    privacy: 'プライバシーポリシー',
+
+    signin: 'ログイン',
+    signup: 'サインアップ',
+    signout: 'サインアウト',
+    account: 'アカウント',
+  },
+}
+
+export const ko = {
+  menu: {
+    home: '홈',
+    pub: '공용',
+    album: '앨범',
+
+    blog: '블로그',
+    terms: '이용 약관',
+    privacy: '개인 정보 보호 정책',
+
+    signin: '로그인',
+    signup: '회원 가입',
+    signout: '로그아웃',
+    account: '계정',
+  },
+}
+
 export default { en, zh }

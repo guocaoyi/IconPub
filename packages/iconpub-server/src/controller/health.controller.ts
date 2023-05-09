@@ -1,18 +1,18 @@
 import { Controller, Get } from '@nestjs/common'
-import { HealthCheck, HealthCheckService, DNSHealthIndicator } from '@nestjs/terminus'
+import { HealthCheck, HealthCheckService, TypeOrmHealthIndicator } from '@nestjs/terminus'
 
-@Controller('health')
+@Controller('/api/check')
 export class HealthController {
-  constructor(private health: HealthCheckService, private dns: DNSHealthIndicator) {}
+  constructor(private health: HealthCheckService, private db: TypeOrmHealthIndicator) {}
 
   @Get()
   @HealthCheck()
   healthCheck() {
-    return this.health.check([() => this.dns.pingCheck('nestjs-docs', 'https://docs.nestjs.com')])
+    return 'ok'
   }
 
-  @Get('/check')
-  check(): string {
-    return 'ok'
+  @Get('/db')
+  check() {
+    return this.health.check([() => this.db.pingCheck('database', { timeout: 300 })])
   }
 }

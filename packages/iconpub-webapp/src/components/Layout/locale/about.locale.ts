@@ -62,4 +62,71 @@ export const zh: typeof en = {
   },
 }
 
-export default { en, zh }
+/**
+ * translate use ChatGPT
+ */
+export const ja: typeof en = {
+  about: {
+    project: {
+      title: 'IconPub',
+      whoami: '概要',
+      term: '利用規約',
+      privacy: 'プライバシーポリシー',
+    },
+    source: {
+      title: 'オープンソース',
+      github: 'GitHub',
+      gitee: 'Gitee',
+      npm: 'NPM Creater',
+      docker: 'Docker イメージ',
+      license: 'Apache License 2.0',
+    },
+    dev: {
+      title: 'プログレッシブ利用',
+      repo: 'Git CI/CD により',
+      plugin: 'コンパイラプラグインにより',
+      bucket: 'プライベート OSS バケット',
+      deploy: 'プライベートデプロイ',
+    },
+    social: {
+      title: 'ソーシャル',
+      github: 'GitHub Issues',
+      twitter: 'Twitter',
+      email: 'メール',
+    },
+  },
+}
+
+export const ko: typeof en = {
+  about: {
+    project: {
+      title: 'IconPub',
+      whoami: '프로젝트 소개',
+      term: '이용약관',
+      privacy: '개인정보 처리방침',
+    },
+    source: {
+      title: '오픈소스',
+      github: 'GitHub',
+      gitee: 'Gitee',
+      npm: 'NPM 크리에이터',
+      docker: 'Docker 이미지',
+      license: 'Apache License 2.0',
+    },
+    dev: {
+      title: '진보적 사용',
+      repo: 'Git CI/CD',
+      plugin: '컴파일러 플러그인',
+      bucket: '개인 OSS 버킷',
+      deploy: '개인 배포',
+    },
+    social: {
+      title: '소셜',
+      github: 'GitHub Issues',
+      twitter: 'Twitter',
+      email: 'Email',
+    },
+  },
+}
+
+export default { en, zh, ja, ko }
