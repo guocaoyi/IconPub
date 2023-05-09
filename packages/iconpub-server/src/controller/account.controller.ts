@@ -6,7 +6,7 @@ import { AppService } from '../service/app.service'
  * account controller
  * @author yalda
  */
-@Controller('account')
+@Controller('/api/account')
 export class AccountController {
   constructor(private readonly appService: AppService) {}
 

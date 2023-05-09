@@ -12,4 +12,18 @@ export const zh: typeof en = {
   },
 }
 
-export default { en, zh }
+export const ja: typeof en = {
+  modal: {
+    cancel: 'キャンセル',
+    ok: 'OK',
+  },
+}
+
+export const ko: typeof en = {
+  modal: {
+    cancel: '취소',
+    ok: '확인',
+  },
+}
+
+export default { en, zh, ja, ko }

@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common'
 import { TerminusModule } from '@nestjs/terminus'
-
-import { databaseProviders } from './database.providers'
+import { MongooseModule } from '@nestjs/mongoose'
 
 import { AccountController } from './controller/account.controller'
 import { AlbumController } from './controller/album.controller'
@@ -15,8 +14,18 @@ import { AppService } from './service/app.service'
 import { IconService } from './service/icon.service'
 import { UserService } from './service/user.service'
 
+import { Account, AccountSchema } from './models/schema/account.schema'
+import { Cat, CatSchema } from './models/cat.schema'
+
 @Module({
-  imports: [TerminusModule],
+  imports: [
+    MongooseModule.forRoot('mongodb://127.0.0.1/iconpub'),
+    MongooseModule.forFeature([
+      { name: Cat.name, schema: CatSchema },
+      { name: Account.name, schema: AccountSchema },
+    ]),
+    TerminusModule,
+  ],
   controllers: [
     AccountController,
     AlbumController,
@@ -26,7 +35,7 @@ import { UserService } from './service/user.service'
     SystemController,
     UserController,
   ],
-  providers: [...databaseProviders, AppService, IconService, UserService],
-  exports: [...databaseProviders],
+  providers: [AppService, IconService, UserService],
+  exports: [],
 })
 export class AppModule {}

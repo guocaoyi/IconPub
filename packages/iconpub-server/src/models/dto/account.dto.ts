@@ -34,6 +34,7 @@ export class AccountDto {
 
   deviceId: '0'
 
+  name: string
   email: string
 
   hasPassword: boolean

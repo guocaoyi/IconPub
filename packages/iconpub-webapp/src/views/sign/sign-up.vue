@@ -4,9 +4,9 @@ import config from '@/config'
 
 <template>
   <main>
-    <div class="auth-form px-3">
+    <div class="px-3">
       <input type="hidden" />
-      <div class="auth-form-header p-0">
+      <div class="p-0">
         <h1>Sign up to {{ config.siteName }}</h1>
       </div>
     </div>

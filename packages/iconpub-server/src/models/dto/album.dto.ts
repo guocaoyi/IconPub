@@ -1,4 +1,4 @@
-import { AccountDto } from './AccountDto'
+import { AccountDto } from './account.dto'
 
 class Group {
   id: number
@@ -15,30 +15,15 @@ export class FontProjectDto {
   font_is_old: 0
   guid: null
   name: string
-  prefix: 'icon-'
+
+  prefix: `${string}-`
+
   status: null
 
   createdAt: string
-  updatedAt: string
-  deletedAt?: string
-}
 
-export class ProjectDto {
-  id: number
-  name: string
-  description: string
-  logo: string
-  authorInfo: []
-  ownerId: string
-  ownerInfo: AccountDto
-  readerInfo: AccountDto[]
-  resourceCount: number
-  tags: string[]
-  subgroupInfo: Group[]
-  extraInfo: { tags: string[]; subgroupInfo: Group[] }
-  type: 1
-  createdAt: string
-  updatedAt?: string
+  updatedAt: string
+
   deletedAt?: string
 }
 
@@ -46,9 +31,21 @@ export class ProjectDto {
  * 图标集合（项目、等同 Project）
  */
 export class AlbumDto {
-  id: number
+  id: string
   name: string
   description: string
+
+  logo: string
+  authorInfo: []
+  ownerId: string
+  ownerInfo: AccountDto
+  readerInfo: AccountDto[]
+  resourceCount: number
+  subgroupInfo: Group[]
+  extraInfo: { tags: string[]; subgroupInfo: Group[] }
+
+  tags: string[]
+  type: 'icon' | 'illu' | 'lottie' | 'svg' | '3d'
 
   copyright: null
   coverCconId: null
@@ -76,9 +73,10 @@ export class AlbumDto {
   slug: string
   source_file_type: null
   tag_ids: '6,20'
-  type: 'icon' | 'illu' | 'lottie' | 'svg'
+
   url: ''
 
   createdAt: string
-  updatedAt: string
+  updatedAt?: string
+  deletedAt?: string
 }

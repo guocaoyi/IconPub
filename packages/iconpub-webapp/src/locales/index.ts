@@ -16,7 +16,6 @@ export const messages = {
   en: {
     // components
     ...BaseAlertLocale.en,
-
     ...BaseModalLocale.en,
     ...LayoutAboutLocale.en,
     ...LayoutFooterLocale.en,
@@ -27,7 +26,6 @@ export const messages = {
     ...ViewBlogLocale.en,
     ...ViewErrorLocale.en,
     ...ViewHomeLocale.en,
-
     ...ViewSignLocale.en,
 
     // others
@@ -36,7 +34,6 @@ export const messages = {
   zh: {
     // components
     ...BaseAlertLocale.zh,
-
     ...BaseModalLocale.zh,
     ...LayoutAboutLocale.zh,
     ...LayoutFooterLocale.zh,
@@ -47,10 +44,47 @@ export const messages = {
     ...ViewAlbumsLocale.zh,
     ...ViewErrorLocale.zh,
     ...ViewHomeLocale.zh,
-
     ...ViewSignLocale.zh,
 
     // others
     ...MenusLocale.zh,
+  },
+
+  ja: {
+    // components
+    ...BaseAlertLocale.ja,
+    ...BaseModalLocale.ja,
+    ...LayoutAboutLocale.ja,
+    ...LayoutFooterLocale.ja,
+
+    // views
+    ...ViewAccountLocale.ja,
+    ...ViewBlogLocale.ja,
+    ...ViewAlbumsLocale.ja,
+    ...ViewErrorLocale.ja,
+    ...ViewHomeLocale.ja,
+    ...ViewSignLocale.ja,
+
+    // others
+    ...MenusLocale.ja,
+  },
+
+  ko: {
+    // components
+    ...BaseAlertLocale.ko,
+    ...BaseModalLocale.ko,
+    ...LayoutAboutLocale.ko,
+    ...LayoutFooterLocale.ko,
+
+    // views
+    ...ViewAccountLocale.ko,
+    ...ViewBlogLocale.ko,
+    ...ViewAlbumsLocale.ko,
+    ...ViewErrorLocale.ko,
+    ...ViewHomeLocale.ko,
+    ...ViewSignLocale.ko,
+
+    // others
+    ...MenusLocale.ko,
   },
 }

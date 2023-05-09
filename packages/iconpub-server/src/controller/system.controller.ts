@@ -1,10 +1,9 @@
 import { Controller, Get, Post } from '@nestjs/common'
 
 /**
- * system controller
  * @author yalda
  */
-@Controller('system')
+@Controller('/api/system')
 export class SystemController {
   /**
    * health check

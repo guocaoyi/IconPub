@@ -13,8 +13,9 @@ package-lock.json
 
 # ignore compiled files
 dist
-dist-ssr
 build
+public
+!./iconpub-webapp/public
 /coverage
 /types
 /esm

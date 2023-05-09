@@ -17,6 +17,11 @@ export const useI18nPlus = () => {
   const toggleLocale = () => {
     const locale = i18n.locale.value
     i18n.locale.value = locale == 'zh' ? 'en' : 'zh'
+
+    // random from localeSet
+    const localeSet = ['zh', 'en', 'ja', 'ko']
+    const randomLocale = localeSet[Math.floor(Math.random() * localeSet.length)]
+    i18n.locale.value = randomLocale
   }
 
   watch(i18n.locale, () => {

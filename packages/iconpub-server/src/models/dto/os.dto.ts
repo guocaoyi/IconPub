@@ -1,8 +1,6 @@
-export class ObjectStorageFormDto {}
-
+import { ApiConsumes } from '@nestjs/swagger'
 /**
- * ObjectStorageVo
- * @description object storage vo
+ *
  */
 export class ObjectStorageDto {
   id: number

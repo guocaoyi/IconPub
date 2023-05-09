@@ -1,4 +1,6 @@
-import * as process from 'process'
+import * as path from 'node:path'
+import * as process from 'node:process'
+import * as session from 'express-session'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import { NestFactory } from '@nestjs/core'
 
@@ -10,8 +12,18 @@ const bootstrap = async () => {
   // app instance
   const app = await NestFactory.create<NestExpressApplication>(AppModule)
 
-  // router prefix
-  app.setGlobalPrefix('/api')
+  // session
+  app.use(
+    session({
+      secret: 'IP_SECRET',
+      resave: false,
+      saveUninitialized: false,
+    }),
+  )
+
+  // public
+  app.useStaticAssets(path.join(__dirname, '..', 'public'), { index: 'index.html' })
+  app.setBaseViewsDir(path.join(__dirname, '..', 'public'))
 
   // service health check
   // - logger

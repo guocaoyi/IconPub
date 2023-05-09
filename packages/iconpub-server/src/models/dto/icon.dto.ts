@@ -1,3 +1,11 @@
+export class CreateCatDto {
+  name: string
+
+  age: number
+
+  breed: string
+}
+
 export class BasicIcon {
   name: string
   showSvg: string

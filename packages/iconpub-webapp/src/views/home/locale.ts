@@ -14,4 +14,23 @@ export const zh: typeof en = {
   pub: {},
 }
 
-export default { en, zh }
+/**
+ * @description transfor use ChatGPT
+ */
+export const ja = {
+  home: {
+    morning: '近日公開予定...',
+    description: 'この機能はまだ利用できません。お待ちください。',
+  },
+  pub: {},
+}
+
+export const ko = {
+  home: {
+    morning: '곧 출시 예정입니다...',
+    description: '아직 사용할 수 없는 기능이므로 기다려주십시오...',
+  },
+  pub: {},
+}
+
+export default { en, zh, ja, ko }

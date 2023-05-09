@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common'
 import { HealthCheck, HealthCheckService, TypeOrmHealthIndicator } from '@nestjs/terminus'
 
-@Controller('health')
+@Controller('/api/check')
 export class HealthController {
   constructor(private health: HealthCheckService, private db: TypeOrmHealthIndicator) {}
 
@@ -11,7 +11,7 @@ export class HealthController {
     return 'ok'
   }
 
-  @Get('/check')
+  @Get('/db')
   check() {
     return this.health.check([() => this.db.pingCheck('database', { timeout: 300 })])
   }

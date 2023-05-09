@@ -6,7 +6,7 @@ import { IconService } from '../service/icon.service'
  * project controller
  * @author yalda
  */
-@Controller('project')
+@Controller('/api/project')
 export class ProjectController {
   constructor(private readonly iconService: IconService) {}
 
