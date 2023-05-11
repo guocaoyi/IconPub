@@ -128,7 +128,7 @@ importers:
       ts-loader: ^9.4.2
       ts-node: ^10.9.1
       tsconfig-paths: ^4.2.0
-      typeorm: 0.3.15
+      typeorm: ^0.3.16
       typescript: ^5.0.4
     dependencies:
       '@nestjs/common': 9.4.0_j3td4gnlgk75ora6o6suo62byy
@@ -137,15 +137,15 @@ importers:
       '@nestjs/passport': 9.0.3_@nestjs+common@9.4.0
       '@nestjs/platform-express': 9.4.0_gqkob5jndcfeb3wjw72wbdwyne
       '@nestjs/swagger': 6.3.0_wgmggry273v4dignukmrfwr7na
-      '@nestjs/terminus': 9.2.2_jknqkguondvj2x67pdeg6imsou
-      '@nestjs/typeorm': 9.0.1_5jgqalkub5zb475ngukfuhbndu
+      '@nestjs/terminus': 9.2.2_sjhjiiijc4wh6gu6mjxr756gp4
+      '@nestjs/typeorm': 9.0.1_jokqutq64fcayux5qfqoidh2g4
       class-transformer: 0.5.1
       class-validator: 0.14.0
       express-session: 1.17.3
       mongoose: 6.11.1
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      typeorm: 0.3.15_ts-node@10.9.1
+      typeorm: 0.3.16_ts-node@10.9.1
     devDependencies:
       '@nestjs/cli': 9.4.2
       '@nestjs/schematics': 9.1.0_typescript@5.0.4
@@ -1472,6 +1472,13 @@ packages:
     dev: true
     optional: true
 
+  /@babel/runtime/7.21.5:
+    resolution: {integrity: sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
+    dev: false
+
   /@babel/template/7.20.7:
     resolution: {integrity: sha512-8SegXApWe6VoNw0r9JHpSteLKTpTiLZ4rMlGIm9JQ18KiCtyQiAMEazujAHrUS5flrcqYZa75ukev3P6QmUwUw==}
     engines: {node: '>=6.9.0'}
@@ -2339,7 +2346,7 @@ packages:
       swagger-ui-dist: 4.18.2
     dev: false
 
-  /@nestjs/terminus/9.2.2_jknqkguondvj2x67pdeg6imsou:
+  /@nestjs/terminus/9.2.2_sjhjiiijc4wh6gu6mjxr756gp4:
     resolution: {integrity: sha512-AWUA8XLcgxWUjUFYHDqi42M7CZn2e+DEWxP+MqNAbMzz4ybB5jGcFK5Fy8qwaNBoWg6KMF1JiXOOygGXgk9ydg==}
     peerDependencies:
       '@grpc/grpc-js': '*'
@@ -2387,14 +2394,14 @@ packages:
       '@nestjs/common': 9.4.0_j3td4gnlgk75ora6o6suo62byy
       '@nestjs/core': 9.4.0_s52inwjga72fw7w7ilq4rk5hru
       '@nestjs/mongoose': 9.2.2_idvvgsbxfmizu5zihspkyv4i4a
-      '@nestjs/typeorm': 9.0.1_5jgqalkub5zb475ngukfuhbndu
+      '@nestjs/typeorm': 9.0.1_jokqutq64fcayux5qfqoidh2g4
       boxen: 5.1.2
       check-disk-space: 3.3.1
       mongoose: 6.11.1
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
       sequelize: 6.31.1
-      typeorm: 0.3.15_ts-node@10.9.1
+      typeorm: 0.3.16_ts-node@10.9.1
     dev: false
 
   /@nestjs/testing/9.4.0_adbpomi7iuzlxxwntv6inkfmju:
@@ -2416,7 +2423,7 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@nestjs/typeorm/9.0.1_5jgqalkub5zb475ngukfuhbndu:
+  /@nestjs/typeorm/9.0.1_jokqutq64fcayux5qfqoidh2g4:
     resolution: {integrity: sha512-A2BgLIPsMtmMI0bPKEf4bmzgFPsnvHqNBx3KkvaJ7hJrBQy0OqYOb+Rr06ifblKWDWS2tUPNrAFQbZjtk3PI+g==}
     peerDependencies:
       '@nestjs/common': ^8.0.0 || ^9.0.0
@@ -2429,7 +2436,7 @@ packages:
       '@nestjs/core': 9.4.0_s52inwjga72fw7w7ilq4rk5hru
       reflect-metadata: 0.1.13
       rxjs: 7.8.1
-      typeorm: 0.3.15_ts-node@10.9.1
+      typeorm: 0.3.16_ts-node@10.9.1
       uuid: 8.3.2
     dev: false
 
@@ -4459,6 +4466,13 @@ packages:
 
   /cubic2quad/1.2.1:
     resolution: {integrity: sha512-wT5Y7mO8abrV16gnssKdmIhIbA9wSkeMzhh27jAguKrV82i24wER0vL5TGhUJ9dbJNDcigoRZ0IAHFEEEI4THQ==}
+    dev: false
+
+  /date-fns/2.30.0:
+    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
+    engines: {node: '>=0.11'}
+    dependencies:
+      '@babel/runtime': 7.21.5
     dev: false
 
   /dayjs/1.11.7:
@@ -7244,6 +7258,10 @@ packages:
   /reflect-metadata/0.1.13:
     resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
 
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
+    dev: false
+
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -8147,8 +8165,8 @@ packages:
   /typedarray/0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typeorm/0.3.15_ts-node@10.9.1:
-    resolution: {integrity: sha512-R4JSw8QjDP1W+ypeRz/XrCXIqubrLSnNAzJAp9EQSQIPHTv+YmUHZis8g08lOwFpuhqL9m8jkPSz8GWEKlU/ow==}
+  /typeorm/0.3.16_ts-node@10.9.1:
+    resolution: {integrity: sha512-wJ4Qy1oqRKNDdZiBTTaVMqwo/XxC52Q7uNPTjltPgLhvIW173bL6Iad0lhptMOsFlpixFPaUu3PNziaRBwX2Zw==}
     engines: {node: '>= 12.9.0'}
     hasBin: true
     peerDependencies:
@@ -8210,6 +8228,7 @@ packages:
       buffer: 6.0.3
       chalk: 4.1.2
       cli-highlight: 2.1.11
+      date-fns: 2.30.0
       debug: 4.3.4
       dotenv: 16.0.3
       glob: 8.1.0

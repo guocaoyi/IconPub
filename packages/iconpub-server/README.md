@@ -2,43 +2,22 @@
 
 ## Features
 
-- 账户管理
-  - 个人信息
-  - 账户管理
-    - 注册 & 登录
-    - 手机号 & 邮箱
-    - 账户密码（设置 & 更改）
-    - 三方账号绑定（Github、微信、Chrome）
-    - 注销账户
-  - 自定义存储桶
-- 资源管理
-  - 我的图标
-  - 我的图册（我发起的、我参与的、我删除的）
-  - 我的收藏（图标）
-- 图标管理
-  - 大小、线粗、颜色、拐角
-  - 搜索、分类、暂存
-- 帮助中心
-  - 功能介绍
-  - 开发使用（使用场景）
-
-## 名词解析
-
-- 图形（图标、插画、动画）
-- 图册（album）
-  - 图标集（type: icon）
-  - 平面插画集（type: sketch）
-  - 矢量动画集（type: animate）
-- 图册分册（volume）
-- 账户（account） // 特指当前用户
-- 用户（user） // 特指其他用户
-- 三方账号（phone、微信号、google、github）
-- 图像 (ikon: icon \ sketch \ lottie)
-- 缓存篮（basket） // 临时储存，通常为用户勾选的图标集合
-
-## 常见流程
-
-### 新增图标
-
-图标 > 缓存篮 > 添加到我的图册
-图标 > 缓存篮 > 添加我的收藏
+- Account Management
+  - Personal Information
+  - Account Management
+    - Registration & Login
+    - Phone Number & Email
+    - Account Password (Set & Change)
+    - Third-party Account Binding (Github, WeChat, Chrome)
+    - Account Cancellation
+  - Custom Storage Bucket
+- Resource Management
+  - My Icons
+  - My Albums (Created by Me, Participated by Me, Deleted by Me)
+  - My Favorites (Icons)
+- Icon Management
+  - Size, Line Thickness, Color, Corner
+  - Search, Categorization, Temporarily Saved
+- Help Center
+  - Function Introduction
+  - Development Usage (Usage Scenarios)

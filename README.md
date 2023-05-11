@@ -13,12 +13,12 @@ IconPub is an icon management platform(IconFont„ÄÅChrome Extension for migraton„
 
 ### Solutions
 
-|                | Client         | Runtime        | Auth           | Storage   | File Storage   |
-| :------------- | :------------- | :------------- | :------------- | :-------- | :------------- |
-| Community      | iconpub-web    | iconpub-server | social \ phone | mongo     | bucket \ file  |
-| Ultimate       | iconpub-web    | iconpub-server | ldap \ account | mongo     | bucket \ file  |
-| Git Repository | create-iconpub | iconpub-core   | -              | lock file | bucket \ npm   |
-| Bundler Plugin | iconpub-plugin | vite/webpack   | -              | lock file | output bunlder |
+|                | Client         | Runtime        | Auth   | Storage   | File Storage   |
+| :------------- | :------------- | :------------- | :----- | :-------- | :------------- |
+| Community      | iconpub-web    | iconpub-server | github | mongo     | bucket \ file  |
+| Ultimate       | iconpub-web    | iconpub-server | github | mongo     | bucket \ file  |
+| Git Repository | create-iconpub | iconpub-core   | -      | lock file | bucket \ npm   |
+| Bundler Plugin | iconpub-plugin | vite/webpack   | -      | lock file | output bunlder |
 
 ### Schedules
 

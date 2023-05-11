@@ -9,6 +9,12 @@ Summary
   5. version timestamp follow the yyyy.MM.dd format
 ```
 
+## 0.1.1 [2023.05.10]
+
+- remove: add po\vo models
+- feat: add ja & ko i18n
+- feat: add dto\mongo schemas
+
 ## 0.1.0 [2022.08.10]
 
 - feat: use nest cli initial
