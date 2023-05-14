@@ -14,7 +14,6 @@ declare module '*.md' {
 }
 
 interface ImportMetaEnv {
-  readonly VITE_NOW: number
   readonly VITE_ORG: string
   readonly VITE_AUTHOR: string
   readonly VITE_SITE_NAME: string

@@ -40,7 +40,7 @@ watch(i18n.locale, () => {
     xl:px-20
   >
     <span text="xs dark dark:light" lh-5>
-      ©{{ $t('footer.right') }} 2022-{{ config.now }} {{ config.siteName.toUpperCase() }} &nbsp;
+      ©{{ $t('footer.right') }} 2022-2023 {{ config.siteName.toUpperCase() }} &nbsp;
     </span>
     <a
       v-for="(item, i) in licenses"

@@ -3,14 +3,21 @@ import * as process from 'node:process'
 import * as session from 'express-session'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import { NestFactory } from '@nestjs/core'
+import { ValidationPipe } from '@nestjs/common'
 
-import { MainModule } from './main.module'
+import { MainModule } from 'src/main.module'
 
 import type { NestExpressApplication } from '@nestjs/platform-express'
 
 const bootstrap = async () => {
   // app instance
-  const app = await NestFactory.create<NestExpressApplication>(MainModule)
+  const app = await NestFactory.create<NestExpressApplication>(MainModule, {
+    cors: true,
+    logger: ['debug', 'error', 'warn', 'log'],
+  })
+
+  //
+  app.enableCors()
 
   // session
   app.use(
@@ -24,6 +31,7 @@ const bootstrap = async () => {
   // public
   app.useStaticAssets(path.join(__dirname, '..', 'public'), { index: 'index.html' })
   app.setBaseViewsDir(path.join(__dirname, '..', 'public'))
+  app.setGlobalPrefix('/api')
 
   // process health
   process.on('uncaughtException', (e) => {
@@ -46,7 +54,10 @@ const bootstrap = async () => {
   const document = SwaggerModule.createDocument(app, config)
   SwaggerModule.setup('/__swagger', app, document)
 
+  //
+  app.useGlobalPipes(new ValidationPipe())
+
   // process listen port
-  await app.listen(4001)
+  await app.listen(process.env.PORT || 3000)
 }
 bootstrap()
