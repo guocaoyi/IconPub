@@ -7,7 +7,6 @@ export const config = {
   menus,
   cname: 'https://icons.pub',
 
-  now: import.meta.env.VITE_NOW ?? '',
   org: import.meta.env.VITE_ORG ?? '',
   author: import.meta.env.VITE_AUTHOR ?? '',
   siteName: import.meta.env.VITE_SITE_NAME ?? '',
