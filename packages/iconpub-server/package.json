@@ -20,6 +20,7 @@
     "test:e2e": "jest --config ./apps/iconpub-server/test/jest-e2e.json"
   },
   "dependencies": {
+    "@casl/ability": "^6.5.0",
     "@nestjs/common": "^9.4.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.4.0",

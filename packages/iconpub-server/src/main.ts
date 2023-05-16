@@ -12,12 +12,16 @@ import type { NestExpressApplication } from '@nestjs/platform-express'
 const bootstrap = async () => {
   // app instance
   const app = await NestFactory.create<NestExpressApplication>(MainModule, {
-    cors: true,
+    cors: false,
     logger: ['debug', 'error', 'warn', 'log'],
   })
 
   //
-  app.enableCors()
+  app.enableCors({
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['*'],
+    credentials: true,
+  })
 
   // session
   app.use(
