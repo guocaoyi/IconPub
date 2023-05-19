@@ -38,9 +38,6 @@ export class User {
 
   @Prop({ alias: 'updated_at', default: Date.now() })
   updatedAt: number
-
-  @Prop({ alias: 'deleted_at' })
-  deletedAt?: number
 }
 
 export type UserDocument = Document<User>

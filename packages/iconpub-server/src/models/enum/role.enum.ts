@@ -17,4 +17,9 @@ export enum Role {
    * for album
    */
   Contributor = 'contributor',
+
+  /**
+   * view album in org
+   */
+  Visitor = 'visitor',
 }

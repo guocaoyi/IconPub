@@ -1,7 +1,6 @@
 import {
   Body,
   Controller,
-  ConsoleLogger,
   Delete,
   HttpCode,
   HttpStatus,
@@ -9,36 +8,31 @@ import {
   Post,
   Put,
   Session,
-  UseInterceptors,
-  UploadedFile,
+  Logger,
 } from '@nestjs/common'
-import { FileInterceptor } from '@nestjs/platform-express'
 import { ApiBody, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger'
 
 import { IconDto, CreateIconDto, UpdateIconDto } from 'src/models/icon.dto'
 import { IconService } from 'src/services/icon.service'
-
-/**
- *
- */
+import { Roles, Role } from 'src/decorators/roles.decorator'
 
 @ApiTags('icon')
 @Controller('icon')
-export class IconController extends ConsoleLogger {
-  constructor(private readonly iconService: IconService) {
-    super()
-  }
+export class IconController {
+  private readonly logger = new Logger(IconController.name)
+
+  constructor(private readonly iconService: IconService) {}
 
   @ApiBody({ type: CreateIconDto })
   @ApiResponse({ type: [IconDto] })
   @HttpCode(HttpStatus.OK)
   @Put()
-  async create(
+  async upload(
     @Session() session: { name: string; id: string },
     @Body() createIconDto: CreateIconDto,
   ): Promise<IconDto> {
-    createIconDto.createdAt = Date.now()
-    createIconDto.owner = session.id
+    // createIconDto.owner = session.id
+
     const icon = await this.iconService.create(createIconDto)
     icon.toObject()
 
@@ -47,9 +41,9 @@ export class IconController extends ConsoleLogger {
 
   @HttpCode(HttpStatus.OK)
   @ApiBody({ type: UpdateIconDto })
-  @ApiResponse({ type: [IconDto] })
+  @ApiResponse({ status: '2XX', type: IconDto })
   @Post()
-  async update(@Body() updateIconDto: UpdateIconDto): Promise<IconDto> {
+  async setAlbum(@Body() updateIconDto: UpdateIconDto): Promise<IconDto> {
     const icon = await this.iconService.update(updateIconDto)
     const iconDto = new IconDto()
     iconDto.id = icon.id
@@ -59,15 +53,8 @@ export class IconController extends ConsoleLogger {
   }
 
   @ApiParam({ name: 'cid', type: String })
-  @UseInterceptors(FileInterceptor('file'))
   @HttpCode(HttpStatus.OK)
-  @Post(':cid')
-  uploadFile(@UploadedFile() file: Express.Multer.File): void {
-    console.log(file)
-  }
-
-  @ApiParam({ name: 'cid', type: String })
-  @HttpCode(HttpStatus.OK)
+  @Roles(Role.Admin, Role.Owner, Role.Contributor)
   @Delete(':cid')
   async delete(
     @Session() session: { name: string; id: string },
@@ -77,8 +64,13 @@ export class IconController extends ConsoleLogger {
   }
 
   @ApiParam({ name: 'cid', type: String })
-  @Put('frozen/:cid')
-  async frozen(@Param('cid') id: string) {
-    return ''
+  @HttpCode(HttpStatus.OK)
+  @Roles(Role.Admin, Role.Owner, Role.Contributor)
+  @Delete('/destory/:cid')
+  async destory(
+    @Session() session: { name: string; id: string },
+    @Param('cid') albumId: string,
+  ): Promise<void> {
+    await this.iconService.delete(albumId, session.id)
   }
 }

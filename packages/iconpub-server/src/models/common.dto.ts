@@ -37,7 +37,7 @@ export class Request {
 }
 
 /**
- * paginated
+ *
  */
 export class PaginatedDto<TData> {
   @ApiProperty()
@@ -49,5 +49,6 @@ export class PaginatedDto<TData> {
   @ApiProperty()
   offset: number
 
+  @ApiProperty()
   data: TData[]
 }

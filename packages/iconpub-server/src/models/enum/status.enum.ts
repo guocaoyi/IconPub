@@ -18,6 +18,8 @@ export enum Status {
   Deleted = 'deleted',
 }
 
+/** */
 export const status = ['actived', 'archived', 'deleted']
 
-export const action = ['active', 'archive']
+/** */
+export const action = ['active', 'archive', 'delete']

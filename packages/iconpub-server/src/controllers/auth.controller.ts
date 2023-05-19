@@ -37,7 +37,7 @@ export class AuthController {
     const password = Buffer.from(createUserDto.password, 'base64').toString()
 
     // validate, check email, check name
-    const hasUser = await this.userService.hasUser(createUserDto.name, createUserDto.email)
+    const hasUser = await this.userService.hasUser(createUserDto.username, createUserDto.email)
     this.logger.debug(hasUser)
     assert.ok(!hasUser, 'user already exists')
 
@@ -51,7 +51,7 @@ export class AuthController {
 
     // redirect to /
 
-    return this.authService.signUp(createUserDto.name, password)
+    return this.authService.signUp(createUserDto.username, password)
   }
 
   /**

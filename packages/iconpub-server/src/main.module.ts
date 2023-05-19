@@ -6,11 +6,12 @@ import { TerminusModule } from '@nestjs/terminus'
 import { JwtModule } from '@nestjs/jwt'
 
 import configuration from 'src/configs/configuration'
-import { jwtConstants } from 'src/configs/jwt'
 
 import { AlbumController } from 'src/controllers/album.controller'
-import { AppController } from 'src/controllers/app.controller'
 import { AuthController } from 'src/controllers/auth.controller'
+import { FileController } from './controllers/file.controller'
+import { FontController } from './controllers/font.controller'
+import { HealthController } from 'src/controllers/health.controller'
 import { IconController } from 'src/controllers/icon.controller'
 import { UserController } from 'src/controllers/user.controller'
 
@@ -39,7 +40,7 @@ import { APP_GUARD } from '@nestjs/core'
     }),
     JwtModule.register({
       global: true,
-      secret: jwtConstants.secret,
+      secret: configuration().jwt.secret,
       signOptions: { expiresIn: '10h' },
     }),
     TerminusModule,
@@ -54,7 +55,15 @@ import { APP_GUARD } from '@nestjs/core'
       { name: User.name, schema: UserSchema },
     ]),
   ],
-  controllers: [AppController, AlbumController, IconController, AuthController, UserController],
+  controllers: [
+    AlbumController,
+    AuthController,
+    FileController,
+    FontController,
+    HealthController,
+    IconController,
+    UserController,
+  ],
   providers: [
     { provide: APP_GUARD, useClass: RolesGuard },
     AccountService,

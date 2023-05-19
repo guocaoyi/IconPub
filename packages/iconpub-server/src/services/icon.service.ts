@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
 import { Icon } from 'src/schemas/icon.schema'
-import { IconDto, CreateIconDto, UpdateIconDto } from 'src/models/icon.dto'
+import { CreateIconDto, UpdateIconDto } from 'src/models/icon.dto'
 
 @Injectable()
 export class IconService {
@@ -13,6 +13,7 @@ export class IconService {
 
   async create(createIconDto: CreateIconDto) {
     const createdIcon = new this.iconModel(createIconDto)
+
     return createdIcon.save()
   }
 
@@ -27,7 +28,7 @@ export class IconService {
 
   async findAll(ownerId: string): Promise<Icon[]> {
     this.logger.log(`findAll ownerId: ${ownerId}`)
-    return this.iconModel.find({ $and: [{ ownerId: ownerId }, { deletedAt: null }] }).exec()
+    return this.iconModel.find({ $and: [{ ownerId: ownerId }] }).exec()
   }
 
   /**

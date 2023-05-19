@@ -12,10 +12,9 @@ import {
 } from '@nestjs/common'
 import { ApiParam, ApiHeader, ApiTags, ApiQuery } from '@nestjs/swagger'
 
-import { Roles } from 'src/decorators/roles.decorator'
-import { Role } from 'src/models/enum/role.enum'
-import { UserService } from 'src/services/user.service'
 import { AuthGuard } from 'src/guards/auth.guard'
+import { Roles, Role } from 'src/decorators/roles.decorator'
+import { UserService } from 'src/services/user.service'
 
 @ApiTags('user')
 @Controller('user')

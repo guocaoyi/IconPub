@@ -21,16 +21,15 @@ export class Album {
   })
   type: 'icon' | 'illu' | 'lottie' | 'svg'
 
-  /**
-   * private: just for owner
-   * protected: for owner and contributors and org members
-   * public: for all platform user can visit
-   */
-  @Prop({ required: true })
+  @Prop({
+    required: true,
+    enum: ['private', 'protected', 'public'],
+    default: 'private',
+  })
   visibility: 'private' | 'protected' | 'public'
 
   @Prop({ required: true, default: 'active' })
-  status: 'active' | 'archived'
+  status: 'active' | 'archived' | 'deleted'
 
   /**
    * owner can visit\add\delete items(icon), achieve\delete album
@@ -61,9 +60,6 @@ export class Album {
 
   @Prop({ alias: 'updated_at', default: Date.now() })
   updatedAt: string
-
-  @Prop({ alias: 'deleted_at' })
-  deletedAt?: string
 }
 
 export type AlbumDocument = Document<Album>

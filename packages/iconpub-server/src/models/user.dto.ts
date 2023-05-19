@@ -1,4 +1,5 @@
 import { ApiProperty, PartialType, PickType } from '@nestjs/swagger'
+import { Exclude } from 'class-transformer'
 import {
   IsBase64,
   IsEmail,
@@ -14,6 +15,10 @@ import {
  * basic user dto
  */
 export class UserDto {
+  constructor(partial: Partial<UserDto>) {
+    Object.assign(this, partial)
+  }
+
   @ApiProperty({
     type: String,
     description: 'username, min length more than 4',
@@ -45,6 +50,7 @@ export class UserDto {
   @IsEmail()
   email: string
 
+  @Exclude()
   @ApiProperty({
     type: String,
     description: 'passwork, encode by base64, min length more than 6',

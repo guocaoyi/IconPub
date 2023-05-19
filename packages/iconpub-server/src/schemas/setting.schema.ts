@@ -11,9 +11,6 @@ export class Setting {
 
   @Prop({ alias: 'updated_at', default: Date.now() })
   updatedAt: number
-
-  @Prop({ alias: 'deleted_at' })
-  deletedAt?: number
 }
 
 export type SettingDocument = Document<Setting>
