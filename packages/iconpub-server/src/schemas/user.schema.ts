@@ -3,8 +3,11 @@ import { Document } from 'mongoose'
 
 @Schema()
 export class User {
+  @Prop({ alias: '_id' })
+  id: string
+
   @Prop()
-  name: string
+  username: string
 
   @Prop({ default: '' })
   bio?: string
@@ -12,13 +15,13 @@ export class User {
   @Prop({ type: [String], default: [] })
   organization?: string[]
 
-  @Prop({ default: '' })
-  avatar?: string
+  @Prop({ default: '', required: false })
+  avatar: string
 
-  @Prop({ default: '' })
-  email?: string
+  @Prop({ default: '', required: false })
+  email: string
 
-  @Prop({ default: '' })
+  @Prop({ default: '', required: false })
   url: string
 
   /**

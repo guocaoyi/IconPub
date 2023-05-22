@@ -1,11 +1,11 @@
 import { ApiProperty, PickType } from '@nestjs/swagger'
-import { IsNotEmpty, MaxLength, IsOptional, MinLength, Max } from 'class-validator'
+import { IsNotEmpty, IsOptional, Max, MaxLength, Min, MinLength } from 'class-validator'
 
 export type IconType = 'icon' | 'illu' | 'svg' | 'font'
 
 export class IconDto {
   @ApiProperty()
-  id: number
+  id: string
 
   @ApiProperty({
     type: String,
@@ -29,7 +29,8 @@ export class IconDto {
     default: 1,
   })
   @IsNotEmpty()
-  @MaxLength(12)
+  @Max(65000)
+  @Min(25000)
   unicode: number
 
   @ApiProperty({

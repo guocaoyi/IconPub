@@ -1,5 +1,4 @@
 import { ApiProperty, PartialType, PickType } from '@nestjs/swagger'
-import { Exclude } from 'class-transformer'
 import {
   IsBase64,
   IsEmail,
@@ -11,9 +10,6 @@ import {
   MinLength,
 } from 'class-validator'
 
-/**
- * basic user dto
- */
 export class UserDto {
   constructor(partial: Partial<UserDto>) {
     Object.assign(this, partial)
@@ -50,24 +46,24 @@ export class UserDto {
   @IsEmail()
   email: string
 
-  @Exclude()
   @ApiProperty({
     type: String,
     description: 'passwork, encode by base64, min length more than 6',
     default: 'changeme',
   })
   @IsNotEmpty()
-  @IsBase64()
-  @MinLength(10)
+  // @IsBase64()
+  // @MinLength(10)
   password: string
+
+  // get passwork(): string {
+  //   return Buffer.from(this.password, 'base64').toString()
+  // }
 
   @ApiProperty({ default: '' })
   @IsOptional()
   @MaxLength(200)
   url: string
-
-  @ApiProperty()
-  createdAt: string
 }
 
 export class CreateUserDto extends PickType(UserDto, ['username', 'email', 'password']) {}

@@ -1,9 +1,8 @@
-import { Injectable } from '@nestjs/common'
-import { InjectModel } from '@nestjs/mongoose'
-import { Model } from 'mongoose'
-
-import { Icon } from 'src/schemas/icon.schema'
 import { Album } from 'src/schemas/album.schema'
+import { Icon } from 'src/schemas/icon.schema'
+import { InjectModel } from '@nestjs/mongoose'
+import { Injectable } from '@nestjs/common'
+import { Model } from 'mongoose'
 
 @Injectable()
 export class AlbumService {

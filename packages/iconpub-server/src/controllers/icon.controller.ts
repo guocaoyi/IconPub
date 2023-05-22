@@ -1,22 +1,26 @@
+import { ApiBearerAuth, ApiBody, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger'
 import {
   Body,
   Controller,
   Delete,
   HttpCode,
   HttpStatus,
+  Logger,
   Param,
   Post,
   Put,
   Session,
-  Logger,
+  UseGuards,
 } from '@nestjs/common'
-import { ApiBody, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger'
 
-import { IconDto, CreateIconDto, UpdateIconDto } from 'src/models/icon.dto'
+import { CreateIconDto, IconDto, UpdateIconDto } from 'src/models/icon.dto'
+import { Role, Roles } from 'src/decorators/roles.decorator'
+import { AuthGuard } from 'src/guards/auth.guard'
 import { IconService } from 'src/services/icon.service'
-import { Roles, Role } from 'src/decorators/roles.decorator'
 
 @ApiTags('icon')
+@ApiBearerAuth()
+@UseGuards(AuthGuard)
 @Controller('icon')
 export class IconController {
   private readonly logger = new Logger(IconController.name)
@@ -27,12 +31,7 @@ export class IconController {
   @ApiResponse({ type: [IconDto] })
   @HttpCode(HttpStatus.OK)
   @Put()
-  async upload(
-    @Session() session: { name: string; id: string },
-    @Body() createIconDto: CreateIconDto,
-  ): Promise<IconDto> {
-    // createIconDto.owner = session.id
-
+  async upload(@Body() createIconDto: CreateIconDto): Promise<IconDto> {
     const icon = await this.iconService.create(createIconDto)
     icon.toObject()
 

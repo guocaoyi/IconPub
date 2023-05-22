@@ -1,9 +1,8 @@
+import { CreateIconDto, UpdateIconDto } from 'src/models/icon.dto'
 import { Injectable, Logger } from '@nestjs/common'
+import { Icon } from 'src/schemas/icon.schema'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
-
-import { Icon } from 'src/schemas/icon.schema'
-import { CreateIconDto, UpdateIconDto } from 'src/models/icon.dto'
 
 @Injectable()
 export class IconService {

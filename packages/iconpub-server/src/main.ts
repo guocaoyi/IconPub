@@ -1,13 +1,11 @@
 import * as path from 'node:path'
 import * as process from 'node:process'
-import helmet from 'helmet'
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
+import { MainModule } from 'src/main.module'
+import type { NestExpressApplication } from '@nestjs/platform-express'
 import { NestFactory } from '@nestjs/core'
 import { ValidationPipe } from '@nestjs/common'
-
-import { MainModule } from 'src/main.module'
-
-import type { NestExpressApplication } from '@nestjs/platform-express'
+import helmet from 'helmet'
 
 const bootstrap = async () => {
   const app = await NestFactory.create<NestExpressApplication>(MainModule, {
@@ -23,12 +21,12 @@ const bootstrap = async () => {
   )
   app.enableCors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['*'],
+    allowedHeaders: '*',
     credentials: true,
   })
 
   // public
-  app.useStaticAssets(path.join(__dirname, '..', 'public'), { index: 'index.html' })
+  app.useStaticAssets(path.join(__dirname, '..', 'publicaddBearerAuth'), { index: 'index.html' })
   app.setBaseViewsDir(path.join(__dirname, '..', 'public'))
   app.setGlobalPrefix('/api')
 
@@ -36,6 +34,7 @@ const bootstrap = async () => {
   const config = new DocumentBuilder()
     .setTitle('IconPub OpenAPI')
     .setDescription('The iconpub API description')
+    .addBearerAuth({ type: 'http', name: 'authorization', in: 'header' })
     .setVersion('0.0.1')
     .addTag('IconPub')
     .build()

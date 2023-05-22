@@ -1,8 +1,8 @@
 import * as crypto from 'node:crypto'
-import { Injectable, UnauthorizedException } from '@nestjs/common'
-import { JwtService } from '@nestjs/jwt'
-
-import { UserService } from './user.service'
+import { CreateUserDto } from 'src/models/user.dto'
+import { InjectModel } from '@nestjs/mongoose'
+import { Injectable } from '@nestjs/common'
+import { Model } from 'mongoose'
 import { User } from 'src/schemas/user.schema'
 
 @Injectable()
@@ -11,46 +11,28 @@ export class AuthService {
   private readonly HashedIterations = 10000
   private readonly HashedDigest = 'sha512'
 
-  constructor(private readonly userService: UserService, private readonly jwtService: JwtService) {}
+  constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
-  /**
-   * @param username: string
-   * @param pass: string, hashed password(base64)
-   */
-  async signIn(username: string, pass: string) {
-    // check user
-
-    // pass base64 decode
-    const user = await this.userService.findOne(username)
-    const hashedPass = this.hashPassword(pass, user?.salt)
-    if (user?.password !== hashedPass) {
-      throw new UnauthorizedException("password doesn't match")
-    }
-
-    const payload = {
-      id: user.name,
-      username: user.name,
-      sub: user.url,
-    }
-
-    return {
-      token: await this.jwtService.signAsync(payload),
-    }
+  private hashed(password: string, salt: string) {
+    return crypto
+      .pbkdf2Sync(password, salt, this.HashedIterations, 32, this.HashedDigest)
+      .toString('hex')
   }
 
   /**
-   *
+   * sing up
    */
-  async signUp(username: string, password: string) {
+  async signUp(createUserDto: CreateUserDto) {
     const salt = this.genSalt()
-    const hashedPassword = this.hashPassword(password, salt)
+    const hashedPassword = this.hashPassword(createUserDto.password, salt)
     const user = new User()
-    user.name = username
+    user.username = createUserDto.username
+    user.email = createUserDto.email
     user.salt = salt
     user.password = hashedPassword
     user.createdAt = Date.now()
     user.updatedAt = Date.now()
-    return this.userService.create(user)
+    return this.userModel.create(user)
   }
 
   /**
@@ -64,18 +46,14 @@ export class AuthService {
    * hashed password
    */
   hashPassword(password: string, salt: string) {
-    return crypto
-      .pbkdf2Sync(password, salt, this.HashedIterations, 32, this.HashedDigest)
-      ?.toString?.('hex')
+    return this.hashed(password, salt)
   }
 
   /**
    * verify password
    */
   comparePassword(password: string, hashedPassword: string, salt: string) {
-    const derivedPassword = crypto
-      .pbkdf2Sync(password, salt, this.HashedIterations, 32, this.HashedDigest)
-      .toString('hex')
+    const derivedPassword = this.hashed(password, salt)
 
     return hashedPassword === derivedPassword
   }

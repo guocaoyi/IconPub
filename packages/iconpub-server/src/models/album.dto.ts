@@ -1,19 +1,18 @@
+import { ApiProperty, PartialType, PickType } from '@nestjs/swagger'
+import { IconType, icontype } from 'src/enums/type.enum'
 import {
   IsArray,
+  IsEnum,
   IsNotEmpty,
+  IsOptional,
+  IsString,
   MaxLength,
   MinLength,
   ValidateIf,
-  IsOptional,
-  IsString,
-  IsEnum,
 } from 'class-validator'
-import { ApiProperty, PickType, PartialType } from '@nestjs/swagger'
-
+import { Status, status } from 'src/enums/status.enum'
+import { Visibility, visibility } from 'src/enums/visit.enum'
 import { User } from 'src/schemas/user.schema'
-import { IconType, icontype } from './enum/type.enum'
-import { Status, status } from './enum/status.enum'
-import { Visibility, visibility } from './enum/visit.enum'
 
 export class AlbumDto {
   @ApiProperty()
