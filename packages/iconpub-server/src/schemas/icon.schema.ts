@@ -1,28 +1,22 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
-/**
- * Icon
- */
 @Schema()
 export class Icon {
-  @Prop({ required: true, description: 'icon name' })
+  @Prop({ required: true, type: String })
   name: string
 
-  @Prop({ required: true, default: (self: any) => `icon_${self.count++}` })
-  symbol: string
-
-  @Prop({ required: true })
-  unicode: number
-
-  @Prop({ alias: 'album_id', required: true })
-  albumId: number
-
-  @Prop({ default: '', required: true })
+  @Prop({ type: String, default: '' })
   description: string
 
-  @Prop()
-  owner: string
+  @Prop({ required: true, type: String })
+  symbol: string
+
+  @Prop({ required: true, type: Number })
+  unicode: number
+
+  @Prop({ required: true, type: Number, alias: 'album_id' })
+  albumId: number
 
   @Prop({
     type: String,
@@ -31,17 +25,11 @@ export class Icon {
   })
   type: 'icon' | 'illu' | 'svg' | 'font'
 
-  @Prop({ type: String, required: true })
+  @Prop({ required: true, type: String })
   resource: string
 
   @Prop({ type: [String], default: [] })
   tags: string[]
-
-  @Prop({ alias: 'created_at', required: true, default: Date.now() })
-  createdAt: number
-
-  @Prop({ alias: 'updated_at', default: Date.now() })
-  updatedAt?: number
 }
 
 export type IconDocument = Icon & Document

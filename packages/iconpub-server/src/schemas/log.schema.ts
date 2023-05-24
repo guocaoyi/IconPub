@@ -12,25 +12,27 @@ export class Operator {
 @Schema()
 export class Log {
   @Prop()
-  album: string
+  albumId: string
 
   @Prop(
     raw({
+      // user id
       operatorId: { type: String, required: true },
+      // user name
       operator: { type: String, required: true },
+      // delete, update, create , fork, publish, unpublish, like, unlike, view, download....
       action: { type: String, required: true },
+      // target name
+      handle: { type: String, required: true },
     }),
   )
   content: Record<string, Operator>
 
-  @Prop({ required: true, default: '' })
+  @Prop({ type: String, default: '' })
   ip: string
 
-  @Prop({ required: false, default: '' })
-  ua: string
-
-  @Prop({ alias: 'created_at', default: Date.now() })
-  createdAt: string
+  @Prop({ type: String, default: '', alias: 'user_agent' })
+  userAgent: string
 }
 
 export type LogDocument = Document<Log>

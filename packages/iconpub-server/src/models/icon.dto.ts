@@ -125,8 +125,4 @@ export class CreateIconDto extends PickType(IconDto, [
   'tags',
 ]) {}
 
-export class UpdateIconDto extends PickType(IconDto, [
-  'id' as const,
-  'albumId',
-  'createdAt',
-] as const) {}
+export class UpdateIconDto extends PickType(IconDto, ['id' as const, 'albumId'] as const) {}

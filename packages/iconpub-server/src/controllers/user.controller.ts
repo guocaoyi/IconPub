@@ -1,4 +1,4 @@
-import { ApiBearerAuth, ApiBody, ApiHeader, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiBody, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger'
 import {
   Body,
   Controller,
@@ -16,6 +16,7 @@ import {
   UseGuards,
 } from '@nestjs/common'
 
+import { Req } from 'src/interfaces/session.interface'
 import { Role, Roles } from 'src/decorators/roles.decorator'
 import { AuthGuard } from 'src/guards/auth.guard'
 import { ResetPassDto } from 'src/models/auth.dto'
@@ -30,9 +31,8 @@ export class UserController {
 
   constructor(private readonly userService: UserService) {}
 
-  @ApiHeader({ required: true, name: 'Authorization', description: 'Bearer *token*' })
   @Get()
-  profile(@Request() req: any) {
+  profile(@Request() req: Req) {
     this.logger.debug(JSON.stringify(req.user, null, 2))
     return req.user
   }
@@ -74,7 +74,6 @@ export class UserController {
   }
 
   @ApiBody({ type: ResetPassDto })
-  @ApiHeader({ name: 'Authorization', description: 'token' })
   @HttpCode(HttpStatus.OK)
   @UseGuards(AuthGuard)
   @Put('newpass')

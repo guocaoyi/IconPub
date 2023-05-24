@@ -7,10 +7,10 @@ import { TerminusModule } from '@nestjs/terminus'
 
 import { AlbumController } from 'src/controllers/album.controller'
 import { AuthController } from 'src/controllers/auth.controller'
-import { FileController } from './controllers/file.controller'
 import { FontController } from './controllers/font.controller'
 import { HealthController } from 'src/controllers/health.controller'
 import { IconController } from 'src/controllers/icon.controller'
+import { UploadController } from './controllers/upload.controller'
 import { UserController } from 'src/controllers/user.controller'
 
 import { Album, AlbumSchema } from 'src/schemas/album.schema'
@@ -55,10 +55,10 @@ import configuration from 'src/configs/configuration'
   controllers: [
     AlbumController,
     AuthController,
-    FileController,
     FontController,
     HealthController,
     IconController,
+    UploadController,
     UserController,
   ],
   providers: [AccountService, AlbumService, AuthService, IconService, UserService],

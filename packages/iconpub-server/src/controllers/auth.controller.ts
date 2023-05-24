@@ -7,6 +7,8 @@ import { CreateUserDto } from 'src/models/user.dto'
 import { SignDto } from 'src/models/auth.dto'
 import { AuthService } from 'src/services/auth.service'
 import { UserService } from 'src/services/user.service'
+import { AlbumService } from 'src/services/album.service'
+import { Album } from 'src/schemas/album.schema'
 
 @ApiTags('auth')
 @Controller()
@@ -15,26 +17,36 @@ export class AuthController {
 
   constructor(
     private readonly authService: AuthService,
-    private readonly userService: UserService,
     private readonly jwtService: JwtService,
+    private readonly userService: UserService,
+    private readonly albumService: AlbumService,
   ) {}
 
-  /**
-   * sign up
-   */
   @ApiBody({ type: CreateUserDto })
   @Put('signup')
   async signup(@Body() dto: CreateUserDto) {
     // validate, check email, check name
     const user = await this.userService.queryUserByNameAndEmail(dto.username, dto.email)
+    const ss = (await this.userService.queryUsersByNameOrEmail(dto.username, dto.email)).reduce(
+      (acc, cur) => {
+        acc[cur.username] = cur
+      },
+      [],
+    )
     this.logger.debug(user)
-    assert.ok(!user, 'user already exists')
+    assert.ok(!user, 'user already exists!')
 
     // create user
 
     // create profile
-    // create user salt
-    // encrypt password
+    // create default org
+
+    // create default album
+    const album = new Album()
+    album.name = `${dto.username}'s pub`
+    album.visibility = 'private'
+    album.owner = dto.username
+    this.albumService.createAlbum(album)
 
     // create session
 
@@ -43,9 +55,6 @@ export class AuthController {
     return this.authService.signUp(dto)
   }
 
-  /**
-   * sign in
-   */
   @ApiBody({ type: SignDto })
   @HttpCode(HttpStatus.OK)
   @Post('signin')
@@ -60,14 +69,8 @@ export class AuthController {
     const result = this.authService.comparePassword(dto.password, user.password, user.salt)
     assert.ok(result, 'password do not match')
 
-    const payload = {
-      //@ts-ignore
-      id: user._id,
-      username: user.username,
-    }
-
     return {
-      token: await this.jwtService.signAsync(payload),
+      token: await this.jwtService.signAsync({ id: user._id, username: user.username }),
     }
   }
 }

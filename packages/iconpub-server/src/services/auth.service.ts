@@ -30,8 +30,6 @@ export class AuthService {
     user.email = createUserDto.email
     user.salt = salt
     user.password = hashedPassword
-    user.createdAt = Date.now()
-    user.updatedAt = Date.now()
     return this.userModel.create(user)
   }
 

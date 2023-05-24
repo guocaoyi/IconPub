@@ -55,12 +55,6 @@ export class ObjectStorage {
 
   @Prop(raw({}))
   uris: Scripts
-
-  @Prop({ alias: 'created_at', required: true })
-  createdAt: string
-
-  @Prop({ alias: 'updated_at' })
-  updatedAt?: string
 }
 
 export type ObjectStorageDocument = ObjectStorage & Document

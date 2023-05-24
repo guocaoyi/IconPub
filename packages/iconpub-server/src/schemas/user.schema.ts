@@ -3,44 +3,48 @@ import { Document } from 'mongoose'
 
 @Schema()
 export class User {
-  @Prop({ alias: '_id' })
-  id: string
-
-  @Prop()
+  @Prop({
+    required: true,
+    type: String,
+    unique: true,
+    index: true,
+  })
   username: string
 
-  @Prop({ default: '' })
-  bio?: string
+  @Prop({ type: String, default: '' })
+  bio: string
 
-  @Prop({ type: [String], default: [] })
-  organization?: string[]
+  @Prop({ required: true, type: [String], default: [] })
+  organization: string[]
 
-  @Prop({ default: '', required: false })
+  @Prop({ type: String, default: '' })
   avatar: string
 
-  @Prop({ default: '', required: false })
+  @Prop({
+    type: String,
+    default: '',
+    unique: true,
+    index: true,
+  })
   email: string
 
-  @Prop({ default: '', required: false })
+  @Prop({ type: String, default: '' })
   url: string
 
   /**
    * salt length is 16
    */
-  @Prop({ required: true })
+  @Prop({
+    type: String,
+    required: true,
+  })
   salt: string
 
   /**
    * crypto password & salt by sha512
    */
-  @Prop({ required: true })
+  @Prop({ type: String, required: true })
   password: string
-
-  @Prop({ alias: 'created_at', required: true, default: Date.now() })
-  createdAt: number
-
-  @Prop({ alias: 'updated_at', default: Date.now() })
-  updatedAt: number
 }
 
 export type UserDocument = Document<User>

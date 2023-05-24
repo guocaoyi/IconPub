@@ -18,20 +18,24 @@ export class UserService {
     return this.userModel.updateOne({ _id: id }, user).exec()
   }
 
-  getUserInfo(uid: string): Promise<User> {
+  getUserInfo(uid: string) {
     return this.userModel.findOne({ _id: uid }).exec()
   }
 
-  queryUserById(username: string): Promise<User> {
+  queryUserById(username: string) {
     return this.userModel.findOne({ username: { $regex: username } }).exec()
   }
 
-  queryUserByName(username: string): Promise<User> {
+  queryUserByName(username: string) {
     return this.userModel.findOne({ username }).exec()
   }
 
-  queryUserByNameAndEmail(username: string, email: string): Promise<User> {
+  queryUserByNameAndEmail(username: string, email: string) {
     return this.userModel.findOne({ $or: [{ username }, { email }] }).exec()
+  }
+
+  queryUsersByNameOrEmail(username: string, email: string) {
+    return this.userModel.find({ $or: [{ username }, { email }] }).exec()
   }
 
   queryUsersByNameReg(username: string): Promise<User[]> {

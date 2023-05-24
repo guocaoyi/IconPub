@@ -1,3 +1,9 @@
+import { Request } from '@nestjs/common'
+
+export interface Req extends Request {
+  user: UserSession
+}
+
 export interface UserSession {
   id: string
 
