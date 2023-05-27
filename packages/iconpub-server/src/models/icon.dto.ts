@@ -1,54 +1,26 @@
-import { ApiProperty, PickType, OmitType, PartialType } from '@nestjs/swagger'
-import { IsNumberString, IsOptional } from 'class-validator'
-import { IsNotEmpty, Max } from 'class-validator'
+import { ApiProperty, PickType } from '@nestjs/swagger'
+import { IsNotEmpty, IsOptional, Max, MaxLength, Min, MinLength } from 'class-validator'
 
 export type IconType = 'icon' | 'illu' | 'svg' | 'font'
 
-export interface IIcon {
-  id: number
-
-  name: string
-
-  symbol: string
-
-  unicode: number
-
-  description: string
-
-  type: IconType
-
-  albumId: string
-
-  owner: string
-
-  tags: string[]
-
-  extraInfo: string
-
-  fontClass: string /** font class */
-
-  pathAttributes: string
-
-  showSvg: string
-}
-
-/**
- * icon dto
- */
 export class IconDto {
   @ApiProperty()
-  id: number
+  id: string
 
   @ApiProperty({
     type: String,
     default: 'name of icon',
   })
+  @IsNotEmpty()
+  @MaxLength(50)
   name: string
 
   @ApiProperty({
     type: String,
     default: 'symbol of icon',
   })
+  @IsNotEmpty()
+  @MaxLength(12)
   symbol: string
 
   @ApiProperty({
@@ -56,27 +28,48 @@ export class IconDto {
     description: '',
     default: 1,
   })
+  @IsNotEmpty()
+  @Max(65000)
+  @Min(25000)
   unicode: number
 
   @ApiProperty({
     type: String,
     default: '',
   })
+  @IsNotEmpty()
+  @MaxLength(200)
   description: string
 
   @ApiProperty({
     type: String,
-    description: 'type of icon',
-    default: 'icon',
-    enum: ['Icon', 'Illu', 'Svg', 'Font'],
+    default: '',
   })
-  type: IconType
+  @IsNotEmpty()
+  @MaxLength(200)
+  svg: string
+
+  @ApiProperty({
+    type: String,
+    default: '',
+  })
+  @IsNotEmpty()
+  @MaxLength(200)
+  file: string
+
+  @ApiProperty({
+    type: String,
+    description: 'color',
+    default: '#999',
+  })
+  fill: string
 
   @ApiProperty({
     type: String,
     description: '',
     default: '',
   })
+  @IsNotEmpty()
   albumId: string
 
   @ApiProperty({
@@ -84,20 +77,26 @@ export class IconDto {
     description: 'owner id',
     default: '',
   })
-  owner: string
+  @IsNotEmpty()
+  @MaxLength(1)
+  owner: string[]
 
   @ApiProperty({
     type: [String],
     description: 'tags of icon',
     default: [],
   })
+  @IsNotEmpty()
+  @IsOptional()
+  @MinLength(1)
+  @MaxLength(20)
   tags: string[]
 
   @ApiProperty()
   extraInfo: string
 
   @ApiProperty()
-  fontClass: string /** font class */
+  fontClass: string
 
   @ApiProperty()
   pathAttributes: string
@@ -105,14 +104,17 @@ export class IconDto {
   @ApiProperty()
   showSvg: string
 
-  @ApiProperty()
-  createdAt: number
+  @ApiProperty({
+    default: Date.now(),
+    nullable: true,
+  })
+  createdAt: number = Date.now()
 
-  @ApiProperty()
+  @ApiProperty({
+    default: Date.now(),
+    nullable: true,
+  })
   updatedAt: number
-
-  @ApiProperty()
-  deletedAt: number
 }
 
 export class CreateIconDto extends PickType(IconDto, [
@@ -121,44 +123,6 @@ export class CreateIconDto extends PickType(IconDto, [
   'description',
   'albumId',
   'tags',
-  'owner' as const,
-  'createdAt' as const,
-]) {
-  @ApiProperty()
-  @IsNotEmpty()
-  symbol: string
+]) {}
 
-  @ApiProperty()
-  @IsNotEmpty()
-  @Max(50)
-  name: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  description: string
-
-  @ApiProperty()
-  @IsNotEmpty()
-  albumId: string
-
-  @ApiProperty({ default: [] })
-  @IsNotEmpty()
-  tags: string[]
-
-  @ApiProperty({
-    default: Date.now(),
-    nullable: true,
-  })
-  @IsOptional()
-  @IsNumberString()
-  createdAt: number = Date.now()
-}
-
-export class UpdateIconDto extends PickType(IconDto, ['id', 'albumId', 'createdAt'] as const) {
-  @ApiProperty({
-    default: Date.now(),
-  })
-  @IsNotEmpty()
-  @IsNumberString()
-  updatedAt: number = Date.now()
-}
+export class UpdateIconDto extends PickType(IconDto, ['id' as const, 'albumId'] as const) {}

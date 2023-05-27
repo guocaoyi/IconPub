@@ -21,3 +21,15 @@
 - Help Center
   - Function Introduction
   - Development Usage (Usage Scenarios)
+
+## Architectures
+
+### Product Architecture
+
+### Info Architecture
+
+### App Architecture
+
+```typescript
+
+```

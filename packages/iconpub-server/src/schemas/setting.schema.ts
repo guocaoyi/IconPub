@@ -1,19 +1,20 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
 @Schema()
 export class Setting {
-  @Prop()
+  @Prop({ required: true, type: String })
   name: string
 
-  @Prop({ alias: 'created_at', required: true, default: Date.now() })
-  createdAt: number
-
-  @Prop({ alias: 'updated_at', default: Date.now() })
-  updatedAt: number
-
-  @Prop({ alias: 'deleted_at' })
-  deletedAt?: number
+  @Prop(
+    raw({
+      oskey: { type: String },
+      osSecret: { type: String },
+      osBucket: { type: String },
+      osPrePath: { type: String },
+    }),
+  )
+  objectStorage: Record<string, string>
 }
 
 export type SettingDocument = Document<Setting>

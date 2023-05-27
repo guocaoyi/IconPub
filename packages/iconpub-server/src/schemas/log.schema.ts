@@ -11,39 +11,28 @@ export class Operator {
 
 @Schema()
 export class Log {
+  @Prop()
+  albumId: string
+
   @Prop(
     raw({
-      uid: { type: String, required: true },
-      user: { type: String, required: true },
-      action: {
-        type: String,
-        required: true,
-        enum: ['create', 'update', 'remove', 'frozen', 'migreate', 'fork', 'star', 'transfer'],
-      },
-      target: { type: String, required: true },
-      targetType: {
-        type: String,
-        required: true,
-        enum: ['album', 'category', 'icon', 'contributor', 'role', 'org'],
-      },
+      // user id
+      operatorId: { type: String, required: true },
+      // user name
+      operator: { type: String, required: true },
+      // delete, update, create , fork, publish, unpublish, like, unlike, view, download....
+      action: { type: String, required: true },
+      // target name
+      handle: { type: String, required: true },
     }),
   )
-  operator: Record<string, Operator>
+  content: Record<string, Operator>
 
-  @Prop({ required: true })
-  type: string
-
-  @Prop({ required: true })
-  content: string
-
-  @Prop({ default: '0.0.0.0' })
+  @Prop({ type: String, default: '' })
   ip: string
 
-  @Prop({ default: '' })
-  ua: string
-
-  @Prop({ alias: 'created_at', default: Date.now() })
-  createdAt: string
+  @Prop({ type: String, default: '', alias: 'user_agent' })
+  userAgent: string
 }
 
 export type LogDocument = Document<Log>

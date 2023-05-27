@@ -1,26 +1,22 @@
-import { Reflector } from '@nestjs/core'
 import {
   CanActivate,
   ExecutionContext,
   Injectable,
-  UnauthorizedException,
   Logger,
+  UnauthorizedException,
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
+import { Reflector } from '@nestjs/core'
 import { Request } from 'express'
 
-import { jwtConstants } from 'src/configs/jwt'
-import { UserService } from 'src/services/user.service'
+import { UserSession } from 'src/interfaces/session.interface'
+import configuration from 'src/configs/configuration'
 
 @Injectable()
 export class AuthGuard implements CanActivate {
   private readonly logger: Logger = new Logger(AuthGuard.name)
 
-  constructor(
-    private reflector: Reflector,
-    private readonly jwtService: JwtService,
-    private readonly userService: UserService,
-  ) {}
+  constructor(private readonly reflector: Reflector, private readonly jwtService: JwtService) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest()
@@ -29,13 +25,17 @@ export class AuthGuard implements CanActivate {
       throw new UnauthorizedException()
     }
     try {
-      const payload = await this.jwtService.verifyAsync(token, {
-        secret: jwtConstants.secret,
+      const session = await this.jwtService.verifyAsync<UserSession>(token, {
+        secret: configuration().jwt.secret,
       })
-      // 💡 We're assigning the payload to the request object here
-      // so that we can access it in our route handlers
-      this.logger.debug(JSON.stringify(payload))
-      request['user'] = payload
+      this.logger.debug(JSON.stringify(session))
+
+      if (new Date().getTime() > session.exp * 1000) {
+        this.logger.debug('expired')
+        throw new UnauthorizedException('user session expired!')
+      }
+
+      request['user'] = session
     } catch {
       throw new UnauthorizedException()
     }

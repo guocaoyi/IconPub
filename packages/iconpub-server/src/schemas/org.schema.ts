@@ -3,17 +3,34 @@ import { Document } from 'mongoose'
 
 @Schema()
 export class Org {
-  @Prop({ required: true })
-  name: string
+  @Prop({
+    required: true,
+    type: String,
+    unique: true,
+    index: true,
+  })
+  label: string
 
-  @Prop({ default: '' })
+  @Prop({ type: String, default: '' })
+  bio: string
+
+  @Prop({ type: String, default: '' })
+  avatar: string
+
+  @Prop({ type: String, default: '' })
   url: string
 
-  @Prop({ default: '' })
-  manages: string
+  /**
+   * owner of org
+   */
+  @Prop({ type: String, required: true })
+  owner: string
 
-  @Prop({ default: '' })
-  users: string[]
+  /**
+   * members of org
+   */
+  @Prop({ required: true, type: [String], default: '' })
+  members: string[]
 }
 
 export type OrgDocument = Document<Org>

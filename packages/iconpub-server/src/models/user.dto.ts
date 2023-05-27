@@ -10,10 +10,11 @@ import {
   MinLength,
 } from 'class-validator'
 
-/**
- * basic user dto
- */
 export class UserDto {
+  constructor(partial: Partial<UserDto>) {
+    Object.assign(this, partial)
+  }
+
   @ApiProperty({
     type: String,
     description: 'username, min length more than 4',
@@ -51,17 +52,18 @@ export class UserDto {
     default: 'changeme',
   })
   @IsNotEmpty()
-  @IsBase64()
-  @MinLength(10)
+  // @IsBase64()
+  // @MinLength(10)
   password: string
+
+  // get passwork(): string {
+  //   return Buffer.from(this.password, 'base64').toString()
+  // }
 
   @ApiProperty({ default: '' })
   @IsOptional()
   @MaxLength(200)
   url: string
-
-  @ApiProperty()
-  createdAt: string
 }
 
 export class CreateUserDto extends PickType(UserDto, ['username', 'email', 'password']) {}

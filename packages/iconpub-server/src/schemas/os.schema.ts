@@ -1,8 +1,9 @@
 import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
-export class ResourceUri {
+export class Scripts {
   js: string
+  type: string
   js_svg: string
   css: string
   eot: string
@@ -53,19 +54,7 @@ export class ObjectStorage {
   hash: string
 
   @Prop(raw({}))
-  uris: ResourceUri
-
-  @Prop({ required: true })
-  groupId: number
-
-  @Prop({ alias: 'created_at', required: true })
-  createdAt: string
-
-  @Prop({ alias: 'updated_at' })
-  updatedAt?: string
-
-  @Prop({ alias: 'deleted_at' })
-  deletedAt?: string
+  uris: Scripts
 }
 
 export type ObjectStorageDocument = ObjectStorage & Document

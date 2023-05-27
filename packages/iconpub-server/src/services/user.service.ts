@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
-import { User, UserDocument } from 'src/schemas/user.schema'
+import { User } from 'src/schemas/user.schema'
 
 @Injectable()
 export class UserService {
@@ -14,28 +14,31 @@ export class UserService {
     return this.userModel.create(user)
   }
 
-  async findOne(username: string): Promise<User> {
-    const u = await this.userModel.findOne({ name: username }).exec()
-    return u
+  modifier(id: string, user: User): Promise<any> {
+    return this.userModel.updateOne({ _id: id }, user).exec()
   }
 
-  async getUserInfo(uid: string): Promise<User> {
-    return this.userModel.findOne({ _id: uid })
+  getUserInfo(uid: string) {
+    return this.userModel.findOne({ _id: uid }).exec()
   }
 
-  /**
-   * search
-   */
-  async hasUser(username: string, email: string): Promise<boolean> {
-    const result = await this.userModel.findOne({ $or: [{ name: username }, { email }] }).exec()
-    this.logger.debug(result)
-    return result !== null
+  queryUserById(username: string) {
+    return this.userModel.findOne({ username: { $regex: username } }).exec()
   }
 
-  /**
-   * search by name
-   */
-  async queryByName(name: string): Promise<UserDocument[]> {
-    return await this.userModel.find({ name: { $regex: name } })
+  queryUserByName(username: string) {
+    return this.userModel.findOne({ username }).exec()
+  }
+
+  queryUserByNameAndEmail(username: string, email: string) {
+    return this.userModel.findOne({ $or: [{ username }, { email }] }).exec()
+  }
+
+  queryUsersByNameOrEmail(username: string, email: string) {
+    return this.userModel.find({ $or: [{ username }, { email }] }).exec()
+  }
+
+  queryUsersByNameReg(username: string): Promise<User[]> {
+    return this.userModel.find({ username: { $regex: username } }).exec()
   }
 }

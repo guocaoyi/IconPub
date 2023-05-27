@@ -1,33 +1,38 @@
+import { ApiBearerAuth, ApiBody, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger'
 import {
+  Body,
   Controller,
   Delete,
   Get,
-  Post,
-  Param,
-  Session,
+  HttpCode,
+  HttpStatus,
   Logger,
-  UseGuards,
-  Request,
+  Param,
+  Post,
+  Put,
   Query,
+  Request,
+  Session,
+  UseGuards,
 } from '@nestjs/common'
-import { ApiParam, ApiHeader, ApiTags, ApiQuery } from '@nestjs/swagger'
 
-import { Roles } from 'src/decorators/roles.decorator'
-import { Role } from 'src/models/enum/role.enum'
-import { UserService } from 'src/services/user.service'
+import { Req } from 'src/interfaces/session.interface'
+import { Role, Roles } from 'src/decorators/roles.decorator'
 import { AuthGuard } from 'src/guards/auth.guard'
+import { ResetPassDto } from 'src/models/auth.dto'
+import { UserService } from 'src/services/user.service'
 
 @ApiTags('user')
+@ApiBearerAuth()
+@UseGuards(AuthGuard)
 @Controller('user')
 export class UserController {
   private readonly logger: Logger = new Logger(UserController.name)
 
   constructor(private readonly userService: UserService) {}
 
-  @ApiHeader({ required: true, name: 'Authorization', description: 'Bearer *token*' })
-  @UseGuards(AuthGuard)
   @Get()
-  profile(@Request() req: any) {
+  profile(@Request() req: Req) {
     this.logger.debug(JSON.stringify(req.user, null, 2))
     return req.user
   }
@@ -64,7 +69,20 @@ export class UserController {
   @ApiQuery({ name: 'name', description: 'user name' })
   @Get('search')
   async search(@Query('name') name: string) {
-    const users = await this.userService.queryByName(name)
-    return users?.map((user) => ({ name: user, id: user._id })) ?? []
+    const users = await this.userService.queryUsersByNameReg(name)
+    return users?.map((user) => ({ name: user, id: user.id })) ?? []
+  }
+
+  @ApiBody({ type: ResetPassDto })
+  @HttpCode(HttpStatus.OK)
+  @UseGuards(AuthGuard)
+  @Put('newpass')
+  modify(@Request() req: Request, @Body() resetPassDto: ResetPassDto) {
+    // req.user.salt
+    // validate old password
+    // this.authService.comparePassword(resetPassDto.password, resetPassDto.newPassword)
+    // new password
+    // modify password
+    // return success
   }
 }
